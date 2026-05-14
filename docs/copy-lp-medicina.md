@@ -23,12 +23,14 @@
 
 ## Hero
 
-**Headline (recomendada):**
-Estude Medicina com quem já é médico.
+**Headline:**
+Estude com médicos. Seja um deles.
 
-**Alternativas:**
+**Alternativas testadas:**
+- Estude Medicina com quem já é médico.
+- Estude com médicos. Forme-se médico.
+- Estude com médicos. Vire médico.
 - Onde quem ensina Medicina também salva vidas todos os dias.
-- Sua formação em Medicina merece professores que são médicos.
 
 **Subheadline:**
 Corpo docente formado por médicos atuantes, mestres e doutores que ensinam o que praticam todos os dias nos maiores hospitais do Maranhão.

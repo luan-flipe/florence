@@ -6,6 +6,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { config } from "@/content/medicina";
+import { ScarcitySeal } from "@/components/scarcity-seal";
 
 const schema = z.object({
   name: z.string().min(2, "Informe seu nome completo"),
@@ -54,9 +55,10 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
 
   return (
     <div className={isSidebar
-      ? "rounded-[1.75rem] bg-white shadow-[0_24px_64px_rgba(0,26,46,0.18)] p-7 w-full"
+      ? "relative rounded-[1.75rem] bg-white shadow-[0_24px_64px_rgba(0,26,46,0.18)] p-7 w-full"
       : "w-full max-w-lg mx-auto"
     }>
+      {isSidebar && <ScarcitySeal />}
       {isSidebar && (
         <div className="mb-6 pb-5 border-b border-gray-100">
           {/* Badge chamativo */}

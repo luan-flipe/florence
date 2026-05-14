@@ -29,51 +29,53 @@ export function Hero() {
           src="/images/hero.jpg"
           alt="Estudante de Medicina da Florence"
           fill
-          className="object-cover object-[60%_25%] lg:object-[55%_center]"
+          className="object-cover object-[40%_center] lg:object-[55%_center]
+            scale-[1.15] origin-bottom
+            lg:scale-100 lg:origin-center"
           priority
         />
 
-        {/* Desktop: gradiente horizontal — escuro à esquerda, revela a pessoa no centro/direita */}
-        <div className="hidden lg:block absolute inset-0
-          bg-gradient-to-r from-[#001a2e]/95 via-[#001a2e]/35 to-transparent" />
+        {/* Gradiente horizontal — bem mais leve para revelar a pessoa */}
+        <div className="absolute inset-0
+          bg-gradient-to-r from-[#001a2e]/95 via-[#001a2e]/15 to-transparent" />
 
-        {/* Mobile: gradiente mais suave — texto fica legível mas a pessoa aparece muito mais */}
-        <div className="lg:hidden absolute inset-0
-          bg-gradient-to-b from-[#001a2e]/78 via-[#001a2e]/20 to-[#001a2e]/45" />
+        {/* Contraste sutil topo (apenas a partir do topo, não escurece base) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001a2e]/15 via-transparent to-transparent" />
 
-        {/* Camada de contraste base */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001a2e]/15 via-transparent to-[#001a2e]/25" />
+        {/* Mobile: fade do bg escuro para cream — efeito de form flutuando além do hero */}
+        <div className="lg:hidden absolute inset-x-0 bottom-0 h-[55%] pointer-events-none
+          bg-gradient-to-b from-transparent via-[#F8F9FA]/55 to-[#F8F9FA]" />
       </div>
 
       {/* ── Conteúdo ───────────────────────────────────── */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-16 lg:py-20">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-12 lg:py-16">
 
         {/* Logo */}
-        <div className="mb-12 lg:mb-14">
-          <Image src="/logo.svg" alt="Centro Universitário Florence" width={260} height={56} className="brightness-0 invert opacity-90" />
+        <div className="mb-10 lg:mb-12">
+          <Image src="/logo.svg" alt="Centro Universitário Florence" width={240} height={52} className="brightness-0 invert opacity-90" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start lg:items-center">
 
           {/* ── Esquerda (7/12) ────────────────────────── */}
           <div className="lg:col-span-7 flex flex-col">
-            <div className="eyebrow eyebrow-dark mb-6 w-fit">
+            <div className="eyebrow eyebrow-dark mb-5 w-fit">
               <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842] animate-pulse" />
               Medicina · São Luís, MA
             </div>
 
-            <h1 className="headline-xl text-4xl md:text-5xl lg:text-[3.75rem] text-white mb-6
+            <h1 className="headline-xl text-4xl md:text-5xl lg:text-[3.5rem] text-white mb-5
               [text-shadow:_0_2px_32px_rgba(0,26,46,0.5)]">
               {h.headline}
             </h1>
 
-            <p className="text-white/75 text-lg leading-relaxed max-w-md mb-10
+            <p className="text-white/75 text-base lg:text-lg leading-relaxed max-w-md mb-8
               [text-shadow:_0_1px_16px_rgba(0,26,46,0.4)]">
               {h.subheadline}
             </p>
 
             {/* Stats */}
-            <div className="flex items-center gap-8 mb-10">
+            <div className="flex items-center gap-5 sm:gap-8 mb-8">
               {[
                 { value: "6 anos", label: "Duração" },
                 { value: "Integral", label: "Turno" },
@@ -82,7 +84,7 @@ export function Hero() {
                 <div key={s.label}>
                   {i > 0 && <div className="w-px h-10 bg-white/15 -ml-8 mr-0 absolute hidden" />}
                   <div className="flex flex-col items-center gap-0.5">
-                    <span className="font-display font-800 text-2xl text-[#F5C842]">{s.value}</span>
+                    <span className="font-display font-800 text-xl sm:text-2xl text-[#F5C842] whitespace-nowrap">{s.value}</span>
                     <span className="text-white/40 text-[10px] uppercase tracking-widest font-display font-600">{s.label}</span>
                   </div>
                 </div>

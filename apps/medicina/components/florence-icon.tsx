@@ -1,5 +1,6 @@
 // Ícone da Florence — apenas o símbolo, sem o texto
 // Cores originais: #00508c (navy) e #0096d2 (sky blue)
+// Versão simplificada: duas metades limpas (sem o detalhe interno)
 
 interface FlorenceIconProps {
   size?: number;
@@ -7,7 +8,6 @@ interface FlorenceIconProps {
 }
 
 export function FlorenceIcon({ size, className = "" }: FlorenceIconProps) {
-  // size prop opcional — quando ausente, dimensiona via className (h-* / w-*)
   const sizeAttrs = size ? { width: size, height: size } : {};
   return (
     <svg
@@ -17,16 +17,15 @@ export function FlorenceIcon({ size, className = "" }: FlorenceIconProps) {
       className={className}
       aria-hidden="true"
     >
-      {/* Metade esquerda do círculo - azul claro */}
+      {/* Metade esquerda do círculo - azul claro (simplificada) */}
       <path
         fill="#0096d2"
-        d="M129.87,107.56s-2.09-30.82-88.9-27.78v122.83s-1.3,77.26,88.9,98.09v-28.83c-3.92-4.61-6.23-10.38-6.23-17.07s2.31-12.46,6.23-17.07v-1.15c-2.08,0-3.69-1.62-3.69-3.69s1.62-3.69,3.69-3.69v-1.15c-3.92-4.61-6.23-10.61-6.23-17.07s2.31-12.46,6.23-17.08v-86.33Z"
+        d="M129.87,107.56 s-2.09,-30.82 -88.9,-27.78 v122.83 s-1.3,77.26 88.9,98.09 Z"
       />
-      {/* Metade direita do círculo - azul escuro */}
+      {/* Metade direita do círculo - azul escuro (simplificada) */}
       <path
         fill="#00508c"
-        fillRule="evenodd"
-        d="M220.06,202.62v-122.83c-86.81-3.04-88.9,27.78-88.9,27.78v86.33c3.92,4.61,6.23,10.38,6.23,17.08s-2.31,12.46-6.23,17.07v1.15c2.08,0,3.69,1.61,3.69,3.69s-1.62,3.69-3.69,3.69v1.15c3.92,4.61,6.23,10.61,6.23,17.07s-2.31,12.46-6.23,17.07v28.83c90.2-20.83,88.9-98.09,88.9-98.09Z"
+        d="M220.06,202.62 v-122.83 c-86.81,-3.04 -88.9,27.78 -88.9,27.78 V299.7 c90.2,-20.83 88.9,-98.09 88.9,-98.09 Z"
       />
       {/* Pétala superior - azul escuro */}
       <path

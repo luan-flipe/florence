@@ -6,7 +6,7 @@ export const config = {
   },
 
   hero: {
-    headline: "Estude Medicina com quem já é médico.",
+    headline: "Estude com médicos. Seja um deles.",
     subheadline:
       "Corpo docente formado por médicos atuantes, mestres e doutores que ensinam o que praticam todos os dias nos maiores hospitais do Maranhão.",
     cta: "Quero minha vaga em Medicina",

@@ -20,8 +20,8 @@ export function Formacao() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
               Estrutura curricular
             </div>
-            <div className="flex items-stretch gap-5 reveal reveal-delay-1">
-              <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0 self-stretch" />
+            <div className="flex items-end gap-5 reveal reveal-delay-1">
+              <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
               <h2 className="headline-lg text-3xl lg:text-5xl text-white">
                 Seis anos que constroem<br />um médico completo.
               </h2>
@@ -57,9 +57,9 @@ export function Formacao() {
                 </div>
               </div>
 
-              {/* Seta entre cards — centralizada vertical e no gap horizontal */}
+              {/* Seta entre cards — centralizada no gap (gap-10 = 40px, seta w-6 = 24px → -right-8 = -32px) */}
               {i < fases.length - 1 && (
-                <div className="hidden md:flex absolute top-1/2 -right-7 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center rounded-full bg-[#0096d2]/15 border border-[#0096d2]/30">
+                <div className="hidden md:flex absolute top-1/2 -right-8 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center rounded-full bg-[#0096d2]/15 border border-[#0096d2]/30">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0096d2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
