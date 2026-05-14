@@ -1,17 +1,23 @@
 # Copy — LP Medicina Florence
 
-**Versão:** v1
+**Versão:** v2
 **Data:** 14/05/2026
-**Status:** Aguardando revisão do cliente
+**Status:** Aprovado — aplicar na LP
 
 ---
 
 ## Placeholders a confirmar
 
-- `[NOTA_MEC]` — Nota do curso no MEC (4 ou 5)
 - `[N_PROFESSORES]` — Número total de médicos no corpo docente
 - `[INSTAGRAM_URL]` — Link do Instagram oficial da Florence
 - Cidade/Estado assumida: São Luís, MA
+
+## Alterações v2 (com base no site oficial)
+- Removido bloco "Nota máxima no MEC" — autorização recente (set/2024), nota não confirmada
+- Substituído por "Múltiplas formas de entrada"
+- Adicionado financiamento (bolsas até 60%, FIES, ProUni) no formulário e CTA final
+- Adicionada seção "Como é a sua formação" com as 3 fases do curso
+- Atualizado e-mail: "condições especiais" → referência específica a bolsas/FIES/ProUni
 
 ---
 
@@ -46,8 +52,8 @@ Você entra na rotina hospitalar muito antes do internato. Simulação realísti
 **Bloco 3 — Estrutura que prepara para o real**
 Centros de simulação, salas de cirurgia, UTIs e laboratórios de anatomia — o mesmo ambiente que você vai encontrar na profissão.
 
-**Bloco 4 — Curso com nota máxima no MEC**
-Reconhecimento de qualidade auditado, não só prometido. *(confirmar: [NOTA_MEC])*
+**Bloco 4 — Múltiplas formas de entrada**
+Vestibular Digital, nota do ENEM ou Histórico Vale Nota. Com bolsas de até 60%, FIES e ProUni disponíveis. Você escolhe como ingressar.
 
 ---
 
@@ -81,6 +87,22 @@ Residência em Oftalmologia com Título de Especialista. Fellowship em Plástica
 
 ---
 
+## Seção 2.5 — Como é a sua formação
+
+**Título da seção:**
+Seis anos que constroem um médico completo.
+
+**Card 1 — Ciclo Básico (1º e 2º anos)**
+Anatomia, fisiologia, bioquímica, microbiologia e imunologia. A base científica sólida que sustenta tudo o que vem depois.
+
+**Card 2 — Ciclo Clínico (3º e 4º anos)**
+Clínica médica, cirurgia, pediatria, ginecologia e obstetrícia. Da teoria ao raciocínio clínico real, com professores que atuam nos hospitais.
+
+**Card 3 — Internato (5º e 6º anos)**
+Dois anos de atendimento direto em ambiente hospitalar e ambulatorial. Você já é médico na prática antes de receber o diploma.
+
+---
+
 ## Seção 3 — Estrutura
 
 **Título da seção:**
@@ -109,6 +131,9 @@ Quero minha vaga em Medicina
 
 **Microcopy abaixo do botão:**
 Resposta em até 1 dia útil. Seus dados ficam só com a Florence.
+
+**Microcopy de financiamento (abaixo do disclaimer):**
+A partir de R$ 9.500/mês — bolsas de até 60%, FIES e ProUni disponíveis.
 
 ---
 
@@ -157,7 +182,7 @@ Oi, [Nome]!
 
 Recebemos seu cadastro para o curso de Medicina do Centro Universitário Florence.
 
-Nos próximos 1 dia útil, um consultor de admissões vai entrar em contato com você para tirar dúvidas, falar sobre as condições especiais e te ajudar a dar o próximo passo.
+Nos próximos 1 dia útil, um consultor de admissões vai entrar em contato com você para tirar dúvidas, apresentar as opções de bolsa, FIES e ProUni disponíveis para você, e te ajudar a dar o próximo passo.
 
 Qualquer urgência, é só responder este e-mail.
 

@@ -29,9 +29,8 @@ export const config = {
       icon: "building",
     },
     {
-      title: "Curso com nota máxima no MEC",
-      // TODO: confirmar nota (4 ou 5)
-      body: "Reconhecimento de qualidade auditado, não só prometido.",
+      title: "Múltiplas formas de entrada",
+      body: "Vestibular Digital, nota do ENEM ou Histórico Vale Nota. Com bolsas de até 60%, FIES e ProUni disponíveis.",
       icon: "award",
     },
   ],
@@ -80,6 +79,30 @@ export const config = {
     ],
   },
 
+  formacao: {
+    titulo: "Seis anos que constroem um médico completo.",
+    fases: [
+      {
+        periodo: "1º e 2º anos",
+        nome: "Ciclo Básico",
+        descricao:
+          "Anatomia, fisiologia, bioquímica, microbiologia e imunologia. A base científica sólida que sustenta tudo o que vem depois.",
+      },
+      {
+        periodo: "3º e 4º anos",
+        nome: "Ciclo Clínico",
+        descricao:
+          "Clínica médica, cirurgia, pediatria, ginecologia e obstetrícia. Da teoria ao raciocínio clínico real, com professores que atuam nos hospitais.",
+      },
+      {
+        periodo: "5º e 6º anos",
+        nome: "Internato",
+        descricao:
+          "Dois anos de atendimento direto em ambiente hospitalar e ambulatorial. Você já é médico na prática antes de receber o diploma.",
+      },
+    ],
+  },
+
   estrutura: {
     titulo: "A estrutura é tão real quanto a prática.",
     itens: [
@@ -101,10 +124,11 @@ export const config = {
   },
 
   formulario: {
-    titulo: "Garante sua vaga.",
+    titulo: "Garanta sua vaga.",
     subtitulo: "Preencha e nosso time entra em contato.",
     cta: "Quero minha vaga",
     lgpd: "Ao enviar, você autoriza o contato da Florence. Não compartilhamos seus dados.",
+    financiamento: "A partir de R$ 9.500/mês — bolsas de até 60%, FIES e ProUni disponíveis.",
   },
 
   obrigado: {

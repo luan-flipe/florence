@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px;">
           <h2 style="color: #1a3a6b;">Oi, ${name.split(" ")[0]}!</h2>
           <p>Recebemos seu cadastro para o curso de <strong>Medicina</strong> do Centro Universitário Florence.</p>
-          <p>Nos próximos <strong>1 dia útil</strong>, um consultor de admissões vai entrar em contato com você pelo WhatsApp ou telefone para tirar dúvidas e apresentar as condições especiais.</p>
+          <p>Nos próximos <strong>1 dia útil</strong>, um consultor de admissões vai entrar em contato com você pelo WhatsApp ou telefone para tirar dúvidas, apresentar as opções de <strong>bolsa, FIES e ProUni</strong> disponíveis para você, e te ajudar a dar o próximo passo.</p>
           <p style="color: #666; font-size: 14px;">Qualquer urgência, é só responder este e-mail.</p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
           <p style="color: #999; font-size: 13px;">Centro Universitário Florence — São Luís, MA</p>

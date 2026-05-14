@@ -117,6 +117,12 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
         <p className="text-xs text-gray-400 text-center leading-snug">
           {f.lgpd}
         </p>
+
+        {f.financiamento && (
+          <p className="text-xs text-blue-600 font-medium text-center leading-snug border-t border-gray-100 pt-3">
+            {f.financiamento}
+          </p>
+        )}
       </form>
     </div>
   );
