@@ -1,6 +1,5 @@
 "use client";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { FlorenceIcon } from "@/components/florence-icon";
 import { config } from "@/content/medicina";
 import { Formulario } from "@/components/formulario";
 
@@ -27,12 +26,9 @@ export function CtaFinal() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
             Garanta sua vaga
           </div>
-          <div className="flex items-start justify-center gap-4 mb-4 reveal reveal-delay-1">
-            <FlorenceIcon size={48} className="flex-shrink-0 mt-1" />
-            <h2 className="headline-lg text-3xl lg:text-5xl text-white text-left">
-              {cta.headline}
-            </h2>
-          </div>
+          <h2 className="headline-lg text-3xl lg:text-5xl text-white mb-4 reveal reveal-delay-1 text-center text-balance">
+            {cta.headline}
+          </h2>
           <p className="text-white/70 text-lg reveal reveal-delay-2">
             {cta.subheadline}
           </p>

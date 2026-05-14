@@ -20,8 +20,8 @@ export function Formacao() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
               Estrutura curricular
             </div>
-            <div className="flex items-start gap-4 reveal reveal-delay-1">
-              <FlorenceIcon size={48} className="flex-shrink-0 mt-1" />
+            <div className="flex items-stretch gap-5 reveal reveal-delay-1">
+              <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0 self-stretch" />
               <h2 className="headline-lg text-3xl lg:text-5xl text-white">
                 Seis anos que constroem<br />um médico completo.
               </h2>

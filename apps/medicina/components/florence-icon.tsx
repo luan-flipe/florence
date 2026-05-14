@@ -6,11 +6,12 @@ interface FlorenceIconProps {
   className?: string;
 }
 
-export function FlorenceIcon({ size = 28, className = "" }: FlorenceIconProps) {
+export function FlorenceIcon({ size, className = "" }: FlorenceIconProps) {
+  // size prop opcional — quando ausente, dimensiona via className (h-* / w-*)
+  const sizeAttrs = size ? { width: size, height: size } : {};
   return (
     <svg
-      width={size}
-      height={size}
+      {...sizeAttrs}
       viewBox="40 10 185 300"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
