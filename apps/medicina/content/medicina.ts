@@ -1,6 +1,6 @@
 export const config = {
   meta: {
-    title: "Medicina na Florence — Estude com médicos atuantes | Florence",
+    title: "Medicina na Florence - Estude com médicos atuantes | Florence",
     description:
       "Curso de Medicina com corpo docente formado por médicos, mestres e doutores. Estrutura completa, prática desde o primeiro período. Inscreva-se.",
   },

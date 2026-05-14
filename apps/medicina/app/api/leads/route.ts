@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabaseAdmin } from "@/lib/supabase";
+
 import { Resend } from "resend";
+import { supabaseAdmin } from "@/lib/supabase";
 import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
 
     // Envia e-mail de confirmação para o lead
     await resend.emails.send({
-      from: "Florence <noreply@florence.edu.br>",
+      from: "Florence <onboarding@resend.dev>",
       to: email,
       subject: `Recebemos seu cadastro para Medicina, ${name.split(" ")[0]}`,
       html: `

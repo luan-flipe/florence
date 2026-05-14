@@ -23,14 +23,15 @@ export function ProfessorCard({ nome, cargo, bio, foto }: ProfessorCardProps) {
       transition-all duration-600 ease-spring hover:-translate-y-1.5
       hover:shadow-[0_20px_60px_rgba(0,80,140,0.12)] h-full flex flex-col">
 
-      {/* Foto */}
-      <div className="relative h-56 bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
+      {/* Foto — aspect-[4/5] portrait, espaço suficiente para enquadrar rostos */}
+      <div className="relative aspect-[4/5] bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
         {!imgError ? (
           <Image
             src={foto}
             alt={nome}
             fill
-            className="object-cover object-top transition-transform duration-600 ease-spring group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover object-[center_20%] transition-transform duration-600 ease-spring group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -40,8 +41,6 @@ export function ProfessorCard({ nome, cargo, bio, foto }: ProfessorCardProps) {
             </span>
           </div>
         )}
-        {/* Gradiente na base da foto */}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/80 to-transparent" />
       </div>
 
       {/* Info */}

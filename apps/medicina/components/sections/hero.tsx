@@ -29,13 +29,20 @@ export function Hero() {
           src="/images/hero.jpg"
           alt="Estudante de Medicina da Florence"
           fill
-          className="object-cover object-[65%_center]"
+          className="object-cover object-[60%_25%] lg:object-[55%_center]"
           priority
         />
-        {/* Gradiente: escuro na esquerda (texto), transparente à direita (mostra a pessoa) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001a2e]/95 via-[#001a2e]/75 to-[#001a2e]/30" />
-        {/* Escurece levemente topo e base */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#001a2e]/40 via-transparent to-[#001a2e]/60" />
+
+        {/* Desktop: gradiente horizontal — escuro à esquerda, revela a pessoa no centro/direita */}
+        <div className="hidden lg:block absolute inset-0
+          bg-gradient-to-r from-[#001a2e]/95 via-[#001a2e]/35 to-transparent" />
+
+        {/* Mobile: gradiente mais suave — texto fica legível mas a pessoa aparece muito mais */}
+        <div className="lg:hidden absolute inset-0
+          bg-gradient-to-b from-[#001a2e]/78 via-[#001a2e]/20 to-[#001a2e]/45" />
+
+        {/* Camada de contraste base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#001a2e]/15 via-transparent to-[#001a2e]/25" />
       </div>
 
       {/* ── Conteúdo ───────────────────────────────────── */}
@@ -55,11 +62,13 @@ export function Hero() {
               Medicina · São Luís, MA
             </div>
 
-            <h1 className="headline-xl text-4xl md:text-5xl lg:text-[3.75rem] text-white mb-6">
+            <h1 className="headline-xl text-4xl md:text-5xl lg:text-[3.75rem] text-white mb-6
+              [text-shadow:_0_2px_32px_rgba(0,26,46,0.5)]">
               {h.headline}
             </h1>
 
-            <p className="text-white/65 text-lg leading-relaxed max-w-md mb-10">
+            <p className="text-white/75 text-lg leading-relaxed max-w-md mb-10
+              [text-shadow:_0_1px_16px_rgba(0,26,46,0.4)]">
               {h.subheadline}
             </p>
 
