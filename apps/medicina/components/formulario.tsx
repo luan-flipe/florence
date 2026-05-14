@@ -27,6 +27,7 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const f = config.formulario;
+  const isSidebar = variant === "sidebar";
 
   const {
     register,
@@ -51,77 +52,95 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
     }
   };
 
-  const isInline = variant === "inline";
-
   return (
-    <div
-      className={
-        isInline
-          ? "w-full max-w-xl mx-auto"
-          : "bg-white rounded-2xl shadow-xl p-6 w-full"
-      }
-    >
-      {!isInline && (
-        <>
-          <h3 className="text-xl font-bold text-gray-900 mb-1">{f.titulo}</h3>
-          <p className="text-sm text-gray-500 mb-5">{f.subtitulo}</p>
-        </>
+    <div className={isSidebar
+      ? "rounded-[1.75rem] bg-white shadow-[0_24px_64px_rgba(0,26,46,0.18)] p-7 w-full"
+      : "w-full max-w-lg mx-auto"
+    }>
+      {isSidebar && (
+        <div className="mb-6">
+          <h3 className="font-display font-800 text-xl text-[#001a2e] mb-1">{f.titulo}</h3>
+          <p className="text-gray-400 text-sm">{f.subtitulo}</p>
+        </div>
       )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        {/* Nome */}
         <div>
           <input
             {...register("name")}
             placeholder="Nome completo"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder:text-gray-400"
+            className="field-input"
           />
           {errors.name && (
-            <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.name.message}</p>
           )}
         </div>
 
+        {/* E-mail */}
         <div>
           <input
             {...register("email")}
             type="email"
             placeholder="E-mail"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder:text-gray-400"
+            className="field-input"
           />
           {errors.email && (
-            <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
+            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.email.message}</p>
           )}
         </div>
 
+        {/* Telefone */}
         <div>
           <input
             {...register("phone")}
             type="tel"
             placeholder="Celular (WhatsApp)"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder:text-gray-400"
+            className="field-input"
           />
           {errors.phone && (
-            <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
+            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.phone.message}</p>
           )}
         </div>
 
-        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+        {error && (
+          <p className="text-red-500 text-sm text-center font-display">{error}</p>
+        )}
 
+        {/* Botão */}
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-700 hover:bg-blue-800 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors text-sm"
+          className="btn-primary w-full justify-center mt-1 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {loading ? "Enviando..." : f.cta}
+          <span>{loading ? "Enviando..." : f.cta}</span>
+          {!loading && (
+            <span className="btn-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+          )}
         </button>
 
-        <p className="text-xs text-gray-400 text-center leading-snug">
+        {/* LGPD */}
+        <p className="text-[11px] text-gray-400 text-center leading-snug">
           {f.lgpd}
         </p>
 
+        {/* Financiamento */}
         {f.financiamento && (
-          <p className="text-xs text-blue-600 font-medium text-center leading-snug border-t border-gray-100 pt-3">
-            {f.financiamento}
-          </p>
+          <div className="flex items-center gap-2 justify-center bg-[#0096d2]/6 rounded-xl px-3 py-2.5">
+            <span className="text-[#0096d2] text-xs">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </span>
+            <p className="text-[11px] text-[#0096d2] font-display font-600 leading-snug">
+              {f.financiamento}
+            </p>
+          </div>
         )}
       </form>
     </div>

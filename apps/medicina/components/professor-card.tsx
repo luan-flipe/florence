@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useState } from "react";
 
@@ -20,32 +19,47 @@ export function ProfessorCard({ nome, cargo, bio, foto }: ProfessorCardProps) {
     .join("");
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+    <div className="group rounded-[1.5rem] overflow-hidden bg-white border border-gray-100/80
+      transition-all duration-600 ease-spring hover:-translate-y-1.5
+      hover:shadow-[0_20px_60px_rgba(0,80,140,0.12)]">
+
       {/* Foto */}
-      <div className="relative h-56 bg-gradient-to-br from-blue-100 to-blue-200">
+      <div className="relative h-56 bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
         {!imgError ? (
           <Image
             src={foto}
             alt={nome}
             fill
-            className="object-cover object-top"
+            className="object-cover object-top transition-transform duration-600 ease-spring group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-5xl font-bold text-blue-400">{initials}</span>
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#0096d2]/10 to-[#00508c]/20">
+            <span className="font-display font-800 text-5xl text-[#0096d2]/40">
+              {initials}
+            </span>
           </div>
         )}
+        {/* Gradiente na base da foto */}
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/80 to-transparent" />
       </div>
 
       {/* Info */}
-      <div className="p-5">
-        <p className="text-xs font-medium text-blue-700 uppercase tracking-wide mb-1">
+      <div className="p-5 pt-4">
+        {/* Cargo como eyebrow */}
+        <p className="text-[10px] font-display font-700 text-[#0096d2] uppercase tracking-[0.15em] mb-1.5">
           {cargo}
         </p>
-        <h3 className="font-bold text-gray-900 mb-2">{nome}</h3>
-        <p className="text-gray-500 text-sm leading-relaxed">{bio}</p>
+        <h3 className="font-display font-700 text-[#001a2e] text-base mb-2 leading-snug">
+          {nome}
+        </h3>
+        <p className="text-gray-500 text-xs leading-relaxed line-clamp-3">
+          {bio}
+        </p>
       </div>
+
+      {/* Barra de cor decorativa na base */}
+      <div className="h-0.5 bg-gradient-to-r from-[#0096d2] to-[#00508c] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
     </div>
   );
 }
