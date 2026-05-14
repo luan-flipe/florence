@@ -15,7 +15,7 @@ export const config = {
   diferenciais: [
     {
       title: "Professores que são médicos",
-      body: "Aulas com profissionais que trabalham em UTIs, centros cirúrgicos e consultórios — não só na teoria.",
+      body: "Aulas com profissionais que trabalham em UTIs, centros cirúrgicos e consultórios - não só na teoria.",
       icon: "stethoscope",
     },
     {
@@ -25,7 +25,7 @@ export const config = {
     },
     {
       title: "Estrutura que prepara para o real",
-      body: "Centros de simulação, salas de cirurgia, UTIs e laboratórios de anatomia — o mesmo ambiente que você vai encontrar na profissão.",
+      body: "Centros de simulação, salas de cirurgia, UTIs e laboratórios de anatomia - o mesmo ambiente que você vai encontrar na profissão.",
       icon: "building",
     },
     {

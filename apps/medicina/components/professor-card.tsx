@@ -21,7 +21,7 @@ export function ProfessorCard({ nome, cargo, bio, foto }: ProfessorCardProps) {
   return (
     <div className="group rounded-[1.5rem] overflow-hidden bg-white border border-gray-100/80
       transition-all duration-600 ease-spring hover:-translate-y-1.5
-      hover:shadow-[0_20px_60px_rgba(0,80,140,0.12)]">
+      hover:shadow-[0_20px_60px_rgba(0,80,140,0.12)] h-full flex flex-col">
 
       {/* Foto */}
       <div className="relative h-56 bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
@@ -45,7 +45,7 @@ export function ProfessorCard({ nome, cargo, bio, foto }: ProfessorCardProps) {
       </div>
 
       {/* Info */}
-      <div className="p-5 pt-4">
+      <div className="p-5 pt-4 flex flex-col flex-1">
         {/* Cargo como eyebrow */}
         <p className="text-[10px] font-display font-700 text-[#0096d2] uppercase tracking-[0.15em] mb-1.5">
           {cargo}

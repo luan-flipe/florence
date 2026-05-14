@@ -1,6 +1,7 @@
 "use client";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { config } from "@/content/medicina";
+import { FlorenceIcon } from "@/components/florence-icon";
 
 const icons = {
   stethoscope: (
@@ -53,9 +54,9 @@ export function Diferenciais() {
 
         {/* Header */}
         <div className="max-w-2xl mb-16">
-          <div className="eyebrow mb-4 reveal">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0096d2]" />
-            Diferenciais
+          <div className="flex items-center gap-2 mb-4 reveal">
+            <FlorenceIcon size={22} />
+            <span className="eyebrow">Diferenciais</span>
           </div>
           <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e] reveal reveal-delay-1">
             Por que Medicina<br />na Florence.
@@ -63,7 +64,7 @@ export function Diferenciais() {
         </div>
 
         {/* Grid assimétrico */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
           {items.map((item, i) => {
             const style = cardStyles[i % cardStyles.length];
             const IconEl = icons[item.icon as keyof typeof icons] ?? icons.stethoscope;
@@ -71,17 +72,16 @@ export function Diferenciais() {
             return (
               <div
                 key={item.title}
-                className={`reveal reveal-delay-${i + 1} rounded-4xl p-7 flex flex-col gap-5
+                className={`reveal reveal-delay-${i + 1} rounded-4xl p-7 flex flex-col gap-6
                   transition-all duration-600 ease-spring hover:-translate-y-1
-                  hover:shadow-[0_16px_48px_rgba(0,26,46,0.12)] ${style.bg}
-                  ${i === 0 ? "lg:row-span-1" : ""}`}
+                  hover:shadow-[0_16px_48px_rgba(0,26,46,0.12)] ${style.bg}`}
               >
-                {/* Icon bezel */}
-                <div className={`w-12 h-12 rounded-2xl ${style.iconBg} ${style.iconColor} flex items-center justify-center`}>
-                  {IconEl}
+                {/* Ícone maior */}
+                <div className={`w-16 h-16 rounded-2xl ${style.iconBg} ${style.iconColor} flex items-center justify-center`}>
+                  <div className="w-8 h-8">{IconEl}</div>
                 </div>
 
-                <div>
+                <div className="flex flex-col flex-1">
                   <h3 className={`font-display font-700 text-lg mb-2 ${style.textColor}`}>
                     {item.title}
                   </h3>

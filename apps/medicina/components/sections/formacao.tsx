@@ -1,5 +1,6 @@
 "use client";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { FlorenceIcon } from "@/components/florence-icon";
 import { config } from "@/content/medicina";
 
 export function Formacao() {
@@ -8,67 +9,52 @@ export function Formacao() {
 
   return (
     <section ref={ref} className="py-24 lg:py-32 bg-[#001a2e] overflow-hidden relative">
-
-      {/* Detalhe decorativo */}
       <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 opacity-10"
         style={{ background: "radial-gradient(circle, #0096d2 0%, transparent 70%)" }} />
 
       <div className="container mx-auto px-4 lg:px-8">
-
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
-            <div className="eyebrow eyebrow-dark mb-4 w-fit reveal">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
-              Estrutura curricular
+            <div className="flex items-center gap-2 mb-4 reveal">
+              <FlorenceIcon size={22} className="brightness-0 invert opacity-70" />
+              <span className="eyebrow eyebrow-dark">Estrutura curricular</span>
             </div>
             <h2 className="headline-lg text-3xl lg:text-5xl text-white reveal reveal-delay-1">
               {titulo}
             </h2>
           </div>
-          <p className="text-white/40 text-sm max-w-xs lg:text-right reveal reveal-delay-2">
-            Bacharelado · 12 semestres · Turno integral · Presencial
+          <p className="text-white/35 text-sm max-w-xs lg:text-right reveal reveal-delay-2">
+            Bacharelado · 12 semestres<br />Turno integral · Presencial
           </p>
         </div>
 
-        {/* Cards das fases */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 relative">
-
-          {/* Linha conectora desktop */}
-          <div className="hidden md:block absolute top-10 left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-[#0096d2]/20 via-[#0096d2]/60 to-[#F5C842]/40 z-0" />
-
+        {/* Cards — sem linha absoluta sobreposta */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {fases.map((fase, i) => (
-            <div
-              key={fase.nome}
-              className={`reveal reveal-delay-${i + 1} relative z-10`}
-            >
-              {/* Shell externo */}
-              <div className="card-shell">
-                <div className="card-core bg-white/5 p-6">
-                  {/* Número */}
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full border border-[#0096d2]/40 flex items-center justify-center">
-                      <span className="font-display font-800 text-[#0096d2] text-lg leading-none">
-                        {i + 1}
-                      </span>
+            <div key={fase.nome} className={`reveal reveal-delay-${i + 1}`}>
+              <div className="card-shell h-full">
+                <div className="card-core bg-white/5 p-6 h-full flex flex-col">
+                  {/* Número + linha decorativa lateral */}
+                  <div className="flex items-start gap-4 mb-5">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full border border-[#0096d2]/40 flex items-center justify-center">
+                      <span className="font-display font-800 text-[#0096d2] text-lg leading-none">{i + 1}</span>
                     </div>
-                    <div className="flex-1 h-px bg-white/10" />
+                    {/* Seta de fluxo entre cards — apenas desktop */}
+                    {i < fases.length - 1 && (
+                      <div className="hidden md:flex items-center absolute right-[-1.5rem] top-10 z-10">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(0,150,210,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Período */}
                   <p className="text-[#F5C842] text-xs font-display font-600 uppercase tracking-widest mb-2">
                     {fase.periodo}
                   </p>
-
-                  {/* Nome */}
-                  <h3 className="font-display font-700 text-xl text-white mb-3">
-                    {fase.nome}
-                  </h3>
-
-                  {/* Descrição */}
-                  <p className="text-white/50 text-sm leading-relaxed">
-                    {fase.descricao}
-                  </p>
+                  <h3 className="font-display font-700 text-xl text-white mb-3">{fase.nome}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed flex-1">{fase.descricao}</p>
                 </div>
               </div>
             </div>
