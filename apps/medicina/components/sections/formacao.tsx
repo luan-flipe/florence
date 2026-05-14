@@ -14,22 +14,23 @@ export function Formacao() {
 
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <div>
-            <div className="eyebrow eyebrow-dark mb-5 w-fit reveal">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
-              Estrutura curricular
-            </div>
+        <div className="mb-16">
+          <div className="eyebrow eyebrow-dark mb-5 w-fit reveal">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
+            Estrutura curricular
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div className="flex items-end gap-5 reveal reveal-delay-1">
               <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
               <h2 className="headline-lg text-3xl lg:text-5xl text-white">
                 Seis anos que constroem<br />um médico completo.
               </h2>
             </div>
+            <p className="text-white/35 text-sm max-w-xs lg:text-right reveal reveal-delay-2 lg:pb-2">
+              Bacharelado · 12 semestres<br />Turno integral · Presencial
+            </p>
           </div>
-          <p className="text-white/35 text-sm max-w-xs lg:text-right reveal reveal-delay-2">
-            Bacharelado · 12 semestres<br />Turno integral · Presencial
-          </p>
         </div>
 
         {/* Cards com setas entre eles, centralizadas verticalmente */}
