@@ -13,16 +13,19 @@ export function Professores() {
       <div className="container mx-auto px-4 lg:px-8">
 
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-          <div className="reveal">
-            <div className="flex items-center gap-2 mb-4">
-              <FlorenceIcon size={22} />
-              <span className="eyebrow">Corpo docente</span>
+          <div>
+            <div className="eyebrow mb-5 w-fit reveal">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0096d2]" />
+              Corpo docente
             </div>
-            <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">
-              Conheça quem<br />vai te formar.
-            </h2>
+            <div className="flex items-start gap-4 reveal reveal-delay-1">
+              <FlorenceIcon size={48} className="flex-shrink-0 mt-1" />
+              <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">
+                Conheça quem<br />vai te formar.
+              </h2>
+            </div>
           </div>
-          <p className="text-gray-400 text-sm max-w-sm lg:text-right leading-relaxed reveal reveal-delay-1">
+          <p className="text-gray-400 text-sm max-w-sm lg:text-right leading-relaxed reveal reveal-delay-2">
             {subtitulo}
           </p>
         </div>

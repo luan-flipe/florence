@@ -23,13 +23,16 @@ export function CtaFinal() {
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-6 reveal">
-            <FlorenceIcon size={22} className="brightness-0 invert opacity-70" />
-            <span className="eyebrow eyebrow-dark">Garanta sua vaga</span>
+          <div className="eyebrow eyebrow-dark mb-6 w-fit mx-auto reveal">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
+            Garanta sua vaga
           </div>
-          <h2 className="headline-lg text-3xl lg:text-5xl text-white mb-4 reveal reveal-delay-1">
-            {cta.headline}
-          </h2>
+          <div className="flex items-start justify-center gap-4 mb-4 reveal reveal-delay-1">
+            <FlorenceIcon size={48} className="flex-shrink-0 mt-1" />
+            <h2 className="headline-lg text-3xl lg:text-5xl text-white text-left">
+              {cta.headline}
+            </h2>
+          </div>
           <p className="text-white/70 text-lg reveal reveal-delay-2">
             {cta.subheadline}
           </p>

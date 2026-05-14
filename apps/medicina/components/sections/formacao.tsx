@@ -16,38 +16,37 @@ export function Formacao() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
-            <div className="flex items-center gap-2 mb-4 reveal">
-              <FlorenceIcon size={22} className="brightness-0 invert opacity-70" />
-              <span className="eyebrow eyebrow-dark">Estrutura curricular</span>
+            <div className="eyebrow eyebrow-dark mb-5 w-fit reveal">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />
+              Estrutura curricular
             </div>
-            <h2 className="headline-lg text-3xl lg:text-5xl text-white reveal reveal-delay-1">
-              {titulo}
-            </h2>
+            <div className="flex items-start gap-4 reveal reveal-delay-1">
+              <FlorenceIcon size={48} className="flex-shrink-0 mt-1" />
+              <h2 className="headline-lg text-3xl lg:text-5xl text-white">
+                Seis anos que constroem<br />um médico completo.
+              </h2>
+            </div>
           </div>
           <p className="text-white/35 text-sm max-w-xs lg:text-right reveal reveal-delay-2">
             Bacharelado · 12 semestres<br />Turno integral · Presencial
           </p>
         </div>
 
-        {/* Cards — sem linha absoluta sobreposta */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* Cards com setas entre eles, centralizadas verticalmente */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 relative">
           {fases.map((fase, i) => (
-            <div key={fase.nome} className={`reveal reveal-delay-${i + 1}`}>
+            <div
+              key={fase.nome}
+              className={`reveal reveal-delay-${i + 1} relative`}
+            >
               <div className="card-shell h-full">
                 <div className="card-core bg-white/5 p-6 h-full flex flex-col">
-                  {/* Número + linha decorativa lateral */}
-                  <div className="flex items-start gap-4 mb-5">
+                  {/* Número */}
+                  <div className="flex items-center gap-3 mb-5">
                     <div className="flex-shrink-0 w-10 h-10 rounded-full border border-[#0096d2]/40 flex items-center justify-center">
                       <span className="font-display font-800 text-[#0096d2] text-lg leading-none">{i + 1}</span>
                     </div>
-                    {/* Seta de fluxo entre cards — apenas desktop */}
-                    {i < fases.length - 1 && (
-                      <div className="hidden md:flex items-center absolute right-[-1.5rem] top-10 z-10">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(0,150,210,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                      </div>
-                    )}
+                    <div className="flex-1 h-px bg-white/10" />
                   </div>
 
                   <p className="text-[#F5C842] text-xs font-display font-600 uppercase tracking-widest mb-2">
@@ -57,6 +56,15 @@ export function Formacao() {
                   <p className="text-white/50 text-sm leading-relaxed flex-1">{fase.descricao}</p>
                 </div>
               </div>
+
+              {/* Seta entre cards — centralizada vertical e no gap horizontal */}
+              {i < fases.length - 1 && (
+                <div className="hidden md:flex absolute top-1/2 -right-7 -translate-y-1/2 z-10 w-6 h-6 items-center justify-center rounded-full bg-[#0096d2]/15 border border-[#0096d2]/30">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0096d2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              )}
             </div>
           ))}
         </div>

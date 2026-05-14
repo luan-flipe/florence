@@ -64,8 +64,10 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
             <span className="w-1.5 h-1.5 rounded-full bg-[#0096d2] animate-pulse" />
             Vagas abertas
           </div>
-          <h3 className="font-display font-800 text-2xl text-[#001a2e] leading-tight mb-1">{f.titulo}</h3>
-          <p className="text-gray-400 text-sm">{f.subtitulo}</p>
+          <h3 className="font-display font-800 text-3xl lg:text-[2rem] text-[#001a2e] leading-[1.05] tracking-tight mb-2">
+            {f.titulo}
+          </h3>
+          <p className="text-gray-500 text-sm">{f.subtitulo}</p>
         </div>
       )}
 
