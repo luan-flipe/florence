@@ -7,7 +7,7 @@ import type { LeadWithStatus } from "@/types/database";
 import { STAGE_BY_VALUE } from "@/lib/stages";
 
 export function LeadCard({ lead }: { lead: LeadWithStatus }) {
-  const stage = STAGE_BY_VALUE[lead.status];
+  const stage = STAGE_BY_VALUE[lead.status] ?? STAGE_BY_VALUE.novo;
   return (
     <Link
       href={`/leads/${lead.id}`}

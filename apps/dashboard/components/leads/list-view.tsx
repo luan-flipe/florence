@@ -24,7 +24,7 @@ export function LeadsListView({ leads }: { leads: LeadWithStatus[] }) {
         </thead>
         <tbody className="divide-y divide-gray-100">
           {leads.map((lead) => {
-            const stage = STAGE_BY_VALUE[lead.status];
+            const stage = STAGE_BY_VALUE[lead.status] ?? STAGE_BY_VALUE.novo;
             return (
               <tr key={lead.id} className="hover:bg-gray-50">
                 <td className="px-4 py-2">

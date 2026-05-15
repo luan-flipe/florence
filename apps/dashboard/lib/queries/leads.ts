@@ -33,8 +33,8 @@ export async function fetchLeads(filter: LeadsFilter = {}): Promise<LeadWithStat
 
   let leads = (data ?? []).map((row: any) => ({
     ...row,
-    status: row.lead_status[0]?.status as LeadStatus,
-    comments_count: row.comments[0]?.count ?? 0,
+    status: (row.lead_status?.[0]?.status ?? "novo") as LeadStatus,
+    comments_count: row.comments?.[0]?.count ?? 0,
   })) as LeadWithStatus[];
 
   if (filter.statuses && filter.statuses.length > 0) {
