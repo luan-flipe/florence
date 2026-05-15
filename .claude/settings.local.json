@@ -18,7 +18,15 @@
       "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__list_projects",
       "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_project",
       "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_deployment",
-      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_deployment_build_logs"
+      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_deployment_build_logs",
+      "Bash(git commit *)",
+      "Bash(export PATH=\"/c/Users/luan.oliveira/tools/node22:$PATH\")",
+      "Bash(npx create-next-app@14 apps/dashboard --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(echo \"EXIT=$?\")",
+      "Read(//tmp/**)",
+      "Bash(ls apps/dashboard)",
+      "Bash(ls apps/dashboard/components/ui)",
+      "Bash(cd \"/c/Users/luan.oliveira/Documents/Projetos/florence/apps/dashboard\" && cat package.json)"
     ]
   }
 }
