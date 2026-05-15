@@ -14,7 +14,11 @@
       "PowerShell(python \"C:\\\\Users\\\\luan.oliveira\\\\Documents\\\\Projetos\\\\florence\\\\docs\\\\decode_images.py\" 2>&1)",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\luan.oliveira\\\\Documents\\\\Projetos\\\\florence\\\\apps\\\\medicina\\\\public\\\\images\" -Recurse -File | Select-Object Name, @{n='KB';e={[math]::Round\\($_.Length/1KB\\)}})",
       "WebFetch(domain:www.florence.edu.br)",
-      "Bash(cp \"/c/Users/luan.oliveira/Downloads/logo \\(4\\).svg\" \"/c/Users/luan.oliveira/Documents/Projetos/florence/apps/medicina/public/logo.svg\" && echo \"logo copied\")"
+      "Bash(cp \"/c/Users/luan.oliveira/Downloads/logo \\(4\\).svg\" \"/c/Users/luan.oliveira/Documents/Projetos/florence/apps/medicina/public/logo.svg\" && echo \"logo copied\")",
+      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__list_projects",
+      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_project",
+      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_deployment",
+      "mcp__7226809a-8879-47dc-a26f-6b261a7acdbb__get_deployment_build_logs"
     ]
   }
 }

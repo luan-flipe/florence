@@ -8,13 +8,28 @@ import { useRouter } from "next/navigation";
 import { config } from "@/content/medicina";
 import { ScarcitySeal } from "@/components/scarcity-seal";
 
+// Máscara de celular brasileiro: (XX) XXXXX-XXXX
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length === 0) return "";
+  if (digits.length <= 2) return `(${digits}`;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+// Contagem de dígitos puros para validação
+const digitCount = (s: string) => s.replace(/\D/g, "").length;
+
 const schema = z.object({
   name: z.string().min(2, "Informe seu nome completo"),
-  email: z.string().email("Informe um e-mail válido"),
+  email: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .email("Informe um e-mail válido"),
   phone: z
     .string()
-    .min(8, "Informe seu telefone")
-    .regex(/^[\d\s\(\)\-\+]+$/, "Telefone inválido"),
+    .refine((v) => digitCount(v) === 11, "Informe um celular com DDD (11 dígitos)"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -33,6 +48,7 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
@@ -53,6 +69,9 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
     }
   };
 
+  // Registro do phone com mascara aplicada no onChange
+  const phoneReg = register("phone");
+
   return (
     <div className={isSidebar
       ? "relative rounded-[1.75rem] bg-white shadow-[0_24px_64px_rgba(0,26,46,0.18)] p-7 w-full"
@@ -61,59 +80,74 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
       {isSidebar && <ScarcitySeal />}
       {isSidebar && (
         <div className="mb-6 pb-5 border-b border-gray-100">
-          {/* Badge chamativo */}
-          <div className="inline-flex items-center gap-1.5 bg-[#0096d2]/10 border border-[#0096d2]/20 text-[#0096d2] rounded-full px-3 py-1 text-[10px] font-display font-700 uppercase tracking-widest mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0096d2] animate-pulse" />
+          {/* Badge — contraste aumentado: fundo mais saturado, texto mais escuro */}
+          <div className="inline-flex items-center gap-1.5 bg-[#0096d2]/15 border border-[#0096d2]/35 text-[#005a82] rounded-full px-3 py-1 text-[10px] font-display font-700 uppercase tracking-widest mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#005a82] animate-pulse" />
             Vagas abertas
           </div>
-          <h3 className="font-display font-800 text-3xl lg:text-[2rem] text-[#001a2e] leading-[1.05] tracking-tight mb-2">
+          {/* h2 ao invés de h3 — corrige hierarquia para acessibilidade */}
+          <h2 className="font-display font-800 text-3xl lg:text-[2rem] text-[#001a2e] leading-[1.05] tracking-tight mb-2">
             {f.titulo}
-          </h3>
-          <p className="text-gray-500 text-sm">{f.subtitulo}</p>
+          </h2>
+          <p className="text-gray-600 text-sm">{f.subtitulo}</p>
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
         {/* Nome */}
         <div>
           <input
             {...register("name")}
             placeholder="Nome completo"
+            autoComplete="name"
             className="field-input"
           />
           {errors.name && (
-            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.name.message}</p>
+            <p className="text-red-600 text-xs mt-1.5 font-display">{errors.name.message}</p>
           )}
         </div>
 
         {/* E-mail */}
         <div>
           <input
-            {...register("email")}
+            {...register("email", {
+              setValueAs: (v: string) => v.trim().toLowerCase(),
+            })}
             type="email"
-            placeholder="E-mail"
+            placeholder="seu@email.com"
+            autoComplete="email"
+            inputMode="email"
             className="field-input"
           />
           {errors.email && (
-            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.email.message}</p>
+            <p className="text-red-600 text-xs mt-1.5 font-display">{errors.email.message}</p>
           )}
         </div>
 
-        {/* Telefone */}
+        {/* Telefone com máscara (XX) XXXXX-XXXX */}
         <div>
           <input
-            {...register("phone")}
+            {...phoneReg}
             type="tel"
-            placeholder="Celular (WhatsApp)"
+            placeholder="(00) 00000-0000"
+            autoComplete="tel"
+            inputMode="numeric"
+            maxLength={15}
+            onChange={(e) => {
+              const masked = formatPhone(e.target.value);
+              e.target.value = masked;
+              setValue("phone", masked, { shouldValidate: false });
+              phoneReg.onChange(e);
+            }}
             className="field-input"
           />
           {errors.phone && (
-            <p className="text-red-500 text-xs mt-1.5 font-display">{errors.phone.message}</p>
+            <p className="text-red-600 text-xs mt-1.5 font-display">{errors.phone.message}</p>
           )}
         </div>
 
         {error && (
-          <p className="text-red-500 text-sm text-center font-display">{error}</p>
+          <p className="text-red-600 text-sm text-center font-display">{error}</p>
         )}
 
         {/* Botão */}
@@ -132,21 +166,21 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
           )}
         </button>
 
-        {/* LGPD — contraste adequado para ambos os variants */}
-        <p className={`text-[11px] text-center leading-snug ${isSidebar ? "text-gray-400" : "text-white/70"}`}>
+        {/* LGPD — contraste aumentado (gray-600 atende WCAG AA em fundo branco) */}
+        <p className={`text-[11px] text-center leading-snug ${isSidebar ? "text-gray-600" : "text-white/80"}`}>
           {f.lgpd}
         </p>
 
-        {/* Financiamento */}
+        {/* Financiamento — texto em azul escurecido para garantir contraste 4.5:1 */}
         {f.financiamento && (
-          <div className={`flex items-center gap-2 justify-center rounded-xl px-3 py-2.5 ${isSidebar ? "bg-[#0096d2]/6" : "bg-white/10"}`}>
-            <span className={isSidebar ? "text-[#0096d2]" : "text-white/80"}>
+          <div className={`flex items-center gap-2 justify-center rounded-xl px-3 py-2.5 ${isSidebar ? "bg-[#0096d2]/10" : "bg-white/15"}`}>
+            <span className={isSidebar ? "text-[#005a82]" : "text-white"}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M12 8v4M12 16h.01"/>
               </svg>
             </span>
-            <p className={`text-[11px] font-display font-600 leading-snug ${isSidebar ? "text-[#0096d2]" : "text-white/90"}`}>
+            <p className={`text-[11px] font-display font-700 leading-snug ${isSidebar ? "text-[#005a82]" : "text-white"}`}>
               {f.financiamento}
             </p>
           </div>
