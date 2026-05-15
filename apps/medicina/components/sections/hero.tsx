@@ -1,6 +1,6 @@
+import { Formulario } from "@/components/formulario";
 import Image from "next/image";
 import { config } from "@/content/medicina";
-import { Formulario } from "@/components/formulario";
 
 export function Hero() {
   const h = config.hero;
@@ -31,7 +31,7 @@ export function Hero() {
           fill
           sizes="100vw"
           quality={70}
-          className="object-cover object-[40%_center] lg:object-[55%_center]
+          className="object-cover object-[35%_center] lg:object-[55%_center]
             scale-[1.15] origin-bottom
             lg:scale-100 lg:origin-center"
           priority
