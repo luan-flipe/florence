@@ -1,10 +1,16 @@
 "use client";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { FlorenceIcon } from "@/components/florence-icon";
 import { config } from "@/content/medicina";
 import { ProfessorCard } from "@/components/professor-card";
-import { ProfessorModal } from "@/components/professor-modal";
+
+// Modal carrega só na primeira abertura — sai do bundle inicial
+const ProfessorModal = dynamic(
+  () => import("@/components/professor-modal").then((m) => m.ProfessorModal),
+  { ssr: false }
+);
 
 type Professor = (typeof config.professores.cards)[number];
 

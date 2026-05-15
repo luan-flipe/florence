@@ -29,6 +29,8 @@ export function Hero() {
           src="/images/hero.jpg"
           alt="Estudante de Medicina da Florence"
           fill
+          sizes="100vw"
+          quality={70}
           className="object-cover object-[40%_center] lg:object-[55%_center]
             scale-[1.15] origin-bottom
             lg:scale-100 lg:origin-center"
