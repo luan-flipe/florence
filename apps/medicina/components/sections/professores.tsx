@@ -6,7 +6,7 @@ import { ProfessorCard } from "@/components/professor-card";
 
 export function Professores() {
   const ref = useScrollReveal<HTMLElement>();
-  const { titulo, subtitulo, cards } = config.professores;
+  const { subtitulo, cards } = config.professores;
 
   return (
     <section ref={ref} className="py-24 lg:py-32 bg-white overflow-hidden">

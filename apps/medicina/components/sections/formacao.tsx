@@ -5,7 +5,7 @@ import { config } from "@/content/medicina";
 
 export function Formacao() {
   const ref = useScrollReveal<HTMLElement>();
-  const { titulo, fases } = config.formacao;
+  const { fases } = config.formacao;
 
   return (
     <section ref={ref} className="py-24 lg:py-32 bg-[#001a2e] overflow-hidden relative">

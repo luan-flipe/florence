@@ -6,7 +6,7 @@ import { config } from "@/content/medicina";
 
 export function Estrutura() {
   const ref = useScrollReveal<HTMLElement>();
-  const { titulo, itens } = config.estrutura;
+  const { itens } = config.estrutura;
 
   return (
     <section ref={ref} className="py-24 lg:py-32 bg-sky-pale overflow-hidden">
