@@ -117,7 +117,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: #0096d2;
+  background: #007ab0;          /* contraste 4.51:1 com texto branco (passa WCAG AA) */
   color: #fff;
   font-family: var(--font-display), sans-serif;
   font-weight: 700;
@@ -130,9 +130,9 @@ body {
 }
 
 .btn-primary:hover {
-  background: #007ab0;
+  background: #005a82;          /* mais escuro no hover (contraste 7.6:1) */
   transform: translateY(-1px);
-  box-shadow: 0 12px 32px rgba(0, 150, 210, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 80, 130, 0.4);
 }
 
 .btn-primary:active {
