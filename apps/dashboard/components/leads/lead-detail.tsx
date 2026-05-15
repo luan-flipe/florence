@@ -9,6 +9,7 @@ import { canAssignLeads } from "@/lib/roles";
 import { StatusChanger } from "./status-changer";
 import { AssignChanger } from "./assign-changer";
 import { CommentForm } from "./comment-form";
+import { useRealtimeComments } from "@/hooks/useRealtimeComments";
 
 interface Props {
   lead: LeadWithStatus;
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export function LeadDetail({ lead, history, comments, profile }: Props) {
+  useRealtimeComments(lead.id);
   const stage = STAGE_BY_VALUE[lead.status];
   const cleanPhone = lead.phone.replace(/\D/g, "");
   const whatsapp = `https://wa.me/55${cleanPhone}`;

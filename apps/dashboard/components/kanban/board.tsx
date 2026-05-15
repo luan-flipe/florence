@@ -13,6 +13,7 @@ import type { LeadWithStatus, LeadStatus } from "@/types/database";
 import { STAGES, STAGE_BY_VALUE } from "@/lib/stages";
 import { LeadCard } from "./lead-card";
 import { createClient } from "@/lib/supabase-client";
+import { useRealtimeLeads } from "@/hooks/useRealtimeLeads";
 
 function SortableLeadCard({ lead }: { lead: LeadWithStatus }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -60,6 +61,9 @@ export function KanbanBoard({ leads, canEdit }: { leads: LeadWithStatus[]; canEd
 
   // Sincroniza com props quando vêm novas leads (refresh do servidor / realtime)
   useEffect(() => { setItems(leads); }, [leads]);
+
+  // Realtime: refresca quando outro user move um lead ou novo lead é capturado
+  useRealtimeLeads();
 
   const grouped = useMemo(() => {
     const map = new Map(STAGES.map((s) => [s.value, [] as LeadWithStatus[]]));
