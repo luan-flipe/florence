@@ -24,19 +24,24 @@ export function ProfessorCard({ nome, cargo, bio, foto, onClick }: ProfessorCard
       type="button"
       onClick={onClick}
       aria-label={`Ver detalhes de ${nome}`}
-      className="group text-left rounded-[1.5rem] overflow-hidden bg-white border border-gray-100/80
+      className="group text-left rounded-[1.5rem] overflow-hidden
+        bg-gradient-to-b from-white to-[#f6fafd]
+        border border-[#e5eef5]
+        shadow-[0_4px_18px_rgba(0,80,140,0.05)]
         transition-all duration-600 ease-spring hover:-translate-y-1.5
-        hover:shadow-[0_20px_60px_rgba(0,80,140,0.12)] h-full flex flex-col
+        hover:shadow-[0_24px_60px_rgba(0,80,140,0.15)] hover:border-[#0096d2]/25
+        h-full flex flex-col
         focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0096d2] focus-visible:ring-offset-2"
     >
-      {/* Foto */}
-      <div className="relative h-56 bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
+      {/* Foto sem gradiente forçado embaixo */}
+      <div className="relative aspect-[4/5] bg-gradient-to-br from-sky-pale to-[#e0f0fa] overflow-hidden">
         {!imgError ? (
           <Image
             src={foto}
             alt={nome}
             fill
-            className="object-cover object-top transition-transform duration-600 ease-spring group-hover:scale-105"
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover object-[center_25%] transition-transform duration-600 ease-spring group-hover:scale-105"
             onError={() => setImgError(true)}
           />
         ) : (
@@ -46,7 +51,15 @@ export function ProfessorCard({ nome, cargo, bio, foto, onClick }: ProfessorCard
             </span>
           </div>
         )}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/80 to-transparent" />
+
+        {/* Cargo flutuante sobre a foto — sempre visível, dá identidade ao card */}
+        <div className="absolute top-3 left-3 z-10">
+          <span className="inline-block bg-white/95 backdrop-blur-sm
+            text-[#005a82] text-[9px] font-display font-700 uppercase tracking-[0.15em]
+            px-2.5 py-1 rounded-full shadow-sm border border-white/60">
+            {cargo}
+          </span>
+        </div>
 
         {/* Indicador "ver mais" no hover */}
         <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 border border-gray-200
@@ -59,30 +72,36 @@ export function ProfessorCard({ nome, cargo, bio, foto, onClick }: ProfessorCard
       </div>
 
       {/* Info */}
-      <div className="p-5 pt-4 flex flex-col flex-1">
-        <p className="text-[10px] font-display font-700 text-[#0096d2] uppercase tracking-[0.15em] mb-1.5">
-          {cargo}
-        </p>
-        <h3 className="font-display font-700 text-[#001a2e] text-base mb-2 leading-snug">
+      <div className="p-5 pt-5 flex flex-col flex-1 relative">
+        {/* Linha decorativa no topo — separador sutil */}
+        <span className="absolute top-0 left-5 right-5 h-px bg-gradient-to-r from-transparent via-[#0096d2]/15 to-transparent" />
+
+        <h3 className="font-display font-700 text-[#001a2e] text-lg mb-2 leading-snug tracking-tight">
           {nome}
         </h3>
-        <p className="text-gray-500 text-xs leading-relaxed line-clamp-3 mb-3">
+        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3 mb-4">
           {bio}
         </p>
 
-        {/* "Ver perfil completo" no rodapé */}
-        <span className="mt-auto pt-3 border-t border-gray-100 text-[11px] font-display font-700
-          text-[#0096d2] uppercase tracking-widest flex items-center gap-1.5
-          group-hover:gap-2.5 transition-all duration-300">
+        {/* "Ver perfil completo" — sempre visível com cor da marca */}
+        <span className="mt-auto inline-flex items-center gap-2 text-[11px] font-display font-700
+          text-[#0096d2] uppercase tracking-widest
+          group-hover:gap-3 transition-all duration-300">
           Ver perfil completo
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
+          <span className="inline-flex w-5 h-5 rounded-full bg-[#0096d2]/10 items-center justify-center
+            group-hover:bg-[#0096d2] transition-colors duration-300">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              className="text-[#0096d2] group-hover:text-white transition-colors duration-300">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
         </span>
       </div>
 
-      {/* Barra decorativa */}
-      <div className="h-0.5 bg-gradient-to-r from-[#0096d2] to-[#00508c] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+      {/* Barra de cor decorativa na base — sempre 30%, 100% no hover */}
+      <div className="h-1 bg-gradient-to-r from-[#0096d2] via-[#00508c] to-[#F5C842]
+        opacity-30 group-hover:opacity-100 transition-opacity duration-400" />
     </button>
   );
 }

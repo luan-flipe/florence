@@ -53,9 +53,10 @@ export function ProfessorModal({ professor, onClose }: ProfessorModalProps) {
       aria-labelledby="professor-modal-title"
     >
       <div
-        className="relative bg-white rounded-[2rem] w-full max-w-2xl max-h-[90dvh] overflow-y-auto
+        className="relative bg-white rounded-[2rem] w-full max-w-4xl max-h-[92dvh] overflow-hidden
           shadow-[0_32px_96px_rgba(0,26,46,0.4)]
-          animate-[fadeUp_0.4s_cubic-bezier(0.32,0.72,0,1)_forwards]"
+          animate-[fadeUp_0.4s_cubic-bezier(0.32,0.72,0,1)_forwards]
+          flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Botão fechar */}
@@ -71,14 +72,17 @@ export function ProfessorModal({ professor, onClose }: ProfessorModalProps) {
           </svg>
         </button>
 
-        {/* Hero com foto */}
-        <div className="relative h-72 sm:h-80 bg-gradient-to-br from-[#0096d2]/10 to-[#00508c]/20 overflow-hidden">
+        {/* ── Coluna foto (esquerda no desktop, topo no mobile) ─── */}
+        <div className="relative flex-shrink-0
+          h-64 sm:h-80 md:h-auto md:w-2/5
+          bg-gradient-to-br from-[#0096d2]/10 to-[#00508c]/20 overflow-hidden">
           {!imgError ? (
             <Image
               src={professor.foto}
               alt={professor.nome}
               fill
-              className="object-cover object-top"
+              sizes="(min-width: 768px) 40vw, 100vw"
+              className="object-cover object-[center_20%] md:object-[center_30%]"
               onError={() => setImgError(true)}
             />
           ) : (
@@ -88,22 +92,22 @@ export function ProfessorModal({ professor, onClose }: ProfessorModalProps) {
               </span>
             </div>
           )}
-          {/* Gradiente na base */}
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/60 to-transparent" />
+          {/* Gradiente sutil só no mobile (transição pra info abaixo) */}
+          <div className="md:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/40 to-transparent" />
         </div>
 
-        {/* Conteúdo */}
-        <div className="px-7 pb-8 pt-2">
-          <p className="text-[11px] font-display font-700 text-[#0096d2] uppercase tracking-[0.18em] mb-2">
+        {/* ── Coluna conteúdo (direita no desktop, abaixo no mobile) ── */}
+        <div className="flex-1 overflow-y-auto p-7 md:p-8">
+          <p className="text-[11px] font-display font-700 text-[#005a82] uppercase tracking-[0.18em] mb-2">
             {professor.cargo}
           </p>
           <h2
             id="professor-modal-title"
-            className="font-display font-800 text-[#001a2e] text-3xl leading-tight mb-4 tracking-tight"
+            className="font-display font-800 text-[#001a2e] text-2xl md:text-3xl leading-tight mb-4 tracking-tight"
           >
             {professor.nome}
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-7">{professor.bio}</p>
+          <p className="text-gray-700 leading-relaxed mb-7 text-sm md:text-base">{professor.bio}</p>
 
           {professor.formacao && professor.formacao.length > 0 && (
             <div className="mb-6">
@@ -114,7 +118,7 @@ export function ProfessorModal({ professor, onClose }: ProfessorModalProps) {
               <ul className="space-y-2">
                 {professor.formacao.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-gray-700 leading-relaxed">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#0096d2]/40 mt-2" />
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#0096d2]/50 mt-2" />
                     <span>{item}</span>
                   </li>
                 ))}
