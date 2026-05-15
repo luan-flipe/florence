@@ -87,6 +87,11 @@ returns text language sql security definer stable as $$
   select role from user_profiles where id = auth.uid()
 $$;
 
+create or replace function auth_courses()
+returns text[] language sql security definer stable as $$
+  select courses from user_profiles where id = auth.uid()
+$$;
+
 -- ─── RLS POLICIES ──────────────────────────────────────────────
 
 -- LEADS
@@ -95,9 +100,7 @@ create policy "leads_select" on leads for select using (
   auth_role() in ('super_admin', 'admin_marketing', 'admin_vendas', 'marketing')
   or (
     auth_role() = 'comercial'
-    and course = any(
-      (select courses from user_profiles where id = auth.uid())
-    )
+    and course = any(auth_courses())
   )
 );
 
@@ -105,9 +108,7 @@ create policy "leads_update" on leads for update using (
   auth_role() in ('super_admin', 'admin_vendas')
   or (
     auth_role() = 'comercial'
-    and course = any(
-      (select courses from user_profiles where id = auth.uid())
-    )
+    and course = any(auth_courses())
   )
 );
 
@@ -120,9 +121,7 @@ create policy "lead_status_select" on lead_status for select using (
     select 1 from leads l
     where l.id = lead_status.lead_id
       and auth_role() = 'comercial'
-      and l.course = any(
-        (select courses from user_profiles where id = auth.uid())
-      )
+      and l.course = any(auth_courses())
   )
 );
 create policy "lead_status_update" on lead_status for update using (
@@ -131,9 +130,7 @@ create policy "lead_status_update" on lead_status for update using (
     select 1 from leads l
     where l.id = lead_status.lead_id
       and auth_role() = 'comercial'
-      and l.course = any(
-        (select courses from user_profiles where id = auth.uid())
-      )
+      and l.course = any(auth_courses())
   )
 );
 
@@ -146,7 +143,7 @@ create policy "history_select" on lead_status_history for select using (
       and (
         auth_role() in ('super_admin', 'admin_marketing', 'admin_vendas', 'marketing')
         or (auth_role() = 'comercial'
-          and l.course = any((select courses from user_profiles where id = auth.uid())))
+          and l.course = any(auth_courses()))
       )
   )
 );
