@@ -190,7 +190,10 @@ export const config = {
     subtitulo: "Preencha e nosso time entra em contato.",
     cta: "Quero minha vaga",
     lgpd: "Ao enviar, você autoriza o contato da Florence. Não compartilhamos seus dados.",
-    financiamento: "A partir de R$ 9.500/mês — bolsas de até 60%, FIES e ProUni disponíveis.",
+    edital: {
+      label: "Confira o edital do Vestibular 2026.2",
+      url: "/edital-medicina-2026-2.pdf",
+    },
   },
 
   obrigado: {

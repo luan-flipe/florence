@@ -178,19 +178,36 @@ export function Formulario({ variant = "sidebar", utm }: FormularioProps) {
           {f.lgpd}
         </p>
 
-        {/* Financiamento — texto em azul escurecido para garantir contraste 4.5:1 */}
-        {f.financiamento && (
-          <div className={`flex items-center gap-2 justify-center rounded-xl px-3 py-2.5 ${isSidebar ? "bg-[#0096d2]/10" : "bg-white/15"}`}>
-            <span className={isSidebar ? "text-[#005a82]" : "text-white"}>
+        {/* Edital — link para PDF do vestibular 2026.2 */}
+        {f.edital && (
+          <a
+            href={f.edital.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group flex items-center gap-2 justify-center rounded-xl px-3 py-2.5 transition-colors
+              ${isSidebar
+                ? "bg-[#0096d2]/10 hover:bg-[#0096d2]/20 text-[#005a82]"
+                : "bg-white/15 hover:bg-white/25 text-white"}`}
+          >
+            <span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8v4M12 16h.01"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="9" y1="15" x2="15" y2="15" />
+                <line x1="9" y1="11" x2="15" y2="11" />
               </svg>
             </span>
-            <p className={`text-[11px] font-display font-700 leading-snug ${isSidebar ? "text-[#005a82]" : "text-white"}`}>
-              {f.financiamento}
-            </p>
-          </div>
+            <span className="text-[11px] font-display font-700 leading-snug">
+              {f.edital.label}
+            </span>
+            <svg
+              width="11" height="11" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         )}
       </form>
     </div>

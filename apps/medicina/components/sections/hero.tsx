@@ -100,7 +100,7 @@ export function Hero({ utm }: { utm?: UtmParams }) {
 
             {/* Tags de ingresso */}
             <div className="flex flex-wrap gap-2">
-              {["Vestibular Digital", "Nota do ENEM", "FIES · ProUni", "Bolsas até 60%"].map((tag) => (
+              {["Vestibular tradicional", "Nota do ENEM", "Segunda graduação"].map((tag) => (
                 <span key={tag} className="px-3 py-1.5 rounded-full bg-white/8 border border-white/12 text-white/70 text-xs font-display font-600 tracking-wide">
                   {tag}
                 </span>
