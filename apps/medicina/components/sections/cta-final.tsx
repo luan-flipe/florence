@@ -2,8 +2,9 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { config } from "@/content/medicina";
 import { Formulario } from "@/components/formulario";
+import type { UtmParams } from "@/app/page";
 
-export function CtaFinal() {
+export function CtaFinal({ utm }: { utm?: UtmParams }) {
   const ref = useScrollReveal<HTMLElement>();
   const cta = config.ctaFinal;
 
@@ -35,7 +36,7 @@ export function CtaFinal() {
         </div>
 
         <div className="max-w-md mx-auto reveal reveal-delay-3">
-          <Formulario variant="inline" />
+          <Formulario variant="inline" utm={utm} />
         </div>
 
         {/* Microcopy com contraste adequado */}

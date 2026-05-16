@@ -36,9 +36,16 @@ type FormData = z.infer<typeof schema>;
 
 interface FormularioProps {
   variant?: "sidebar" | "inline";
+  utm?: {
+    utm_source: string | null;
+    utm_medium: string | null;
+    utm_campaign: string | null;
+    utm_content: string | null;
+    utm_term: string | null;
+  };
 }
 
-export function Formulario({ variant = "sidebar" }: FormularioProps) {
+export function Formulario({ variant = "sidebar", utm }: FormularioProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -59,7 +66,7 @@ export function Formulario({ variant = "sidebar" }: FormularioProps) {
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...(utm ?? {}) }),
       });
       if (!res.ok) throw new Error("Erro ao enviar");
       router.push("/obrigado");

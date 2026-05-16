@@ -1,8 +1,9 @@
 import { Formulario } from "@/components/formulario";
 import Image from "next/image";
 import { config } from "@/content/medicina";
+import type { UtmParams } from "@/app/page";
 
-export function Hero() {
+export function Hero({ utm }: { utm?: UtmParams }) {
   const h = config.hero;
 
   return (
@@ -109,7 +110,7 @@ export function Hero() {
 
           {/* ── Direita — Formulário (5/12) ────────────── */}
           <div className="lg:col-span-5 lg:sticky lg:top-8">
-            <Formulario variant="sidebar" />
+            <Formulario variant="sidebar" utm={utm} />
           </div>
         </div>
 

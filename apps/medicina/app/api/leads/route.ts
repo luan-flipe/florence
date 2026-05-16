@@ -10,6 +10,11 @@ const leadSchema = z.object({
   name: z.string().min(2, "Nome obrigatório"),
   email: z.string().email("E-mail inválido"),
   phone: z.string().min(8, "Telefone obrigatório"),
+  utm_source: z.string().nullable().optional(),
+  utm_medium: z.string().nullable().optional(),
+  utm_campaign: z.string().nullable().optional(),
+  utm_content: z.string().nullable().optional(),
+  utm_term: z.string().nullable().optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -24,12 +29,23 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { name, email, phone } = parsed.data;
+    const {
+      name, email, phone,
+      utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+    } = parsed.data;
 
     // Salva o lead no Supabase
     const { error: dbError } = await supabaseAdmin()
       .from("leads")
-      .insert({ name, email, phone, course: "medicina" });
+      .insert({
+        name, email, phone,
+        course: "medicina",
+        utm_source: utm_source ?? null,
+        utm_medium: utm_medium ?? null,
+        utm_campaign: utm_campaign ?? null,
+        utm_content: utm_content ?? null,
+        utm_term: utm_term ?? null,
+      });
 
     if (dbError) {
       console.error("Supabase error:", dbError);
