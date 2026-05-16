@@ -34,16 +34,22 @@ export function Sidebar({ profile }: SidebarProps) {
         <p className="text-xs text-gray-500">Dashboard</p>
       </div>
 
-      <nav className="flex-1 p-3 space-y-1">
+      <nav className="flex-1 p-3 space-y-0.5">
         {items.map((item) => {
           const active = pathname.startsWith(item.href);
           const Icon = item.icon;
           return (
             <Link key={item.href} href={item.href}
-              className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors ${
-                active ? "bg-blue-50 text-blue-700 font-medium" : "text-gray-700 hover:bg-gray-100"
-              }`}>
-              <Icon size={18} />
+              className={`relative flex items-center gap-3 px-3 py-2 rounded-lg text-sm
+                transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]
+                active:scale-[0.98]
+                ${active
+                  ? "bg-slate-100 text-slate-900 font-medium"
+                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"}`}>
+              {active && (
+                <span className="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-[#0072a3] rounded-full" />
+              )}
+              <Icon size={18} strokeWidth={active ? 2 : 1.75} />
               {item.label}
             </Link>
           );

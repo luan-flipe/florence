@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Dashboard Florence",
@@ -15,8 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="pt-BR" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="font-sans antialiased">
+        <NextTopLoader
+          color="#0072a3"
+          showSpinner={false}
+          height={2}
+          shadow="0 0 8px #0072a3, 0 0 4px #0072a3"
+          easing="cubic-bezier(0.32, 0.72, 0, 1)"
+          speed={250}
+        />
+        {children}
+      </body>
     </html>
   );
 }
