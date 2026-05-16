@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createClient } from "@/lib/supabase-server";
 import type { LeadStatus } from "@/types/database";
 
@@ -29,7 +30,7 @@ export async function fetchAnalytics(opts: { since: Date; until: Date; course?: 
   }
 
   // 3. Histórico — para calcular tempo até primeiro contato
-  let historyByLead = new Map<string, { to_status: string; changed_at: string }[]>();
+  const historyByLead = new Map<string, { to_status: string; changed_at: string }[]>();
   if (leadIds.length > 0) {
     const { data: historyData } = await supabase
       .from("lead_status_history")
