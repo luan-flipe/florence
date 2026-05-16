@@ -43,7 +43,7 @@ export function Professores() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 items-stretch">
             {cards.map((prof, i) => (
               <div key={prof.nome} className={`reveal reveal-delay-${(i % 4) + 1} flex flex-col`}>
                 <ProfessorCard

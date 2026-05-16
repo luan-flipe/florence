@@ -26,7 +26,8 @@
       "Read(//tmp/**)",
       "Bash(ls apps/dashboard)",
       "Bash(ls apps/dashboard/components/ui)",
-      "Bash(cd \"/c/Users/luan.oliveira/Documents/Projetos/florence/apps/dashboard\" && cat package.json)"
+      "Bash(cd \"/c/Users/luan.oliveira/Documents/Projetos/florence/apps/dashboard\" && cat package.json)",
+      "Bash(cd \"/c/Users/luan.oliveira/Downloads/medicos\" && ls *.docx | wc -l && ls *.docx)"
     ]
   }
 }
