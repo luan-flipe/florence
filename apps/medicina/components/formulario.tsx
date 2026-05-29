@@ -6,7 +6,8 @@ import { z } from "zod";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { config } from "@/content/medicina";
-import { ScarcitySeal } from "@/components/scarcity-seal";
+// TODO: descomentar quando rolar nova campanha de escassez
+// import { ScarcitySeal } from "@/components/scarcity-seal";
 
 // Máscara de celular brasileiro: (XX) XXXXX-XXXX
 function formatPhone(value: string): string {
@@ -84,7 +85,8 @@ export function Formulario({ variant = "sidebar", utm }: FormularioProps) {
       ? "relative rounded-[1.75rem] bg-white shadow-[0_24px_64px_rgba(0,26,46,0.18)] p-7 w-full"
       : "w-full max-w-lg mx-auto"
     }>
-      {isSidebar && <ScarcitySeal />}
+      {/* TODO: descomentar quando rolar nova campanha de escassez */}
+      {/* {isSidebar && <ScarcitySeal />} */}
       {isSidebar && (
         <div className="mb-6 pb-5 border-b border-gray-100">
           {/* Badge — contraste aumentado: fundo mais saturado, texto mais escuro */}
