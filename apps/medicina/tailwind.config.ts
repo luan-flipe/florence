@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 // Preset compartilhado com os tokens da marca Florence (cores, fontes, animacoes).
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-import florencePreset from "@florence/config/tailwind-preset";
+import florencePreset from "../../packages/config/tailwind-preset.js";
 
 const config: Config = {
   presets: [florencePreset as Partial<Config>],

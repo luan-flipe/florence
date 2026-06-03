@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@florence/config": "*",
+    "@florence/lib": "*",
+    "@florence/ui": "*",
     "@base-ui/react": "^1.4.1",
     "@hookform/resolvers": "^5.2.2",
     "@supabase/supabase-js": "^2.105.4",
