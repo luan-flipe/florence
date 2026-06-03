@@ -11,6 +11,8 @@ export interface SubmitLeadOptions {
   resendApiKey?: string;
   /** Remetente do e-mail; default "Florence <onboarding@resend.dev>". */
   fromEmail?: string;
+  /** Dados extras especificos da LP (ex: { curso_interesse: "Direito" }). */
+  metadata?: Record<string, unknown>;
 }
 
 /**
@@ -25,6 +27,7 @@ export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
       email: input.email,
       phone: input.phone,
       lp_slug: opts.lpSlug,
+      metadata: opts.metadata ?? {},
       utm_source: input.utm_source ?? null,
       utm_medium: input.utm_medium ?? null,
       utm_campaign: input.utm_campaign ?? null,
