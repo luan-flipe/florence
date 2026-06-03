@@ -8,6 +8,8 @@
   "scripts": {
     "dev:medicina": "npm run dev -w medicina",
     "build:medicina": "npm run build -w medicina",
+    "dev:graduacao": "npm run dev -w graduacao",
+    "build:graduacao": "npm run build -w graduacao",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present"
   }
