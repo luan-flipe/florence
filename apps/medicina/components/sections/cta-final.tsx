@@ -36,7 +36,7 @@ export function CtaFinal({ utm }: { utm?: UtmParams }) {
         </div>
 
         <div className="max-w-md mx-auto reveal reveal-delay-3">
-          <Formulario variant="inline" utm={utm} />
+          <Formulario copy={config.formulario} variant="inline" utm={utm} formId="form-cta-final" formName="form-cta-final" />
         </div>
 
         {/* Microcopy com contraste adequado */}

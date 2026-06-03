@@ -1,0 +1,14 @@
+{
+  "name": "florence-lps",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:medicina": "npm run dev -w medicina",
+    "build:medicina": "npm run build -w medicina",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}

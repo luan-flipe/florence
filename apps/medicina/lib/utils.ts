@@ -1,6 +1,3 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+// Shim de re-export — a implementação vive em @florence/lib (monorepo).
+// Mantido para não quebrar imports existentes "@/lib/utils".
+export * from "@florence/lib/utils";

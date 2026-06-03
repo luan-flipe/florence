@@ -10,6 +10,12 @@ export const config = {
     subheadline:
       "Corpo docente formado por médicos atuantes, mestres e doutores que ensinam o que praticam todos os dias nos maiores hospitais do Maranhão.",
     cta: "Quero minha vaga em Medicina",
+    stats: [
+      { value: "6 anos", label: "Duração" },
+      { value: "Integral", label: "Turno" },
+      { value: "Médicos", label: "Professores" },
+    ],
+    tags: ["Vestibular tradicional", "Nota do ENEM", "Segunda graduação"],
   },
 
   diferenciais: [
