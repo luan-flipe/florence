@@ -1,0 +1,63 @@
+import { Resend } from "resend";
+import { supabaseAdmin } from "./supabase";
+import type { LeadInput } from "./types";
+
+export interface SubmitLeadOptions {
+  /** Slug da LP de origem — grava em lp_slug (e em course durante a migracao). */
+  lpSlug: string;
+  /** Nome de exibicao usado no e-mail de confirmacao (ex: "Medicina"). */
+  displayName: string;
+  /** Chave Resend; default process.env.RESEND_API_KEY. */
+  resendApiKey?: string;
+  /** Remetente do e-mail; default "Florence <onboarding@resend.dev>". */
+  fromEmail?: string;
+}
+
+/**
+ * Persiste um lead no Supabase e dispara o e-mail de confirmacao.
+ *
+ * DUAL-WRITE: grava `course` (legado) e `lp_slug` (novo) durante a janela de
+ * migracao da coluna. Quando `course` for removida (fase final), basta retirar
+ * a linha `course` daqui. Requer que a coluna `lp_slug` ja exista no banco
+ * (rodar supabase/007_add_lp_slug.sql antes de implantar este codigo).
+ */
+export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
+  const { error } = await supabaseAdmin()
+    .from("leads")
+    .insert({
+      name: input.name,
+      email: input.email,
+      phone: input.phone,
+      course: opts.lpSlug, // legado — remover apos o drop da coluna course
+      lp_slug: opts.lpSlug,
+      utm_source: input.utm_source ?? null,
+      utm_medium: input.utm_medium ?? null,
+      utm_campaign: input.utm_campaign ?? null,
+      utm_content: input.utm_content ?? null,
+      utm_term: input.utm_term ?? null,
+    });
+
+  if (error) throw error;
+
+  // E-mail de confirmacao (best-effort — nao deve derrubar a captacao do lead).
+  const apiKey = opts.resendApiKey ?? process.env.RESEND_API_KEY;
+  if (!apiKey) return;
+
+  const firstName = input.name.split(" ")[0];
+  const resend = new Resend(apiKey);
+  await resend.emails.send({
+    from: opts.fromEmail ?? "Florence <onboarding@resend.dev>",
+    to: input.email,
+    subject: `Recebemos seu cadastro para ${opts.displayName}, ${firstName}`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px;">
+        <h2 style="color: #1a3a6b;">Oi, ${firstName}!</h2>
+        <p>Recebemos seu cadastro para <strong>${opts.displayName}</strong> do Centro Universitário Florence.</p>
+        <p>Nos próximos <strong>1 dia útil</strong>, um consultor de admissões vai entrar em contato com você pelo WhatsApp ou telefone para tirar dúvidas, apresentar as opções de <strong>bolsa, FIES e ProUni</strong> disponíveis para você, e te ajudar a dar o próximo passo.</p>
+        <p style="color: #666; font-size: 14px;">Qualquer urgência, é só responder este e-mail.</p>
+        <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
+        <p style="color: #999; font-size: 13px;">Centro Universitário Florence — São Luís, MA</p>
+      </div>
+    `,
+  });
+}

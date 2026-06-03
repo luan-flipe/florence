@@ -79,11 +79,7 @@ export function Hero({ utm }: { utm?: UtmParams }) {
 
             {/* Stats */}
             <div className="flex items-center gap-5 sm:gap-8 mb-8">
-              {[
-                { value: "6 anos", label: "Duração" },
-                { value: "Integral", label: "Turno" },
-                { value: "Médicos", label: "Professores" },
-              ].map((s, i) => (
+              {h.stats.map((s, i) => (
                 <div key={s.label}>
                   {i > 0 && <div className="w-px h-10 bg-white/15 -ml-8 mr-0 absolute hidden" />}
                   <div className="flex flex-col items-center gap-0.5">
@@ -100,7 +96,7 @@ export function Hero({ utm }: { utm?: UtmParams }) {
 
             {/* Tags de ingresso */}
             <div className="flex flex-wrap gap-2">
-              {["Vestibular tradicional", "Nota do ENEM", "Segunda graduação"].map((tag) => (
+              {h.tags.map((tag) => (
                 <span key={tag} className="px-3 py-1.5 rounded-full bg-white/8 border border-white/12 text-white/70 text-xs font-display font-600 tracking-wide">
                   {tag}
                 </span>

@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-
-import { Resend } from "resend";
-import { supabaseAdmin } from "@/lib/supabase";
 import { z } from "zod";
+import { submitLead } from "@florence/lib/lead";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const LP_SLUG = process.env.NEXT_PUBLIC_LP_SLUG ?? "medicina";
+const LP_DISPLAY_NAME = process.env.LP_DISPLAY_NAME ?? "Medicina";
 
 const leadSchema = z.object({
   name: z.string().min(2, "Nome obrigatório"),
@@ -29,49 +28,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const {
-      name, email, phone,
-      utm_source, utm_medium, utm_campaign, utm_content, utm_term,
-    } = parsed.data;
-
-    // Salva o lead no Supabase
-    const { error: dbError } = await supabaseAdmin()
-      .from("leads")
-      .insert({
-        name, email, phone,
-        course: "medicina",
-        utm_source: utm_source ?? null,
-        utm_medium: utm_medium ?? null,
-        utm_campaign: utm_campaign ?? null,
-        utm_content: utm_content ?? null,
-        utm_term: utm_term ?? null,
-      });
-
-    if (dbError) {
-      console.error("Supabase error:", dbError);
-      return NextResponse.json({ error: "Erro ao salvar lead." }, { status: 500 });
-    }
-
-    // Envia e-mail de confirmação para o lead
-    await resend.emails.send({
-      from: "Florence <onboarding@resend.dev>",
-      to: email,
-      subject: `Recebemos seu cadastro para Medicina, ${name.split(" ")[0]}`,
-      html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px;">
-          <h2 style="color: #1a3a6b;">Oi, ${name.split(" ")[0]}!</h2>
-          <p>Recebemos seu cadastro para o curso de <strong>Medicina</strong> do Centro Universitário Florence.</p>
-          <p>Nos próximos <strong>1 dia útil</strong>, um consultor de admissões vai entrar em contato com você pelo WhatsApp ou telefone para tirar dúvidas, apresentar as opções de <strong>bolsa, FIES e ProUni</strong> disponíveis para você, e te ajudar a dar o próximo passo.</p>
-          <p style="color: #666; font-size: 14px;">Qualquer urgência, é só responder este e-mail.</p>
-          <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
-          <p style="color: #999; font-size: 13px;">Centro Universitário Florence — São Luís, MA</p>
-        </div>
-      `,
+    await submitLead(parsed.data, {
+      lpSlug: LP_SLUG,
+      displayName: LP_DISPLAY_NAME,
     });
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
-    console.error("Unexpected error:", err);
-    return NextResponse.json({ error: "Erro interno." }, { status: 500 });
+    console.error("Lead submission error:", err);
+    return NextResponse.json({ error: "Erro ao salvar lead." }, { status: 500 });
   }
 }

@@ -5,11 +5,13 @@
   "exports": {
     "./supabase": "./supabase.ts",
     "./utils": "./utils.ts",
-    "./types": "./types.ts"
+    "./types": "./types.ts",
+    "./lead": "./lead.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.105.4",
     "clsx": "^2.1.1",
+    "resend": "^6.12.3",
     "tailwind-merge": "^3.6.0"
   }
 }
