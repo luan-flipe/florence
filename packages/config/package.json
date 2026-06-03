@@ -1,0 +1,9 @@
+{
+  "name": "@florence/config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./tailwind-preset": "./tailwind-preset.js",
+    "./tsconfig.base.json": "./tsconfig.base.json"
+  }
+}
