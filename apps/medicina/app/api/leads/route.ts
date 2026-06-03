@@ -36,6 +36,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
     console.error("Lead submission error:", err);
-    return NextResponse.json({ error: "Erro ao salvar lead." }, { status: 500 });
+    // detail temporario para diagnostico no preview — remover depois
+    const detail = err instanceof Error ? err.message : JSON.stringify(err);
+    return NextResponse.json({ error: "Erro ao salvar lead.", detail }, { status: 500 });
   }
 }

@@ -39,17 +39,19 @@ export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
 
   if (error) throw error;
 
-  // E-mail de confirmacao (best-effort — nao deve derrubar a captacao do lead).
+  // E-mail de confirmacao — BEST-EFFORT. O lead ja foi salvo; uma falha no
+  // envio (ex: dominio Resend nao verificado) NAO deve derrubar a captacao.
   const apiKey = opts.resendApiKey ?? process.env.RESEND_API_KEY;
   if (!apiKey) return;
 
-  const firstName = input.name.split(" ")[0];
-  const resend = new Resend(apiKey);
-  await resend.emails.send({
-    from: opts.fromEmail ?? "Florence <onboarding@resend.dev>",
-    to: input.email,
-    subject: `Recebemos seu cadastro para ${opts.displayName}, ${firstName}`,
-    html: `
+  try {
+    const firstName = input.name.split(" ")[0];
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from: opts.fromEmail ?? "Florence <onboarding@resend.dev>",
+      to: input.email,
+      subject: `Recebemos seu cadastro para ${opts.displayName}, ${firstName}`,
+      html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px;">
         <h2 style="color: #1a3a6b;">Oi, ${firstName}!</h2>
         <p>Recebemos seu cadastro para <strong>${opts.displayName}</strong> do Centro Universitário Florence.</p>
@@ -59,5 +61,8 @@ export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
         <p style="color: #999; font-size: 13px;">Centro Universitário Florence — São Luís, MA</p>
       </div>
     `,
-  });
+    });
+  } catch (emailErr) {
+    console.error("Lead salvo, mas falhou o e-mail de confirmacao:", emailErr);
+  }
 }
