@@ -41,6 +41,10 @@ interface FormularioProps {
   utm?: UtmParams;
   /** Endpoint de captação. Default: rota local /api/leads de cada app. */
   endpoint?: string;
+  /** id do <form> — usado para identificar o formulário no tracking (GTM). */
+  formId?: string;
+  /** name do <form> — usado para identificar o formulário no tracking (GTM). */
+  formName?: string;
 }
 
 export function Formulario({
@@ -48,6 +52,8 @@ export function Formulario({
   variant = "sidebar",
   utm,
   endpoint = "/api/leads",
+  formId,
+  formName,
 }: FormularioProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -102,7 +108,7 @@ export function Formulario({
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
+      <form id={formId} name={formName} onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4" noValidate>
         {/* Nome */}
         <div>
           <input
