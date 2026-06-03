@@ -49,6 +49,13 @@ drop function if exists auth_role()        cascade;
 drop function if exists auth_courses()     cascade;
 drop function if exists auth_tenant_id()   cascade;
 
+-- 3b. Drop triggers/funcoes que gravavam nas tabelas removidas.
+-- IMPORTANTE: sem isso, o trigger on_lead_created continua disparando a cada
+-- insert em `leads` e tenta gravar em lead_status (ja dropada) -> 42P01.
+drop trigger if exists on_lead_created on leads;
+drop function if exists handle_new_lead()   cascade;
+drop function if exists log_status_change() cascade;
+
 -- 4. Remover coluna tenant_id de leads, caso a migration 005 do dashboard
 --    tenha sido aplicada antes deste cleanup. `if exists` cobre o caso normal
 --    (nao aplicada) sem erro.
