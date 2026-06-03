@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { FormularioCopy, UtmParams } from "@florence/lib/types";
+import type { FormularioCopy, UtmParams, ExtraField } from "@florence/lib/types";
 // Selo de escassez disponível em @florence/ui/scarcity-seal (opt-in por LP/campanha).
 
 // Máscara de celular brasileiro: (XX) XXXXX-XXXX
@@ -45,6 +45,12 @@ interface FormularioProps {
   formId?: string;
   /** name do <form> — usado para identificar o formulário no tracking (GTM). */
   formName?: string;
+  /** Campos extras (ex: curso de interesse). Renderizados antes do botao. */
+  extraFields?: ExtraField[];
+  /** Valores controlados dos campos extras (por name). */
+  extraValues?: Record<string, string>;
+  /** Callback quando um campo extra muda (name, value). */
+  onExtraChange?: (name: string, value: string) => void;
 }
 
 export function Formulario({
@@ -54,9 +60,13 @@ export function Formulario({
   endpoint = "/api/leads",
   formId,
   formName,
+  extraFields = [],
+  extraValues = {},
+  onExtraChange,
 }: FormularioProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [extraError, setExtraError] = useState<string | null>(null);
   const router = useRouter();
   const f = copy;
   const isSidebar = variant === "sidebar";
@@ -69,13 +79,20 @@ export function Formulario({
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormData) => {
+    for (const f of extraFields) {
+      if (f.required && !extraValues[f.name]) {
+        setExtraError(`Selecione: ${f.label}`);
+        return;
+      }
+    }
+    setExtraError(null);
     setLoading(true);
     setError(null);
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, ...(utm ?? {}) }),
+        body: JSON.stringify({ ...data, ...extraValues, ...(utm ?? {}) }),
       });
       if (!res.ok) throw new Error("Erro ao enviar");
       router.push("/obrigado");
@@ -160,6 +177,27 @@ export function Formulario({
             <p className="text-red-600 text-xs mt-1.5 font-display">{errors.phone.message}</p>
           )}
         </div>
+
+        {extraFields.map((f) => (
+          <div key={f.name}>
+            <select
+              value={extraValues[f.name] ?? ""}
+              onChange={(e) => onExtraChange?.(f.name, e.target.value)}
+              className="field-input"
+              aria-label={f.label}
+            >
+              <option value="" disabled>
+                {f.placeholder ?? f.label}
+              </option>
+              {f.options.map((opt) => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
+            </select>
+          </div>
+        ))}
+        {extraError && (
+          <p className="text-red-600 text-xs mt-1 font-display">{extraError}</p>
+        )}
 
         {error && (
           <p className="text-red-600 text-sm text-center font-display">{error}</p>

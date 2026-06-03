@@ -25,3 +25,13 @@ export interface FormularioCopy {
   lgpd: string;
   edital?: { label: string; url: string };
 }
+
+/** Campo extra opcional renderizado pelo <Formulario> (ex: curso de interesse). */
+export interface ExtraField {
+  name: string;
+  label: string;
+  type: "select";
+  options: string[];
+  required?: boolean;
+  placeholder?: string;
+}
