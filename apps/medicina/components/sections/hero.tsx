@@ -110,7 +110,7 @@ export function Hero({ utm }: { utm?: UtmParams }) {
 
           {/* ── Direita — Formulário (5/12) ────────────── */}
           <div className="lg:col-span-5 lg:sticky lg:top-8">
-            <Formulario variant="sidebar" utm={utm} />
+            <Formulario copy={config.formulario} variant="sidebar" utm={utm} />
           </div>
         </div>
 

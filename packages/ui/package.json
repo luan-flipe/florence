@@ -1,0 +1,24 @@
+{
+  "name": "@florence/ui",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./formulario": "./formulario.tsx",
+    "./florence-icon": "./florence-icon.tsx",
+    "./scarcity-seal": "./scarcity-seal.tsx",
+    "./professor-card": "./professor-card.tsx",
+    "./professor-modal": "./professor-modal.tsx",
+    "./use-scroll-reveal": "./use-scroll-reveal.ts"
+  },
+  "peerDependencies": {
+    "next": ">=14",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@florence/lib": "*",
+    "react-hook-form": "^7.75.0",
+    "zod": "^4.4.3"
+  }
+}
