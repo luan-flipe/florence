@@ -3,7 +3,7 @@ import { supabaseAdmin } from "./supabase";
 import type { LeadInput } from "./types";
 
 export interface SubmitLeadOptions {
-  /** Slug da LP de origem — grava em lp_slug (e em course durante a migracao). */
+  /** Slug da LP de origem — gravado em leads.lp_slug. */
   lpSlug: string;
   /** Nome de exibicao usado no e-mail de confirmacao (ex: "Medicina"). */
   displayName: string;
@@ -14,12 +14,8 @@ export interface SubmitLeadOptions {
 }
 
 /**
- * Persiste um lead no Supabase e dispara o e-mail de confirmacao.
- *
- * DUAL-WRITE: grava `course` (legado) e `lp_slug` (novo) durante a janela de
- * migracao da coluna. Quando `course` for removida (fase final), basta retirar
- * a linha `course` daqui. Requer que a coluna `lp_slug` ja exista no banco
- * (rodar supabase/007_add_lp_slug.sql antes de implantar este codigo).
+ * Persiste um lead no Supabase (leads.lp_slug = origem) e dispara o e-mail
+ * de confirmacao (best-effort).
  */
 export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
   const { error } = await supabaseAdmin()
@@ -28,7 +24,6 @@ export async function submitLead(input: LeadInput, opts: SubmitLeadOptions) {
       name: input.name,
       email: input.email,
       phone: input.phone,
-      course: opts.lpSlug, // legado — remover apos o drop da coluna course
       lp_slug: opts.lpSlug,
       utm_source: input.utm_source ?? null,
       utm_medium: input.utm_medium ?? null,
