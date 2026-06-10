@@ -13,7 +13,7 @@ export function Depoimentos() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-end gap-4 lg:gap-5 mb-12 reveal">
           <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
-          <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">{d.titulo}</h2>
+          <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">Quem estuda<br />na Florence.</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {d.cards.map((c, i) => (
