@@ -12,6 +12,8 @@
     "build:graduacao": "npm run build -w graduacao",
     "dev:pos": "npm run dev -w pos-graduacao",
     "build:pos": "npm run build -w pos-graduacao",
+    "dev:tecnico": "npm run dev -w tecnico",
+    "build:tecnico": "npm run build -w tecnico",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present"
   }
