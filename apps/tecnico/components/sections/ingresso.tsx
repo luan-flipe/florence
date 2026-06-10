@@ -10,10 +10,10 @@ export function Ingresso() {
     <section ref={ref} className="py-24 lg:py-32 bg-cream overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="mb-12 max-w-2xl">
-          <div className="eyebrow mb-5 w-fit reveal"><span className="w-1.5 h-1.5 rounded-full bg-[#0096d2]" />Ingresso</div>
+          <div className="eyebrow mb-5 w-fit reveal"><span className="w-1.5 h-1.5 rounded-full bg-[#0096d2]" />Matrícula</div>
           <div className="flex items-end gap-4 lg:gap-5 reveal reveal-delay-1">
             <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
-            <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">Seis formas<br />de entrar.</h2>
+            <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">Matrícula<br />simples.</h2>
           </div>
           <p className="text-gray-500 mt-4 reveal reveal-delay-2">{subtitulo}</p>
         </div>

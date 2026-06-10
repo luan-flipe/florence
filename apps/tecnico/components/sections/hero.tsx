@@ -31,7 +31,7 @@ export function Hero({ utm }: { utm?: UtmParams }) {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero.jpg"
-          alt="Estudantes de Graduação da Florence"
+          alt="Formação técnica na Florence"
           fill
           sizes="100vw"
           quality={70}

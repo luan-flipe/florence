@@ -16,7 +16,7 @@ export function Diferenciais() {
             <div className="eyebrow eyebrow-dark mb-5 w-fit"><span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />{d.titulo}</div>
             <div className="flex items-end gap-4 lg:gap-5 mb-5">
               <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
-              <h2 className="headline-lg text-3xl lg:text-5xl text-white">Prática desde<br />o início.</h2>
+              <h2 className="headline-lg text-3xl lg:text-5xl text-white">Formação prática<br />para o mercado.</h2>
             </div>
             <p className="text-white/70 text-lg leading-relaxed max-w-md">{d.lead.corpo}</p>
           </div>
