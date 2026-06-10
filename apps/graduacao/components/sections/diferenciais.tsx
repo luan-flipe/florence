@@ -1,5 +1,6 @@
 "use client";
 import { useScrollReveal } from "@florence/ui/use-scroll-reveal";
+import { FlorenceIcon } from "@florence/ui/florence-icon";
 import { config } from "@/content/graduacao";
 
 export function Diferenciais() {
@@ -13,7 +14,10 @@ export function Diferenciais() {
           {/* Bloco-lider */}
           <div className="reveal">
             <div className="eyebrow eyebrow-dark mb-5 w-fit"><span className="w-1.5 h-1.5 rounded-full bg-[#F5C842]" />{d.titulo}</div>
-            <h2 className="headline-lg text-3xl lg:text-5xl text-white mb-5">{d.lead.titulo}</h2>
+            <div className="flex items-end gap-4 lg:gap-5 mb-5">
+              <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
+              <h2 className="headline-lg text-3xl lg:text-5xl text-white">{d.lead.titulo}</h2>
+            </div>
             <p className="text-white/70 text-lg leading-relaxed max-w-md">{d.lead.corpo}</p>
           </div>
           {/* Pontos de apoio — divididos por linha, sem cards */}

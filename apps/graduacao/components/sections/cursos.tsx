@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { config } from "@/content/graduacao";
 import { useScrollReveal } from "@florence/ui/use-scroll-reveal";
+import { FlorenceIcon } from "@florence/ui/florence-icon";
 import { CursoCard } from "@/components/curso-card";
 import { CursoModal, type Curso } from "@/components/curso-modal";
 import { useCursoInteresse } from "@/components/curso-interesse-context";
@@ -18,7 +19,10 @@ export function Cursos() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mb-14 max-w-2xl">
             <div className="eyebrow mb-5 w-fit reveal"><span className="w-1.5 h-1.5 rounded-full bg-[#0096d2]" />Cursos</div>
-            <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e] reveal reveal-delay-1">{titulo}</h2>
+            <div className="flex items-end gap-4 lg:gap-5 reveal reveal-delay-1">
+              <FlorenceIcon className="h-[4.25rem] lg:h-[6.75rem] w-auto flex-shrink-0" />
+              <h2 className="headline-lg text-3xl lg:text-5xl text-[#001a2e]">{titulo}</h2>
+            </div>
             <p className="text-gray-500 mt-4 reveal reveal-delay-2">{subtitulo}</p>
           </div>
 
