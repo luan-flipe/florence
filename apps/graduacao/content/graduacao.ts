@@ -45,135 +45,135 @@ export const config = {
             slug: "enfermagem", nome: "Enfermagem", area: "Saúde",
             titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
             turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
-            resumo: "Formação generalista com prática clínica e foco no SUS.",
+            resumo: "Formação generalista com prática clínica e compromisso com o SUS.",
             descricao:
-              "O curso forma enfermeiros com visão generalista, comprometidos com a realidade social, atuando na promoção, prevenção e reabilitação da saúde nos três níveis de atenção.",
+              "O curso prepara enfermeiros com visão generalista e humanista, comprometidos com a realidade social e aptos a atuar nos três níveis de atenção à saúde. A formação integra conteúdos técnico-científicos, pesquisa e participação em equipes multidisciplinares, com foco em promoção, prevenção e reabilitação.",
             diferenciais: [
-              "Prática clínica desde os primeiros períodos",
-              "Formação alinhada ao SUS",
-              "Laboratórios e cenários de simulação",
+              "Prática clínica supervisionada desde os primeiros períodos",
+              "Formação alinhada ao SUS e à saúde coletiva",
+              "Atuação em equipes multidisciplinares de saúde",
             ],
-            mercado: ["Hospitais", "Atenção básica", "Saúde coletiva", "Docência e pesquisa"],
+            mercado: ["Hospitais e clínicas", "Atenção básica e saúde da família", "Home care e reabilitação", "Saúde corporativa"],
             foto: "/images/cursos/enfermagem.jpg",
           },
           {
-            slug: "biomedicina", nome: "Biomedicina", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Diagnóstico laboratorial e pesquisa aplicada à saúde humana.", // MOCK
+            slug: "biomedicina", nome: "Biomedicina", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "4 anos · 8 semestres",
+            turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
+            resumo: "Diagnóstico, pesquisa e medicina laboratorial em uma das profissões com mais habilitações do Brasil.",
             descricao:
-              "Forma profissionais para atuar em análises clínicas, hemoterapia, imunologia, biologia molecular e pesquisa biomédica, com base sólida em ciências básicas e tecnologia laboratorial.", // MOCK
+              "O curso forma profissionais para pesquisar doenças, analisar alterações patológicas e aprimorar diagnósticos, com base em ciências exatas, biológicas e da saúde. A grade inclui formação em biologia molecular, genética, toxicologia, reprodução humana e diagnóstico por imagem, integrando teoria e prática em laboratórios e clínicas especializadas.",
             diferenciais: [
-              "Laboratórios de análises clínicas e biomolecular", // MOCK
-              "Formação voltada ao diagnóstico e pesquisa", // MOCK
-              "Professores pesquisadores atuantes na área", // MOCK
+              "Formação em 32 habilitações reconhecidas pelo CFBio",
+              "Laboratórios de análises clínicas, biomolecular e toxicologia",
+              "Experiência em equipes multidisciplinares de saúde",
             ],
-            mercado: ["Laboratórios clínicos", "Bancos de sangue", "Pesquisa científica", "Indústria farmacêutica"], // MOCK
+            mercado: ["Laboratórios clínicos e hospitais", "Biologia molecular e genética", "Reprodução humana assistida", "Perícia criminal e pesquisa científica"],
             foto: "/images/cursos/biomedicina.jpg",
           },
           {
-            slug: "farmacia", nome: "Farmácia", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Da manipulação à atenção farmacêutica, com foco no paciente.", // MOCK
+            slug: "farmacia", nome: "Farmácia", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
+            turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
+            resumo: "Do medicamento ao paciente: formação generalista com rigor científico e ética profissional.",
             descricao:
-              "Formação generalista que habilita o farmacêutico para atuar em farmácias comunitárias, hospitalares, indústria, análises clínicas e vigilância sanitária, sempre centrado no uso racional do medicamento.", // MOCK
+              "O curso forma farmacêuticos com base generalista, humanista, crítica e reflexiva, habilitados para atuar em produção de medicamentos, análises clínicas e toxicológicas, vigilância sanitária e atenção farmacêutica. A formação integra ciências biológicas, exatas e farmacêuticas, preparando o profissional para identificar necessidades da população e propor soluções com comprometimento social.",
             diferenciais: [
-              "Farmácia-escola com atendimento real", // MOCK
-              "Laboratório de manipulação e controle de qualidade", // MOCK
-              "Estágio em ambientes hospitalares e industriais", // MOCK
+              "Formação que abrange produção, análise e atenção farmacêutica",
+              "Projetos integradores com retorno do conhecimento à comunidade",
+              "Base sólida em ética e rigor científico",
             ],
-            mercado: ["Farmácias e drogarias", "Indústria farmacêutica", "Hospitais", "Vigilância sanitária"], // MOCK
+            mercado: ["Farmácias comunitárias e hospitalares", "Indústria farmacêutica e cosmética", "Vigilância sanitária e epidemiológica", "Laboratórios de análises clínicas"],
             foto: "/images/cursos/farmacia.jpg",
           },
           {
-            slug: "fisioterapia", nome: "Fisioterapia", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Reabilitação e promoção de saúde com prática clínica intensa.", // MOCK
+            slug: "fisioterapia", nome: "Fisioterapia", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
+            turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
+            resumo: "Reabilitação, promoção de saúde e autonomia profissional com formação generalista e humanista.",
             descricao:
-              "O curso habilita para a prevenção, tratamento e reabilitação de disfunções musculoesqueléticas, neurológicas, respiratórias e cardíacas, com ênfase na prática clínica supervisionada desde os primeiros períodos.", // MOCK
+              "O curso forma fisioterapeutas com perfil generalista, humanista, crítico e reflexivo para atuar em todos os níveis de atenção à saúde, da promoção à reabilitação. A formação prepara para atuação hospitalar, ambulatorial, esportiva e educacional, desenvolvendo também o espírito empreendedor e a capacidade de trabalho em equipes multidisciplinares.",
             diferenciais: [
-              "Clínica-escola com atendimentos reais", // MOCK
-              "Equipamentos de última geração", // MOCK
-              "Estágio em hospitais e unidades de saúde", // MOCK
+              "Atuação em todos os níveis de atenção à saúde",
+              "Formação para UTI, ambulatório, esporte e saúde ocupacional",
+              "Desenvolvimento de visão empreendedora e autônoma",
             ],
-            mercado: ["Clínicas de reabilitação", "Hospitais", "Esportes", "Saúde do idoso"], // MOCK
+            mercado: ["Hospitais e UTIs", "Clínicas de reabilitação", "Esporte e performance", "Saúde ocupacional e estética"],
             foto: "/images/cursos/fisioterapia.jpg",
           },
           {
             slug: "medicina", nome: "Medicina", area: "Saúde",
             titulacao: "Bacharelado", duracao: "6 anos · 12 semestres",
             turnos: ["Integral"], modalidade: "Presencial",
-            resumo: "Formação médica humanista com prática clínica desde o início.",
+            resumo: "Formação médica completa, do ciclo básico ao internato hospitalar.",
             descricao:
-              "Curso de Medicina com metodologias ativas, internato em unidades de saúde parceiras e formação humanista que prepara o médico para atuar com ética e competência nos mais variados contextos.", // MOCK: refinar com a pagina
+              "O curso estrutura a formação em três fases progressivas: ciclo básico com anatomia, fisiologia e bioquímica, ciclo clínico com as grandes especialidades e internato de dois anos em hospitais e ambulatórios parceiros. A proposta forma médicos com competência técnica, empatia e capacidade de decisão nos mais variados contextos de saúde.",
             diferenciais: [
-              "Metodologias ativas de aprendizagem", // MOCK
-              "Internato em hospitais e UBS parceiras", // MOCK
-              "Formação humanista e centrada no paciente", // MOCK
+              "Internato de dois anos em unidades hospitalares e ambulatoriais",
+              "Formação em ciclos progressivos com profundidade crescente",
+              "Ênfase em empatia, ética e comunicação com o paciente",
             ],
-            mercado: ["Clínica geral", "Residência médica", "Saúde pública", "Especialidades"], // MOCK
+            mercado: ["Clínica geral e medicina de família", "Residência médica e especialidades", "Saúde pública e gestão hospitalar", "Pesquisa e educação médica"],
             foto: "/images/cursos/medicina.jpg",
           },
           {
-            slug: "medicina-veterinaria", nome: "Medicina Veterinária", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Saúde animal, saúde pública e bem-estar com prática supervisionada.", // MOCK
+            slug: "medicina-veterinaria", nome: "Medicina Veterinária", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
+            turnos: ["Integral"], modalidade: "Presencial",
+            resumo: "Saúde animal, bem-estar e saúde pública em uma formação de amplo espectro.",
             descricao:
-              "Formação que habilita o médico veterinário para atuar na clínica de pequenos e grandes animais, saúde pública, inspeção de alimentos e produção agropecuária, com laboratórios e hospital veterinário.", // MOCK
+              "O curso prepara médicos veterinários para garantir a saúde e o bem-estar de animais e humanos, com formação que abrange clínica, cirurgia, medicina preventiva, produção animal e inspeção de alimentos. A estrutura atende à crescente demanda do mercado de pets, animais exóticos e agropecuária, com metodologia moderna e corpo docente especializado.",
             diferenciais: [
-              "Hospital Veterinário Escola", // MOCK
-              "Laboratórios de microbiologia e patologia", // MOCK
-              "Estágio em clínicas e propriedades rurais", // MOCK
+              "Formação que abrange pets, exóticos e produção animal",
+              "Clínica, cirurgia, medicina preventiva e saúde pública",
+              "Preparação para docência, pesquisa e extensão",
             ],
-            mercado: ["Clínica de pequenos animais", "Agropecuária", "Saúde pública veterinária", "Inspeção de alimentos"], // MOCK
+            mercado: ["Clínica e cirurgia veterinária", "Produção animal e agropecuária", "Inspeção e tecnologia de alimentos", "Saúde pública e vigilância sanitária animal"],
             foto: "/images/cursos/medicina-veterinaria.jpg",
           },
           {
-            slug: "nutricao", nome: "Nutrição", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Alimentação e saúde: clínica, coletiva e esportiva na prática.", // MOCK
+            slug: "nutricao", nome: "Nutrição", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "4 anos · 8 semestres",
+            turnos: ["Noturno"], modalidade: "Presencial",
+            resumo: "Alimentação como ferramenta de saúde: clínica, coletiva, esportiva e industrial.",
             descricao:
-              "O curso forma nutricionistas com competências para atuar na atenção clínica individual, nutrição coletiva, esportiva e funcional, com laboratório de técnica dietética e estágios supervisionados.", // MOCK
+              "O curso forma nutricionistas com visão crítica da realidade social, capacitados para assistência nutricional individual e coletiva, promoção de segurança alimentar e atenção à saúde em diferentes contextos. A formação multidisciplinar integra inovações científicas, alinhamento ao SUS e competências para resolver problemas de saúde prevalentes na população.",
             diferenciais: [
-              "Laboratório de técnica dietética e análise de alimentos", // MOCK
-              "Estágios em UAN, hospitais e clínicas", // MOCK
-              "Formação em nutrição clínica e esportiva", // MOCK
+              "Formação multidisciplinar com alinhamento ao SUS",
+              "Atuação em clínica, coletividade, indústria e academia",
+              "Capacitação em nutrição esportiva, estética e fitoterapia",
             ],
-            mercado: ["Clínicas e consultórios", "Hospitais e UAN", "Esporte de alto rendimento", "Saúde coletiva"], // MOCK
+            mercado: ["Clínicas, consultórios e hospitais", "Alimentação coletiva e catering", "Indústria alimentícia", "Saúde pública e vigilância sanitária"],
             foto: "/images/cursos/nutricao.jpg",
           },
           {
-            slug: "odontologia", nome: "Odontologia", area: "Saúde", // MOCK
-            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Saúde bucal e técnica cirúrgica com clínica-escola integrada.", // MOCK
+            slug: "odontologia", nome: "Odontologia", area: "Saúde",
+            titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
+            turnos: ["Integral"], modalidade: "Presencial",
+            resumo: "Cirurgião-dentista com formação técnica, ética e visão humanista integradas.",
             descricao:
-              "Formação clínica e humanista que prepara o cirurgião-dentista para atuar em clínica geral, especialidades, saúde pública e gestão de consultório, com clínica-escola de alta complexidade.", // MOCK
+              "O curso prepara cirurgiões-dentistas generalistas para diagnosticar e tratar doenças bucais prevalentes, integrar equipes multidisciplinares de saúde e atuar com responsabilidade ética e social. A formação combina rigor técnico-científico com construção humanística, preparando para a clínica privada, o SUS, a pesquisa e o ensino.",
             diferenciais: [
-              "Clínica-escola com atendimentos à comunidade", // MOCK
-              "Equipamentos digitais de imagem e diagnóstico", // MOCK
-              "Estágio supervisionado em unidades do SUS", // MOCK
+              "Sólida formação técnico-científica aliada à humanização",
+              "Atuação em saúde pública e promoção comunitária",
+              "Preparação para clínica geral e especialidades odontológicas",
             ],
-            mercado: ["Clínica privada", "Saúde pública", "Especialidades odontológicas", "Docência"], // MOCK
+            mercado: ["Clínica privada e consultórios", "Serviços públicos de saúde bucal", "Especialidades odontológicas", "Pesquisa e docência"],
             foto: "/images/cursos/odontologia.jpg",
           },
           {
-            slug: "estetica-cosmetica", nome: "Estética e Cosmética", area: "Saúde", // MOCK
-            titulacao: "Tecnólogo", duracao: "Conforme matriz", // MOCK
-            turnos: ["Matutino", "Noturno"], modalidade: "Presencial", // MOCK
-            resumo: "Técnicas estéticas modernas com foco em saúde e bem-estar.", // MOCK
+            slug: "estetica-cosmetica", nome: "Estética e Cosmética", area: "Saúde",
+            titulacao: "Tecnólogo", duracao: "2,5 anos · 5 semestres",
+            turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
+            resumo: "Estética facial, corporal e capilar com formação prática e base científica em 2,5 anos.",
             descricao:
-              "Curso tecnológico que forma profissionais para atuar em estética facial, corporal e capilar, com base em anatomia, fisiologia e cosmetologia, aliando técnica e visão de negócio.", // MOCK
+              "O curso tecnológico capacita para identificar e executar procedimentos estéticos faciais, corporais e capilares, além de técnicas de visagismo, maquiagem e cosmetologia. A formação combina laboratórios especializados com base conceitual sólida, preparando tanto para a atuação imediata no mercado quanto para a gestão de negócios na área.",
             diferenciais: [
-              "Laboratório de práticas estéticas equipado", // MOCK
-              "Formação em cosmetologia e dermofarmácia", // MOCK
-              "Visão empreendedora para abertura de negócio", // MOCK
+              "Formação completa em 2,5 anos, em um segmento em expansão",
+              "Laboratórios especializados com prática desde o início",
+              "Capacitação para atuar e gerir negócios na área estética",
             ],
-            mercado: ["Clínicas de estética", "Spas e centros de bem-estar", "Consultórios dermatológicos", "Empreendedorismo"], // MOCK
+            mercado: ["Clínicas de estética e medicina estética", "Spas, academias e salões", "Consultoria em cosméticos e equipamentos", "Hotéis, resorts e instituições de ensino"],
             foto: "/images/cursos/estetica-cosmetica.jpg",
           },
         ],
@@ -185,26 +185,30 @@ export const config = {
             slug: "direito", nome: "Direito", area: "Sociais & Gestão",
             titulacao: "Bacharelado", duracao: "5 anos · 10 semestres",
             turnos: ["Matutino", "Noturno"], modalidade: "Presencial",
-            resumo: "Formação humanista e técnica, com prática jurídica real.",
+            resumo: "Formação humanista e técnico-científica com prática jurídica real.",
             descricao:
-              "Sólida formação humanista e técnico-científica, com Núcleo Integrado de Prática Jurídica e Clínica-Escola, preparando para a advocacia e as carreiras públicas.",
+              "O curso oferece sólida formação humanista e técnico-científica, preparando bacharéis para compreender os fenômenos jurídicos dentro de contextos sociais mais amplos e com postura crítica e reflexiva. A grade contempla as dimensões múltiplas das Ciências Jurídicas, desenvolve autonomia de aprendizado e capacita para o trabalho em equipe nas mais diversas carreiras do Direito.",
             diferenciais: [
               "Núcleo Integrado de Prática Jurídica",
-              "Clínica-Escola",
-              "Corpo docente atuante na área",
+              "Visão crítica e interdisciplinar das Ciências Jurídicas",
+              "Corpo docente atuante na advocacia e nas carreiras públicas",
             ],
-            mercado: ["Advocacia", "Magistratura", "Ministério Público", "Defensoria", "Procuradorias"],
+            mercado: ["Advocacia pública e privada", "Magistratura estadual e federal", "Ministério Público e Defensoria", "Procuradorias e cargos exclusivos de bacharel"],
             foto: "/images/cursos/direito.jpg",
           },
           {
             slug: "administracao", nome: "Administração (EAD)", area: "Sociais & Gestão",
-            titulacao: "Bacharelado", duracao: "Conforme matriz EAD", // MOCK: confirmar
+            titulacao: "Bacharelado", duracao: "Conforme matriz EAD",
             turnos: ["EAD"], modalidade: "EAD",
-            resumo: "Gestão na prática, com flexibilidade do ensino a distância.",
+            resumo: "Formação em gestão com a flexibilidade do EAD e suporte de coordenação especializada.",
             descricao:
-              "Curso de Administração na modalidade EAD da Florence, com foco em gestão, empreendedorismo e visão de mercado.", // MOCK: refinar com a pagina
-            diferenciais: ["Flexibilidade EAD", "Visão de mercado", "Corpo docente atuante"], // MOCK
-            mercado: ["Gestão", "Empreendedorismo", "Consultoria", "Setor público"],
+              "O curso de Administração EAD da Florence permite estudar no próprio ritmo, com acesso a aulas e materiais conforme a conveniência do aluno. A proposta combina flexibilidade com seriedade acadêmica: coordenação especializada, suporte contínuo das equipes NEAD e SECAD, avaliações presenciais nos laboratórios da instituição e orientação para estágios ao longo da formação.",
+            diferenciais: [
+              "Estudo flexível com suporte de equipe especializada",
+              "Avaliações presenciais para garantir qualidade da formação",
+              "Orientação para estágios desde o início do curso",
+            ],
+            mercado: ["Gestão empresarial e corporativa", "Empreendedorismo e startups", "Consultoria organizacional", "Setor público e terceiro setor"],
             foto: "/images/cursos/administracao.jpg",
           },
         ],
