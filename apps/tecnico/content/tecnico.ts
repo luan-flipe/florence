@@ -41,78 +41,78 @@ export const config = {
         area: "Saúde",
         itens: [
           {
-            slug: "tecnico-enfermagem", nome: "Técnico em Enfermagem", area: "Saúde", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-enfermagem", nome: "Técnico em Enfermagem", area: "Saúde",
+            titulacao: "Curso Técnico", duracao: "22 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Assistência de enfermagem com foco prático e atuação no SUS.", // MOCK
+            resumo: "Elo entre paciente e equipe médica, com prática supervisionada em hospitais, clínicas e unidades básicas de saúde.",
             descricao:
-              "Forma profissionais para atuar como técnicos de enfermagem em hospitais, clínicas e unidades de atenção básica, com prática supervisionada desde o início do curso.", // MOCK
+              "Você aprende a realizar curativos, administrar medicamentos e assistir a equipe de saúde em ambientes hospitalares e ambulatoriais. O curso combina 1.200 horas de aulas teórico-práticas com 600 horas de estágio supervisionado em cenários reais. Ao concluir, você está habilitado a atuar em hospitais privados, UTIs, centros cirúrgicos, UBS e clínicas.",
             diferenciais: [
-              "Prática em laboratórios de enfermagem desde o início", // MOCK
-              "Formação alinhada ao SUS e ao mercado de trabalho", // MOCK
-              "Professores atuantes na área de saúde", // MOCK
+              "Infraestrutura de simulação realística para treino antes do estágio",
+              "Estágio supervisionado de 600 horas em serviços de saúde reais",
+              "Formação disponível na modalidade concomitante ou subsequente ao ensino médio",
             ],
-            mercado: ["Hospitais", "Clínicas", "UBS", "Home care"], // MOCK
+            mercado: ["Hospitais e UTIs", "Centros cirúrgicos", "Unidades Básicas de Saúde", "Clínicas e consultórios", "Home care e casas de repouso"],
             foto: "/images/cursos/tecnico-enfermagem.jpg",
           },
           {
-            slug: "tecnico-estetica", nome: "Técnico em Estética", area: "Saúde", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-estetica", nome: "Técnico em Estética", area: "Saúde",
+            titulacao: "Curso Técnico", duracao: "20 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Técnicas estéticas faciais e corporais para atuar em clínicas e spas.", // MOCK
+            resumo: "Procedimentos estéticos faciais e corporais com base em saúde da pele, cosmetologia e operação de equipamentos profissionais.",
             descricao:
-              "Capacita profissionais para realizar procedimentos estéticos faciais e corporais com base em anatomia, fisiologia e cosmetologia, aliando técnica e segurança.", // MOCK
+              "O curso forma o profissional responsável pela segurança do paciente durante procedimentos estéticos: você aprende sobre saúde da pele, cosméticos, massagens corporais e operação de equipamentos estéticos. São 1.275 horas de aulas teórico-práticas e 200 horas de estágio supervisionado. A saída profissional é ampla, de clínicas e spas ao atendimento autônomo em parceria com dermatologistas e fisioterapeutas.",
             diferenciais: [
-              "Laboratório de práticas estéticas equipado", // MOCK
-              "Base em anatomia e cosmetologia aplicada", // MOCK
-              "Formação voltada para o mercado de beleza e saúde", // MOCK
+              "Laboratório de práticas estéticas equipado para treino real",
+              "Currículo que cobre saúde da pele, cosmetologia e equipamentos estéticos",
+              "Estágio supervisionado de 200 horas garantido pela instituição",
             ],
-            mercado: ["Clínicas de estética", "Spas", "Centros de bem-estar", "Empreendedorismo"], // MOCK
+            mercado: ["Clínicas de estética e dermatologia", "Spas e salões", "Centros de bem-estar", "Atendimento autônomo", "Suporte a fisioterapeutas e nutricionistas"],
             foto: "/images/cursos/tecnico-estetica.jpg",
           },
           {
-            slug: "tecnico-analises-clinicas", nome: "Técnico em Análises Clínicas", area: "Saúde", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-analises-clinicas", nome: "Técnico em Análises Clínicas", area: "Saúde",
+            titulacao: "Curso Técnico", duracao: "20 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Análises laboratoriais clínicas com prática em laboratório equipado.", // MOCK
+            resumo: "Análises laboratoriais com coleta, processamento e operação de equipamentos em laboratórios clínicos e bancos de sangue.",
             descricao:
-              "Forma técnicos para coleta, processamento e análise de amostras biológicas em laboratórios clínicos, com ênfase em bioquímica, hematologia e microbiologia.", // MOCK
+              "Você aprende a executar rotinas laboratoriais, coletar e distribuir material biológico, operar equipamentos de análise e auxiliar em urgências clínicas. O curso soma 1.275 horas de aulas práticas e teóricas com 200 horas de estágio obrigatório garantido. Formados atuam em laboratórios privados, bancos de sangue, hospitais e clínicas universitárias.",
             diferenciais: [
-              "Prática em laboratório de análises clínicas", // MOCK
-              "Formação em bioquímica, hematologia e microbiologia", // MOCK
-              "Professores com experiência em laboratórios clínicos", // MOCK
+              "Laboratório de análises clínicas com equipamentos de uso profissional",
+              "Estágio obrigatório garantido pela instituição",
+              "Metodologia focada em atividades práticas que simulam o ambiente real de trabalho",
             ],
-            mercado: ["Laboratórios clínicos", "Hospitais", "Clínicas diagnósticas", "Postos de saúde"], // MOCK
+            mercado: ["Laboratórios clínicos privados", "Bancos de sangue", "Hospitais e unidades de saúde", "Laboratórios universitários", "Clínicas diagnósticas"],
             foto: "/images/cursos/tecnico-analises-clinicas.jpg",
           },
           {
-            slug: "tecnico-saude-bucal", nome: "Técnico em Saúde Bucal", area: "Saúde", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-saude-bucal", nome: "Técnico em Saúde Bucal", area: "Saúde",
+            titulacao: "Curso Técnico", duracao: "20 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Auxílio odontológico e prevenção em saúde bucal na prática.", // MOCK
+            resumo: "Suporte especializado ao cirurgião-dentista em procedimentos clínicos, esterilização de equipamentos e promoção de saúde bucal.",
             descricao:
-              "Capacita profissionais para auxiliar cirurgiões-dentistas em procedimentos clínicos, realizar atividades de prevenção e promover saúde bucal em unidades de saúde.", // MOCK
+              "Você aprende a auxiliar em procedimentos odontológicos, esterilizar instrumentais, orientar pacientes sobre prevenção e atuar em programas de saúde bucal coletiva. O curso reúne 1.200 horas de formação teórico-prática e 200 horas de estágio supervisionado em clínicas e unidades de saúde. Ao se formar, você pode atuar no SUS, em hospitais públicos e privados e em consultórios odontológicos.",
             diferenciais: [
-              "Prática em consultórios odontológicos reais", // MOCK
-              "Formação em prevenção e promoção de saúde bucal", // MOCK
-              "Atuação no SUS e em clínicas privadas", // MOCK
+              "Laboratórios modernos com metodologia centrada na prática clínica",
+              "Estágio supervisionado de 200 horas em ambientes odontológicos reais",
+              "Formação válida para atuação no SUS e em consultórios privados",
             ],
-            mercado: ["Consultórios odontológicos", "UBS", "Saúde pública", "Clínicas privadas"], // MOCK
+            mercado: ["Consultórios odontológicos", "Unidades Básicas de Saúde", "Hospitais públicos e privados", "Programas de saúde bucal escolar", "Clínicas especializadas"],
             foto: "/images/cursos/tecnico-saude-bucal.jpg",
           },
           {
-            slug: "tecnico-nutricao", nome: "Técnico em Nutrição", area: "Saúde", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-nutricao", nome: "Técnico em Nutrição", area: "Saúde",
+            titulacao: "Curso Técnico", duracao: "20 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Suporte nutricional prático em unidades de alimentação e nutrição.", // MOCK
+            resumo: "Apoio técnico ao nutricionista no preparo de dietas, monitoramento alimentar e orientação em serviços de saúde e alimentação coletiva.",
             descricao:
-              "Forma profissionais para auxiliar nutricionistas em unidades de alimentação e nutrição (UAN), hospitais e clínicas, com prática em técnicas dietéticas e controle de qualidade.", // MOCK
+              "O curso prepara você para monitorar o preparo de alimentos, compreender as necessidades nutricionais dos pacientes e apoiar o nutricionista em clínicas, hospitais e serviços de alimentação coletiva. São 1.200 horas de aulas teórico-práticas e 200 horas de estágio supervisionado. A formação abre portas em hospitais, escolas, empresas e serviços de nutrição clínica.",
             diferenciais: [
-              "Prática em laboratório de técnica dietética", // MOCK
-              "Formação voltada a UAN e serviços de saúde", // MOCK
-              "Base em nutrição clínica e coletiva", // MOCK
+              "Infraestrutura prática projetada para simular ambientes reais de trabalho",
+              "Currículo que integra técnica dietética, nutrição clínica e alimentação coletiva",
+              "Estágio supervisionado de 200 horas garantido pela instituição",
             ],
-            mercado: ["UAN", "Hospitais", "Escolas", "Clínicas de nutrição"], // MOCK
+            mercado: ["Hospitais e clínicas", "Serviços de alimentação coletiva (UAN)", "Escolas e creches", "Empresas com restaurante corporativo", "Consultórios de nutrição"],
             foto: "/images/cursos/tecnico-nutricao.jpg",
           },
         ],
@@ -121,33 +121,33 @@ export const config = {
         area: "Indústria & Tecnologia",
         itens: [
           {
-            slug: "tecnico-eletromecanica", nome: "Técnico em Eletromecânica", area: "Indústria & Tecnologia", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-eletromecanica", nome: "Técnico em Eletromecânica", area: "Indústria & Tecnologia",
+            titulacao: "Curso Técnico", duracao: "20 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Manutenção e instalação de sistemas elétricos e mecânicos industriais.", // MOCK
+            resumo: "Manutenção, instalação e operação de sistemas elétricos e mecânicos em indústrias de qualquer porte.",
             descricao:
-              "Capacita para operar, instalar e manter sistemas eletromecânicos em indústrias, integrando conhecimentos de eletricidade, mecânica e automação com prática em laboratório.", // MOCK
+              "Você aprende a analisar a qualidade e o funcionamento de máquinas, operar e manter sistemas eletromecânicos e atuar em projetos industriais que exigem conhecimento integrado de elétrica e mecânica. O curso soma 1.200 horas de aulas teórico-práticas e 180 horas de estágio supervisionado. As oportunidades de trabalho vão de empresas de energia e usinas a indústrias de manufatura em geral.",
             diferenciais: [
-              "Prática em laboratório de eletromecânica e automação", // MOCK
-              "Formação integrada de elétrica e mecânica industrial", // MOCK
-              "Professores com experiência no setor industrial", // MOCK
+              "Infraestrutura que replica condições reais de chão de fábrica",
+              "Currículo integrado de eletricidade e mecânica industrial",
+              "Estágio supervisionado de 180 horas em ambiente industrial",
             ],
-            mercado: ["Indústrias", "Manutenção industrial", "Automação", "Empresas de energia"], // MOCK
+            mercado: ["Indústrias de manufatura", "Empresas de energia e geração", "Usinas e refinarias", "Manutenção industrial", "Automação e controle de processos"],
             foto: "/images/cursos/tecnico-eletromecanica.jpg",
           },
           {
-            slug: "tecnico-eletrotecnica", nome: "Técnico em Eletrotécnica", area: "Indústria & Tecnologia", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-eletrotecnica", nome: "Técnico em Eletrotécnica", area: "Indústria & Tecnologia",
+            titulacao: "Curso Técnico", duracao: "22 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Instalações elétricas e sistemas de energia com base técnica sólida.", // MOCK
+            resumo: "Instalação, operação e manutenção de sistemas elétricos residenciais, comerciais e industriais, com foco em energia e telecomunicações.",
             descricao:
-              "Forma técnicos para projetar, instalar e manter sistemas elétricos residenciais, comerciais e industriais, com foco em segurança e normas técnicas brasileiras.", // MOCK
+              "Você aprende a instalar e manter sistemas de geração, transmissão e distribuição de energia elétrica, além de desenvolver projetos elétricos e de infraestrutura de telecomunicações para edificações. O curso combina 1.200 horas de formação teórico-prática com 200 horas de estágio supervisionado. O mercado é amplo: das construtoras às empresas de energia alternativa, passando por indústrias e telecomunicações.",
             diferenciais: [
-              "Prática em instalações elétricas e comandos", // MOCK
-              "Formação conforme normas técnicas brasileiras (ABNT/NR)", // MOCK
-              "Base em projetos elétricos residenciais e industriais", // MOCK
+              "Formação 360 graus: instalações residenciais, comerciais e industriais",
+              "Laboratórios equipados para prática em sistemas elétricos reais",
+              "Estágio supervisionado de 200 horas garantido pela instituição",
             ],
-            mercado: ["Construtoras", "Indústrias", "Concessionárias de energia", "Manutenção predial"], // MOCK
+            mercado: ["Empresas de geração e distribuição de energia", "Construtoras e incorporadoras", "Indústrias", "Energia alternativa e renovável", "Projetos de telecomunicações e infraestrutura"],
             foto: "/images/cursos/tecnico-eletrotecnica.jpg",
           },
         ],
@@ -156,18 +156,18 @@ export const config = {
         area: "Meio Ambiente",
         itens: [
           {
-            slug: "tecnico-meio-ambiente", nome: "Técnico em Meio Ambiente", area: "Meio Ambiente", // MOCK
-            titulacao: "Curso Técnico", duracao: "18 a 24 meses", // MOCK
+            slug: "tecnico-meio-ambiente", nome: "Técnico em Meio Ambiente", area: "Meio Ambiente",
+            titulacao: "Curso Técnico", duracao: "14 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Gestão ambiental e monitoramento com foco em sustentabilidade.", // MOCK
+            resumo: "Monitoramento ambiental, conformidade legal e gestão de programas de sustentabilidade em empresas e órgãos públicos.",
             descricao:
-              "Forma profissionais para atuar no monitoramento, controle ambiental e gestão de resíduos em empresas, órgãos públicos e consultorias, com prática em coleta e análise ambiental.", // MOCK
+              "Você aprende a apoiar engenheiros ambientais no monitoramento de conformidade legal, organizar programas de educação ambiental e desenvolver projetos de preservação para empresas que utilizam recursos naturais. O curso reúne 800 horas de aulas teórico-práticas e 200 horas de estágio supervisionado, formando o profissional em pouco mais de um ano. A demanda cresce à medida que empresas adotam práticas ecologicamente responsáveis.",
             diferenciais: [
-              "Formação em gestão de resíduos e controle ambiental", // MOCK
-              "Base em legislação ambiental e sustentabilidade", // MOCK
-              "Prática em coleta e análise de amostras ambientais", // MOCK
+              "Formação concluída em 14 meses, com entrada rápida no mercado",
+              "Currículo focado em legislação ambiental, gestão de riscos e educação ambiental",
+              "Estágio supervisionado de 200 horas garantido pela instituição",
             ],
-            mercado: ["Empresas industriais", "Órgãos ambientais", "Consultorias", "Saneamento"], // MOCK
+            mercado: ["Empresas mineradoras e madeireiras", "Indústrias com licenciamento ambiental", "Órgãos públicos de meio ambiente", "Consultorias ambientais", "Saneamento básico"],
             foto: "/images/cursos/tecnico-meio-ambiente.jpg",
           },
         ],
