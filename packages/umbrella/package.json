@@ -1,0 +1,8 @@
+{
+  "name": "@florence/umbrella",
+  "version": "0.0.0",
+  "private": true,
+  "exports": { ".": "./index.tsx" },
+  "peerDependencies": { "next": ">=14", "react": "^18", "react-dom": "^18" },
+  "dependencies": { "@florence/lib": "*", "@florence/ui": "*" }
+}
