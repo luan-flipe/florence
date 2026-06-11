@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["@florence/lib", "@florence/ui"],
+  transpilePackages: ["@florence/lib", "@florence/ui", "@florence/umbrella"],
   experimental: { optimizeCss: true },
   images: {
     formats: ["image/avif", "image/webp"],

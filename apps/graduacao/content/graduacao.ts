@@ -1,3 +1,5 @@
+import type { UmbrellaConfig } from "@florence/umbrella";
+
 export const config = {
   meta: {
     title: "Graduação no Centro Universitário Florence | 11 cursos em São Luís",
@@ -10,6 +12,7 @@ export const config = {
     headline: "Sua carreira começa na prática.",
     subheadline:
       "Graduação no Centro Universitário Florence, com corpo docente atuante e vivência prática desde os primeiros períodos. Onze cursos para você escolher o seu.",
+    imageAlt: "Estudantes de Graduação da Florence",
     stats: [
       { value: "11", label: "cursos" },
       { value: "6", label: "formas de ingresso" },
@@ -30,7 +33,8 @@ export const config = {
   },
 
   cursos: {
-    titulo: "Encontre o seu curso.",
+    eyebrow: "Cursos",
+    titulo: "Encontre o\nseu curso.",
     subtitulo:
       "Onze graduações para construir a carreira que você quer. Clique para conhecer cada uma.",
     grupos: [
@@ -209,9 +213,9 @@ export const config = {
   },
 
   diferenciais: {
-    titulo: "Por que a Florence.",
+    eyebrow: "Por que a Florence.",
     lead: {
-      titulo: "Prática desde o início.",
+      titulo: "Prática desde\no início.",
       corpo:
         "Laboratórios, clínicas-escola e projetos reais desde os primeiros períodos. Você aprende fazendo, não só assistindo.",
     },
@@ -230,7 +234,8 @@ export const config = {
   },
 
   ingresso: {
-    titulo: "Seis formas de entrar.",
+    eyebrow: "Ingresso",
+    titulo: "Seis formas\nde entrar.",
     subtitulo: "Escolha a que combina com o seu momento.",
     formas: [
       { nome: "Vestibular Digital", descricao: "Prova online, com data e horário flexíveis." },
@@ -243,7 +248,8 @@ export const config = {
   },
 
   financiamento: {
-    titulo: "Estudar pode custar menos do que você imagina.",
+    eyebrow: "Bolsas & Financiamento",
+    titulo: "Estudar pode custar menos\ndo que você imagina.",
     descricao:
       "Bolsas de até 60%, FIES, ProUni e o programa Corporativo Florence para quem trabalha em empresas parceiras.",
     itens: [
@@ -257,7 +263,7 @@ export const config = {
   // Mock/oculto ate o cliente enviar depoimentos reais.
   depoimentos: {
     ativo: false,
-    titulo: "Quem estuda na Florence.",
+    titulo: "Quem estuda\nna Florence.",
     cards: [
       { nome: "Aluno Florence", turma: "Turma 2024", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
       { nome: "Aluna Florence", turma: "Turma 2023", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
@@ -274,7 +280,7 @@ export const config = {
     corpo: "Nosso time de admissões vai entrar em contato com você em breve.",
     ctaSecundario: { label: "Conhecer a Florence", href: "https://www.florence.edu.br" },
   },
-} as const;
+} satisfies UmbrellaConfig;
 
 // Lista achatada de nomes de curso para o dropdown do formulario.
 export const cursoOptions: string[] = config.cursos.grupos

@@ -8,6 +8,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "../../packages/ui/**/*.{js,ts,jsx,tsx}",
+    "../../packages/umbrella/**/*.{js,ts,jsx,tsx}",
   ],
 };
 export default config;

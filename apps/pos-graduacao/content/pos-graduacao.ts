@@ -1,3 +1,5 @@
+import type { UmbrellaConfig } from "@florence/umbrella";
+
 export const config = {
   meta: {
     title: "Pós-graduação no Centro Universitário Florence | Especializações em São Luís",
@@ -10,12 +12,12 @@ export const config = {
     headline: "Especialize-se com quem atua na área.",
     subheadline:
       "Pós-graduação em Saúde, Odontologia, Direito e Estética, com professores de excelência e conclusão a partir de 13 meses.",
+    imageAlt: "Profissionais em especialização na Florence",
     stats: [
       { value: "18+", label: "especializações" },
       { value: "13 meses", label: "para concluir" },
       { value: "4", label: "áreas" },
     ],
-    cta: "Quero me especializar",
   },
 
   // Urgencia config-driven: ativo=false some sem mexer no layout.
@@ -31,7 +33,8 @@ export const config = {
   },
 
   cursos: {
-    titulo: "Encontre sua especialização.",
+    eyebrow: "Especializações",
+    titulo: "Encontre sua\nespecialização.",
     subtitulo:
       "Escolha a área e dê o próximo passo na carreira.",
     grupos: [
@@ -401,9 +404,9 @@ export const config = {
   },
 
   diferenciais: {
-    titulo: "Por que a Florence.",
+    eyebrow: "Por que a Florence.",
     lead: {
-      titulo: "Especialização aplicada à prática.",
+      titulo: "Especialização\naplicada à prática.",
       corpo:
         "Conteúdo conectado ao dia a dia da profissão, com professores que atuam na área e metodologia voltada para resultado.",
     },
@@ -422,7 +425,8 @@ export const config = {
   },
 
   ingresso: {
-    titulo: "Sem vestibular.",
+    eyebrow: "Inscrição",
+    titulo: "Sem vestibular,\nsem complicação.",
     subtitulo: "A inscrição é por análise de documentos, simples e rápida.",
     formas: [
       { nome: "Diploma de graduação", descricao: "Cópia do seu diploma de nível superior." },
@@ -433,7 +437,8 @@ export const config = {
   },
 
   financiamento: {
-    titulo: "Investimento facilitado.",
+    eyebrow: "Investimento",
+    titulo: "Investimento\nfacilitado.",
     descricao:
       "Condições de pagamento flexíveis e o programa Corporativo Florence para quem trabalha em empresas parceiras.",
     itens: [
@@ -447,7 +452,7 @@ export const config = {
   // Mock/oculto ate o cliente enviar depoimentos reais.
   depoimentos: {
     ativo: false,
-    titulo: "Quem se especializa na Florence.",
+    titulo: "Quem se especializa\nna Florence.",
     cards: [
       { nome: "Aluno Florence", turma: "Turma 2024", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
       { nome: "Aluna Florence", turma: "Turma 2023", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
@@ -464,7 +469,7 @@ export const config = {
     corpo: "Nosso time de admissões vai entrar em contato com você em breve.",
     ctaSecundario: { label: "Conhecer a Florence", href: "https://www.florence.edu.br" },
   },
-} as const;
+} satisfies UmbrellaConfig;
 
 // Lista achatada de nomes de curso para o dropdown do formulario.
 export const cursoOptions: string[] = config.cursos.grupos

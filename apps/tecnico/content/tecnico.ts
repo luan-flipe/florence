@@ -1,3 +1,5 @@
+import type { UmbrellaConfig } from "@florence/umbrella";
+
 export const config = {
   meta: {
     title: "Cursos Técnicos no Centro Universitário Florence | São Luís",
@@ -10,12 +12,12 @@ export const config = {
     headline: "Uma profissão técnica em menos tempo.",
     subheadline:
       "Cursos técnicos presenciais em Saúde, Indústria e Meio Ambiente, com prática desde o início para você entrar logo no mercado de trabalho.",
+    imageAlt: "Formação técnica na Florence",
     stats: [
       { value: "8", label: "cursos" },
       { value: "Presencial", label: "modalidade" },
       { value: "3", label: "áreas" },
     ],
-    cta: "Quero me matricular",
   },
 
   // Urgencia config-driven: ativo=false some sem mexer no layout.
@@ -31,7 +33,8 @@ export const config = {
   },
 
   cursos: {
-    titulo: "Encontre seu curso técnico.",
+    eyebrow: "Cursos técnicos",
+    titulo: "Encontre seu\ncurso técnico.",
     subtitulo: "Escolha a área e comece a se qualificar.",
     grupos: [
       {
@@ -173,9 +176,9 @@ export const config = {
   },
 
   diferenciais: {
-    titulo: "Por que a Florence.",
+    eyebrow: "Por que a Florence.",
     lead: {
-      titulo: "Formação prática para o mercado.",
+      titulo: "Formação prática\npara o mercado.",
       corpo:
         "Você aprende fazendo, com laboratórios e prática desde o início, para sair pronto para trabalhar.",
     },
@@ -194,7 +197,8 @@ export const config = {
   },
 
   ingresso: {
-    titulo: "Matrícula simples.",
+    eyebrow: "Matrícula",
+    titulo: "Matrícula\nsimples.",
     subtitulo: "Sem vestibular. Você se matricula com documentos básicos.",
     formas: [
       { nome: "Documentos pessoais", descricao: "RG e CPF." },
@@ -205,7 +209,8 @@ export const config = {
   },
 
   financiamento: {
-    titulo: "Mensalidade que cabe no bolso.",
+    eyebrow: "Investimento",
+    titulo: "Mensalidade que\ncabe no bolso.",
     descricao:
       "Condições de pagamento flexíveis e o programa Corporativo Florence para quem trabalha em empresas parceiras.",
     itens: [
@@ -219,7 +224,7 @@ export const config = {
   // Mock/oculto ate o cliente enviar depoimentos reais.
   depoimentos: {
     ativo: false,
-    titulo: "Quem se forma na Florence.",
+    titulo: "Quem se forma\nna Florence.",
     cards: [
       { nome: "Aluno Florence", turma: "Turma 2024", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
       { nome: "Aluna Florence", turma: "Turma 2023", texto: "Depoimento de exemplo (mock).", foto: "" }, // MOCK
@@ -236,7 +241,7 @@ export const config = {
     corpo: "Nosso time vai entrar em contato com você em breve.",
     ctaSecundario: { label: "Conhecer a Florence", href: "https://www.florence.edu.br" },
   },
-} as const;
+} satisfies UmbrellaConfig;
 
 // Lista achatada de nomes de curso para o dropdown do formulario.
 export const cursoOptions: string[] = config.cursos.grupos
