@@ -46,18 +46,18 @@ export const config = {
             nome: "Análises Clínicas e Diagnóstico Laboratorial",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "6 ou 18 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Diagnóstico laboratorial avançado aplicado à prática clínica.", // MOCK
+            resumo: "Formação crítica e atualizada para quem quer liderar o diagnóstico laboratorial.",
             descricao:
-              "Aprofunda a formação em análises clínicas, hematologia, microbiologia e bioquímica, preparando o profissional para atuar em laboratórios de alta complexidade.", // MOCK
+              "A especialização capacita biomédicos, farmacêuticos-bioquímicos e biólogos a executar e liberar laudos, assumir a responsabilidade técnica de laboratórios e atuar em consultoria e pesquisa. O currículo cobre hematologia, microbiologia, bioquímica, parasitologia e imunologia com metodologias atualizadas de interpretação de exames. Indicado tanto para quem está iniciando na área quanto para profissionais em busca de qualificação continuada.",
             diferenciais: [
-              "Conteúdo atualizado com as diretrizes do CFB e CFBio", // MOCK
-              "Professores atuantes em laboratórios clínicos de referência", // MOCK
-              "Foco em diagnóstico molecular e automação laboratorial", // MOCK
+              "Currículo atualizado com metodologias e técnicas contemporâneas de análises clínicas",
+              "Encontros quinzenais presenciais com flexibilidade para profissionais em exercício",
+              "Formação que habilita o profissional à responsabilidade técnica de laboratórios",
             ],
-            mercado: ["Laboratórios clínicos", "Hemocentros", "Indústria diagnóstica", "Vigilância sanitária"], // MOCK
+            mercado: ["Laboratórios clínicos e de alta complexidade", "Hemocentros", "Indústria diagnóstica", "Vigilância sanitária", "Consultoria e pesquisa laboratorial"],
             foto: "/images/cursos/analises-clinicas-diagnostico-laboratorial.jpg",
           },
           {
@@ -65,18 +65,18 @@ export const config = {
             nome: "Bioquímica Clínica",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Especialização em bioquímica aplicada ao diagnóstico e pesquisa clínica.", // MOCK
+            resumo: "Conhecimento aprofundado em bioquímica para uma atuação laboratorial ética e competente.",
             descricao:
-              "Capacita o profissional para interpretar e desenvolver análises bioquímicas em contextos laboratoriais e de pesquisa, com ênfase em marcadores metabólicos e doenças crônicas.", // MOCK
+              "O curso oferece formação especializada e aprofundada em bioquímica clínica, equipando profissionais de biomedicina, farmácia, biologia, enfermagem e áreas afins com conhecimentos atualizados para a prática laboratorial. O programa prepara o especialista para interpretar exames bioquímicos, adotar condutas éticas e contribuir para a qualidade diagnóstica em diferentes contextos de saúde.",
             diferenciais: [
-              "Integração entre bioquímica clínica e farmacologia", // MOCK
-              "Laboratórios equipados para análises metabólicas", // MOCK
-              "Corpo docente com atuação em pesquisa aplicada", // MOCK
+              "Abrangência interdisciplinar: aberto a graduados em biomedicina, farmácia, biologia, enfermagem, medicina e odontologia",
+              "Encontros quinzenais presenciais compatíveis com a rotina de quem já está no mercado",
+              "Coordenação acadêmica com currículo Lattes disponível para consulta",
             ],
-            mercado: ["Laboratórios de análises clínicas", "Indústria farmacêutica", "Pesquisa científica", "Hospitais"], // MOCK
+            mercado: ["Laboratórios de análises clínicas", "Indústria farmacêutica e diagnóstica", "Pesquisa científica", "Hospitais e clínicas"],
             foto: "/images/cursos/bioquimica-clinica.jpg",
           },
           {
@@ -84,18 +84,18 @@ export const config = {
             nome: "Emagrecimento e Obesidade",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Abordagem multiprofissional no tratamento do sobrepeso e obesidade.", // MOCK
+            resumo: "Capacitação especializada para o manejo clínico do sobrepeso e da obesidade.",
             descricao:
-              "Forma profissionais de saúde para o manejo clínico e nutricional da obesidade, integrando evidências científicas atuais sobre comportamento alimentar, cirurgia bariátrica e farmacoterapia.", // MOCK
+              "A especialização capacita profissionais da saúde a adquirir conhecimentos teóricos e práticos no campo do emagrecimento e da obesidade, com foco em avaliação, prescrição e acompanhamento de estratégias de intervenção saudável. O curso é voltado para médicos, nutricionistas, educadores físicos, enfermeiros, psicólogos e outros graduados na área da saúde que buscam atuar com segurança no tratamento de pacientes com sobrepeso.",
             diferenciais: [
-              "Visão multiprofissional e interdisciplinar", // MOCK
-              "Atualização em farmacoterapia e cirurgia bariátrica", // MOCK
-              "Abordagem comportamental e psicológica do paciente", // MOCK
+              "Currículo voltado à prática clínica com protocolos de avaliação e acompanhamento do paciente",
+              "Abordagem multiprofissional integrando diferentes áreas da saúde no tratamento da obesidade",
+              "Encontros quinzenais presenciais com matriz curricular disponível para consulta",
             ],
-            mercado: ["Clínicas de emagrecimento", "Hospitais", "Consultórios de nutrição e endocrinologia", "Planos de saúde"], // MOCK
+            mercado: ["Clínicas de emagrecimento e endocrinologia", "Consultórios de nutrição", "Hospitais e programas bariátricos", "Equipes de saúde multiprofissional"],
             foto: "/images/cursos/emagrecimento-obesidade.jpg",
           },
           {
@@ -103,18 +103,18 @@ export const config = {
             nome: "Enfermagem Oncológica",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Cuidado especializado ao paciente oncológico em todas as fases do tratamento.", // MOCK
+            resumo: "Formação para a assistência integral ao paciente oncológico em equipes multiprofissionais.",
             descricao:
-              "Prepara o enfermeiro para atuar na assistência integral ao paciente com câncer, desde a prevenção e diagnóstico até o tratamento, reabilitação e cuidados paliativos.", // MOCK
+              "A especialização contribui para a formação de equipes multiprofissionais com foco no trabalho interdisciplinar em assistência, gestão, pesquisa e educação nas redes de atenção oncológica. O programa é aberto a graduados em enfermagem, medicina, odontologia, psicologia, fisioterapia, serviço social e áreas afins. O profissional formado está preparado para atuar em todas as etapas do cuidado oncológico, da prevenção aos cuidados paliativos.",
             diferenciais: [
-              "Foco em oncologia clínica e cuidados paliativos", // MOCK
-              "Professores com atuação em unidades oncológicas de referência", // MOCK
-              "Atualização em protocolos de quimio e imunoterapia", // MOCK
+              "Abordagem interdisciplinar que integra assistência, gestão e pesquisa em oncologia",
+              "Programa voltado a múltiplas categorias profissionais da saúde",
+              "Coordenação com expertise em oncologia e formação continuada",
             ],
-            mercado: ["Hospitais oncológicos", "UNACON e CACON", "Clínicas de oncologia", "Cuidados paliativos"], // MOCK
+            mercado: ["Hospitais oncológicos e UNACONs", "Serviços de quimioterapia e radioterapia", "Cuidados paliativos", "Gestão de redes de atenção oncológica"],
             foto: "/images/cursos/enfermagem-oncologica.jpg",
           },
           {
@@ -122,18 +122,18 @@ export const config = {
             nome: "Farmácia Clínica e Hospitalar",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Farmacêutico clínico no cuidado direto ao paciente e na gestão do medicamento.", // MOCK
+            resumo: "Qualificação técnico-científica para o farmacêutico que atua em ambiente hospitalar.",
             descricao:
-              "Desenvolve competências para a atuação do farmacêutico em ambientes hospitalares, com foco em farmacovigilância, interações medicamentosas, conciliação e farmácia clínica.", // MOCK
+              "O programa qualifica farmacêuticos que atuam em farmácia hospitalar para o desenvolvimento de atividades técnico-científicas e os habilita a atuar como gestores e técnicos nos diferentes níveis da administração em saúde. O currículo contempla o monitoramento farmacoterapêutico de pacientes internados, preparando o profissional para contribuir diretamente com a segurança do paciente. Aberto a graduados em biomedicina, farmácia, enfermagem, medicina e áreas afins.",
             diferenciais: [
-              "Foco em conciliação medicamentosa e farmacovigilância", // MOCK
-              "Professores com atuação em hospitais de ensino", // MOCK
-              "Atualização em prescrição farmacêutica e farmácia clínica", // MOCK
+              "Foco em monitoramento farmacoterapêutico e segurança do paciente hospitalizado",
+              "Preparo para funções de gestão e responsabilidade técnica em farmácia hospitalar",
+              "Encontros quinzenais presenciais com matriz curricular disponível para download",
             ],
-            mercado: ["Hospitais", "UTIs", "Clínicas especializadas", "Planos de saúde"], // MOCK
+            mercado: ["Hospitais e prontos-socorros", "UTIs e centros cirúrgicos", "Farmácias hospitalares", "Gestão de assistência farmacêutica no SUS"],
             foto: "/images/cursos/farmacia-clinica-hospitalar.jpg",
           },
           {
@@ -141,18 +141,18 @@ export const config = {
             nome: "Fisioterapia em Geriatria e Gerontologia",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Reabilitação e promoção de saúde voltadas ao paciente idoso.", // MOCK
+            resumo: "Prática fisioterapêutica especializada para promover funcionalidade e qualidade de vida no envelhecimento.",
             descricao:
-              "Capacita o fisioterapeuta para atuar na prevenção, avaliação e reabilitação funcional do idoso, considerando as particularidades do envelhecimento saudável e das síndromes geriátricas.", // MOCK
+              "O curso capacita fisioterapeutas a adquirir conhecimentos teóricos e práticos em geriatria e gerontologia, com ênfase no desenvolvimento de competências para avaliação, intervenção e reabilitação física voltada ao envelhecimento saudável e à independência funcional do idoso. O programa é voltado exclusivamente para graduados em fisioterapia que desejam se aprofundar no cuidado à população idosa.",
             diferenciais: [
-              "Abordagem biopsicossocial do envelhecimento", // MOCK
-              "Atualização em tecnologias assistivas e reabilitação funcional", // MOCK
-              "Professores atuantes em serviços geriátricos e ILPI", // MOCK
+              "Curso exclusivo para fisioterapeutas, com conteúdo aprofundado nas especificidades do paciente geriátrico",
+              "Foco em reabilitação funcional para promoção da autonomia e qualidade de vida do idoso",
+              "Encontros quinzenais presenciais com matriz curricular detalhada disponível para consulta",
             ],
-            mercado: ["ILPI e residenciais para idosos", "Hospitais geriatria", "Clínicas de reabilitação", "Saúde pública"], // MOCK
+            mercado: ["ILPIs e residências para idosos", "Hospitais com serviço de geriatria", "Clínicas de reabilitação", "Atenção domiciliar e saúde pública"],
             foto: "/images/cursos/fisioterapia-geriatria-gerontologia.jpg",
           },
           {
@@ -160,18 +160,18 @@ export const config = {
             nome: "Fitoterapia e Suplementação Nutricional",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Uso racional de fitoterápicos e suplementos na prática clínica.", // MOCK
+            resumo: "Prescrição segura e baseada em evidências de fitoterápicos e suplementos na prática clínica.",
             descricao:
-              "Forma profissionais para a prescrição baseada em evidências de fitoterápicos e suplementos, integrando a medicina integrativa com a prática clínica convencional.", // MOCK
+              "A especialização capacita profissionais da saúde a adquirir conhecimentos teóricos e práticos em fitoterapia e suplementação nutricional, com foco na prescrição segura e embasada em evidências científicas. O programa é indicado para nutricionistas, farmacêuticos, médicos, enfermeiros e outros graduados que desejam integrar recursos fitoterápicos e suplementares ao cuidado clínico de forma responsável.",
             diferenciais: [
-              "Base em farmacognosia e fitoquímica aplicada", // MOCK
-              "Enfoque em evidências científicas e segurança ao paciente", // MOCK
-              "Aplicação em nutrição clínica, farmácia e medicina integrativa", // MOCK
+              "Ênfase na segurança ao paciente e na prescrição com base em evidências científicas atuais",
+              "Abrangência multiprofissional: aberto a nutricionistas, farmacêuticos, médicos, enfermeiros e afins",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Consultórios de nutrição e farmácia", "Clínicas de medicina integrativa", "Indústria de suplementos", "Drogarias e farmácias de manipulação"], // MOCK
+            mercado: ["Consultórios de nutrição e farmácia clínica", "Farmácias de manipulação", "Clínicas de medicina integrativa", "Indústria de suplementos e cosméticos naturais"],
             foto: "/images/cursos/fitoterapia-suplementacao-nutricional.jpg",
           },
           {
@@ -179,18 +179,18 @@ export const config = {
             nome: "Nutrição Clínica e Esportiva",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Nutrição avançada voltada à clínica e ao desempenho esportivo.", // MOCK
+            resumo: "Dupla certificação em nutrição clínica e esportiva para quem quer ampliar o campo de atuação.",
             descricao:
-              "Aprofunda a formação do nutricionista para atuar na atenção clínica individualizada e no suporte nutricional a atletas e praticantes de atividade física, baseado em evidências científicas.", // MOCK
+              "O programa proporciona conhecimentos abrangentes em nutrição clínica e esportiva, abordando temas contemporâneos relevantes para a prática em contextos ambulatorial, hospitalar e esportivo. Com dupla certificação, a especialização atende nutricionistas, profissionais de educação física, médicos e gastrólogos que buscam aprofundar a atuação em saúde. O currículo integra teoria e prática com foco nos cenários reais da profissão.",
             diferenciais: [
-              "Integração entre nutrição clínica e performance esportiva", // MOCK
-              "Atualização em suplementação e composição corporal", // MOCK
-              "Professores atuantes em clínicas e centros esportivos de referência", // MOCK
+              "Dupla certificação que amplifica as possibilidades de atuação do profissional",
+              "Conteúdo abrange tanto a prática clínica quanto o suporte nutricional ao esporte",
+              "Programa aberto a nutricionistas, médicos, educadores físicos e gastrônomos",
             ],
-            mercado: ["Consultórios e clínicas de nutrição", "Centros esportivos e academias", "Equipes esportivas profissionais", "Hospitais e UAN"], // MOCK
+            mercado: ["Consultórios e clínicas de nutrição", "Equipes esportivas e centros de performance", "Hospitais e serviços de nutrição enteral", "Programas de saúde corporativa"],
             foto: "/images/cursos/nutricao-clinica-esportiva.jpg",
           },
           {
@@ -198,18 +198,18 @@ export const config = {
             nome: "Saúde Coletiva e Família",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Atenção primária, promoção da saúde e cuidado à família.", // MOCK
+            resumo: "Formação para gestão, planejamento e atuação na saúde da família e nas redes do SUS.",
             descricao:
-              "Prepara profissionais de saúde para atuar na atenção básica e em equipes de saúde da família, com foco em vigilância epidemiológica, promoção da saúde e cuidado integral.", // MOCK
+              "A especialização desenvolve especialistas em saúde coletiva com ênfase na saúde da família, ampliando as possibilidades de atuação em gestão, planejamento, análise e avaliação dentro do SUS, especialmente nas estratégias de saúde da família. O programa é indicado para médicos, psicólogos, gestores de serviços de saúde e profissionais que preparam concursos públicos na área. O egresso está habilitado para assumir cargos de liderança em equipes de saúde da família e vigilância epidemiológica.",
             diferenciais: [
-              "Formação orientada para o SUS e atenção básica", // MOCK
-              "Metodologias de educação em saúde e trabalho em equipe", // MOCK
-              "Professores com experiência na Estratégia Saúde da Família", // MOCK
+              "Currículo orientado para a realidade do SUS e das Estratégias de Saúde da Família",
+              "Formação que habilita para funções de gestão, planejamento e avaliação em saúde coletiva",
+              "Programa com duração de 12 meses, ideal para quem busca agilidade na certificação",
             ],
-            mercado: ["UBS e ESF", "Gestão municipal em saúde", "ONG e organizações de saúde coletiva", "Vigilância em saúde"], // MOCK
+            mercado: ["Estratégia Saúde da Família e UBS", "Gestão municipal e estadual em saúde", "Vigilância epidemiológica e sanitária", "Organizações de saúde coletiva"],
             foto: "/images/cursos/saude-coletiva-familia.jpg",
           },
           {
@@ -217,18 +217,18 @@ export const config = {
             nome: "Urgência e Emergência",
             area: "Saúde",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Atendimento de alta complexidade em situações críticas e emergenciais.", // MOCK
+            resumo: "Preparo para lidar com os desafios reais da assistência em urgência e emergência.",
             descricao:
-              "Desenvolve competências para o atendimento ao paciente em situações de urgência e emergência, com foco em protocolos ACLS, ATLS e gestão de serviços de emergência.", // MOCK
+              "A especialização promove a discussão dos problemas nacionais e regionais da assistência em urgência e emergência, desenvolvendo nos profissionais a capacidade de investigar e aprimorar a qualidade do atendimento prestado. O programa é aberto a graduados em enfermagem, medicina, odontologia, psicologia, fisioterapia, serviço social e terapia ocupacional. O egresso está habilitado a atuar com competência técnica e visão crítica nos mais exigentes serviços de emergência.",
             diferenciais: [
-              "Treinamento em suporte avançado de vida (ACLS/ATLS)", // MOCK
-              "Simulações clínicas com manequins de alta fidelidade", // MOCK
-              "Professores atuantes em UTI e pronto-socorro", // MOCK
+              "Abordagem dos problemas concretos da urgência e emergência no contexto brasileiro",
+              "Formação multiprofissional aberta a diversas categorias da saúde",
+              "Encontros quinzenais presenciais com matriz curricular disponível para consulta",
             ],
-            mercado: ["Pronto-socorros e UPA", "UTI adulto e pediátrica", "SAMU e resgate", "Hospitais de alta complexidade"], // MOCK
+            mercado: ["Pronto-socorros e UPAs", "UTIs adulto e pediátrica", "SAMU e serviços de resgate", "Hospitais de alta complexidade"],
             foto: "/images/cursos/urgencia-emergencia.jpg",
           },
         ],
@@ -241,18 +241,18 @@ export const config = {
             nome: "Cirurgia Oral Menor",
             area: "Odontologia",
             titulacao: "Aperfeiçoamento",
-            duracao: "12 meses", // MOCK
+            duracao: "11 módulos · 180h",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Técnicas cirúrgicas orais menores com segurança e precisão.", // MOCK
+            resumo: "Qualificação prática em cirurgia oral menor com atendimento real a pacientes supervisionados.",
             descricao:
-              "Capacita o cirurgião-dentista para a realização de procedimentos de cirurgia oral menor, como exodontias complexas, biopsias, frenectomias e implantes básicos, com embasamento científico.", // MOCK
+              "O aperfeiçoamento combina aulas teóricas, práticas laboratoriais e atendimento clínico em pacientes, com foco em diagnóstico, planejamento e execução de procedimentos cirúrgicos e manejo de complicações. O currículo cobre anestesiologia, anatomia cirúrgica, exodontias simples e complexas, dentes inclusos, cirurgia pré-protética, farmacoterapia, bichectomia, infecções odontogênicas e cirurgia periodontal. Indicado para cirurgiões-dentistas e estudantes de odontologia que buscam qualificação técnica avançada em cirurgia.",
             diferenciais: [
-              "Treinamento em biossegurança e controle de complicações", // MOCK
-              "Prática supervisionada com pacientes reais", // MOCK
-              "Atualização em anestesiologia e farmacologia odontológica", // MOCK
+              "Atendimento clínico real a pacientes desde o início do curso, com supervisão docente",
+              "Carga horária de 180 horas distribuídas em 11 módulos temáticos",
+              "Currículo abrangente que vai de anestesiologia a bichectomia e infecções odontogênicas",
             ],
-            mercado: ["Clínicas odontológicas", "Consultórios particulares", "Saúde pública odontológica", "Cirurgia bucomaxilofacial"], // MOCK
+            mercado: ["Consultórios odontológicos particulares", "Clínicas de especialidades odontológicas", "Saúde pública e serviços de odontologia", "Habilitação para procedimentos cirúrgicos eletivos"],
             foto: "/images/cursos/cirurgia-oral-menor.jpg",
           },
           {
@@ -260,18 +260,18 @@ export const config = {
             nome: "Endodontia",
             area: "Odontologia",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Tratamento endodôntico avançado com tecnologia de ponta.", // MOCK
+            resumo: "Especialização completa em diagnóstico e tratamento endodôntico, do caso simples ao complexo.",
             descricao:
-              "Especialização em diagnóstico e tratamento de doenças da polpa dentária e dos tecidos periapicais, com uso de tecnologias de rotação contínua, CBCT e obturação avançada.", // MOCK
+              "A especialização capacita cirurgiões-dentistas a adquirir conhecimentos teóricos e práticos especializados em endodontia, com ênfase em casos complexos, retratamentos e manejo de complicações. O programa forma profissionais aptos a diagnosticar e tratar doenças pulpares e periapicais com segurança e fundamento científico, em consultórios particulares e clínicas de especialidades.",
             diferenciais: [
-              "Uso de equipamentos de última geração (localizadores apicais, motor endodôntico)", // MOCK
-              "Treinamento em retratamentos e cirurgia parendodôntica", // MOCK
-              "Professores especialistas reconhecidos pelo CFO", // MOCK
+              "Foco em casos complexos, retratamentos endodônticos e manejo de complicações",
+              "Formação exclusiva para cirurgiões-dentistas graduados",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Clínicas de especialidades odontológicas", "Consultórios particulares", "Clínicas-escola", "Docência odontológica"], // MOCK
+            mercado: ["Consultórios de endodontia", "Clínicas de especialidades odontológicas", "Clínicas-escola e serviços de referência", "Docência em odontologia"],
             foto: "/images/cursos/endodontia.jpg",
           },
           {
@@ -279,18 +279,18 @@ export const config = {
             nome: "Clareamento Dental",
             area: "Odontologia",
             titulacao: "Aperfeiçoamento",
-            duracao: "12 meses", // MOCK
+            duracao: "3 dias (intensivo)",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Técnicas modernas de clareamento dental com segurança e eficácia.", // MOCK
+            resumo: "Imersão prática em clareamento dental: técnicas atuais, controle de hipersensibilidade e atendimento real a pacientes.",
             descricao:
-              "Capacita o cirurgião-dentista para realizar procedimentos de clareamento dental de consultório, caseiro e combinado, com base nas evidências científicas e nos protocolos atuais.", // MOCK
+              "O aperfeiçoamento intensivo de três dias combina teoria, prática laboratorial e atendimento clínico supervisionado a pacientes, com foco nas técnicas mais utilizadas de clareamento de consultório e caseiro e no controle da hipersensibilidade dentinária. O programa é indicado para estudantes de odontologia que querem ampliar a base acadêmica e para profissionais que buscam atualização com as abordagens e materiais mais recentes do mercado.",
             diferenciais: [
-              "Domínio das principais técnicas de clareamento do mercado", // MOCK
-              "Abordagem em fotossensibilidade e biocompatibilidade", // MOCK
-              "Treinamento prático em manequins e pacientes supervisionados", // MOCK
+              "Atendimento clínico real a pacientes no próprio curso, com supervisão de especialistas",
+              "Foco no controle da hipersensibilidade dentinária durante os procedimentos de clareamento",
+              "Condições especiais de investimento para alunos e ex-alunos da Florence",
             ],
-            mercado: ["Consultórios particulares", "Clínicas de estética dental", "Clínicas odontológicas integradas", "Docência e cursos livres"], // MOCK
+            mercado: ["Consultórios odontológicos particulares", "Clínicas de estética dental", "Clínicas odontológicas integradas", "Ampliação de portfólio de serviços clínicos"],
             foto: "/images/cursos/clareamento-dental.jpg",
           },
           {
@@ -298,18 +298,18 @@ export const config = {
             nome: "Odontopediatria",
             area: "Odontologia",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Saúde bucal da infância e adolescência com abordagem humanizada.", // MOCK
+            resumo: "Formação especializada no diagnóstico, prevenção e tratamento odontológico de crianças e adolescentes.",
             descricao:
-              "Forma especialistas para o atendimento odontológico de crianças e adolescentes, com foco em prevenção, manejo comportamental, anestesia em crianças e tratamento de lesões cariosas.", // MOCK
+              "A especialização capacita cirurgiões-dentistas a adquirir conhecimentos teóricos e práticos em odontopediatria, desenvolvendo competências para diagnosticar, prevenir e tratar doenças bucais em crianças e promover hábitos saudáveis desde a infância. O programa forma profissionais atentos às particularidades do paciente pediátrico, preparados para atuar em consultórios, clínicas especializadas e serviços de saúde pública.",
             diferenciais: [
-              "Treinamento em manejo comportamental e sedação consciente", // MOCK
-              "Abordagem preventiva e minimamente invasiva", // MOCK
-              "Professores com atuação em clínicas pediátricas e hospitais infantis", // MOCK
+              "Foco no desenvolvimento de competências preventivas, diagnósticas e terapêuticas para o paciente pediátrico",
+              "Formação exclusiva para graduados em odontologia",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Consultórios de odontopediatria", "Hospitais infantis", "Saúde pública", "Clínicas odontológicas especializadas"], // MOCK
+            mercado: ["Consultórios de odontopediatria", "Hospitais infantis e serviços de saúde pública", "Clínicas odontológicas especializadas", "Saúde escolar e programas preventivos"],
             foto: "/images/cursos/odontopediatria.jpg",
           },
           {
@@ -317,18 +317,18 @@ export const config = {
             nome: "Ortodontia",
             area: "Odontologia",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Diagnóstico e tratamento ortodôntico com técnicas contemporâneas.", // MOCK
+            resumo: "Especialização completa para diagnosticar e executar tratamentos ortodônticos com aparelhos fixos, removíveis e alinhadores.",
             descricao:
-              "Capacita o cirurgião-dentista para planejar e executar tratamentos ortodônticos com aparelhos fixos e removíveis, alinhadores e contenção, com base em diagnóstico cefalométrico e digital.", // MOCK
+              "O programa capacita cirurgiões-dentistas a adquirir conhecimentos teóricos e práticos especializados em ortodontia, com foco em diagnóstico, planejamento e execução de tratamentos com aparelhos fixos, removíveis, alinhadores estéticos e abordagens multidisciplinares. O egresso está preparado para conduzir casos desde a triagem até a contenção com segurança e embasamento científico.",
             diferenciais: [
-              "Treinamento em aparelhos metálicos, estéticos e alinhadores", // MOCK
-              "Uso de software de planejamento digital (CAD/CAM)", // MOCK
-              "Professores especialistas reconhecidos pelo CFO", // MOCK
+              "Formação em aparelhos fixos, removíveis e alinhadores estéticos em um único programa",
+              "Abordagem multidisciplinar integrando ortodontia a outras especialidades odontológicas",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Consultórios de ortodontia", "Clínicas odontológicas", "Saúde pública", "Docência odontológica"], // MOCK
+            mercado: ["Consultórios de ortodontia", "Clínicas odontológicas integradas", "Serviços de saúde pública", "Docência em odontologia"],
             foto: "/images/cursos/ortodontia.jpg",
           },
           {
@@ -336,18 +336,18 @@ export const config = {
             nome: "Resinas Dentárias",
             area: "Odontologia",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Restaurações estéticas em resina composta com alta precisão e naturalidade.", // MOCK
+            resumo: "Domínio das técnicas e materiais de resina composta para restaurações estéticas e funcionais de alto padrão.",
             descricao:
-              "Aprofunda o conhecimento e a técnica em restaurações diretas com resina composta, com foco em estratificação, biomimética, polimento e longevidade clínica.", // MOCK
+              "A especialização capacita cirurgiões-dentistas a adquirir conhecimentos teóricos e práticos avançados em resinas dentárias, desenvolvendo competências em técnicas de restauração estética, seleção e manipulação de materiais, preparo do substrato dentário e obtenção de resultados com alto nível estético e funcional. O programa é voltado exclusivamente para graduados em odontologia que desejam excelência na dentística restauradora.",
             diferenciais: [
-              "Treinamento em estratificação e técnica biomimética", // MOCK
-              "Uso de materiais e sistemas de resina de última geração", // MOCK
-              "Professores com produção científica e experiência clínica comprovadas", // MOCK
+              "Foco em resultados estéticos e funcionais de alto padrão com resinas compostas",
+              "Domínio de técnicas de seleção de materiais, preparo de substrato e manipulação de resinas",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Consultórios de dentística", "Clínicas de estética dental", "Laboratórios de prótese", "Docência odontológica"], // MOCK
+            mercado: ["Consultórios de dentística restauradora", "Clínicas de estética dental", "Clínicas odontológicas integradas", "Docência em odontologia"],
             foto: "/images/cursos/resinas-dentarias.jpg",
           },
         ],
@@ -360,18 +360,18 @@ export const config = {
             nome: "Ciências Criminais",
             area: "Direito",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 a 24 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Formação especializada em direito penal, processo penal e criminologia.", // MOCK
+            resumo: "Estudo sistematizado e interdisciplinar das ciências criminais para integração imediata ao mercado jurídico.",
             descricao:
-              "Aprofunda o conhecimento jurídico nas áreas do direito penal, processo penal e criminologia, preparando o profissional para atuar na advocacia criminal, Ministério Público, Magistratura e Defensoria.", // MOCK
+              "A especialização oferece compreensão aprofundada das bases epistemológicas e dos elementos estruturais das ciências criminais, preparando o bacharel em direito para atuar com segurança no setor da justiça criminal. O programa integra direito penal, processo penal e criminologia com abordagem interdisciplinar, formando profissionais aptos a assumir posições nas carreiras jurídicas públicas e privadas desde a conclusão do curso.",
             diferenciais: [
-              "Corpo docente atuante na advocacia e carreiras jurídicas", // MOCK
-              "Abordagem crítica de política criminal e garantias constitucionais", // MOCK
-              "Atualização em legislação penal especial e jurisprudência dos tribunais superiores", // MOCK
+              "Abordagem interdisciplinar das ciências criminais com foco na aplicação prática imediata",
+              "Programa exclusivo para bacharéis em direito, com conteúdo aprofundado e atualizado",
+              "Encontros quinzenais presenciais com acesso à matriz curricular completa",
             ],
-            mercado: ["Advocacia criminal", "Ministério Público", "Magistratura", "Defensoria Pública"], // MOCK
+            mercado: ["Advocacia criminal", "Ministério Público", "Magistratura", "Defensoria Pública"],
             foto: "/images/cursos/ciencias-criminais.jpg",
           },
         ],
@@ -384,18 +384,18 @@ export const config = {
             nome: "Estética Avançada com Ênfase em Injetáveis",
             area: "Estética",
             titulacao: "Especialização",
-            duracao: "12 a 24 meses", // MOCK
+            duracao: "12 meses",
             turnos: [],
             modalidade: "Presencial",
-            resumo: "Procedimentos estéticos avançados com técnicas injetáveis seguras e eficazes.", // MOCK
+            resumo: "Aprofundamento em procedimentos estéticos com injetáveis: anatomia, farmacologia e técnicas seguras.",
             descricao:
-              "Capacita profissionais habilitados para a realização de procedimentos estéticos com injetáveis, como toxina botulínica e preenchedores, com base anatômica sólida e protocolos de segurança.", // MOCK
+              "A especialização aprofunda o conhecimento e as habilidades de profissionais da estética e cosmetologia em procedimentos não cirúrgicos com injetáveis, incluindo toxina botulínica e preenchedores dérmicos. O currículo abrange anatomia facial, farmacologia dos produtos injetáveis, técnicas de aplicação segura e ética profissional. O programa é indicado para dermatologistas, cirurgiões plásticos, fisioterapeutas dermatofuncionais, esteticistas farmacêuticos e esteticistas de enfermagem com formação e experiência na área.",
             diferenciais: [
-              "Treinamento prático em técnicas de toxina botulínica e ácido hialurônico", // MOCK
-              "Fundamentos de anatomia facial aplicada à estética", // MOCK
-              "Atualização em biossegurança e manejo de complicações", // MOCK
+              "Conteúdo integrado: anatomia facial, farmacologia dos injetáveis e técnicas práticas em um único programa",
+              "Formação com 12 meses de duração, permitindo agilidade na especialização",
+              "Voltado a profissionais com formação prévia em saúde ou estética e experiência prática na área",
             ],
-            mercado: ["Clínicas de estética avançada", "Clínicas dermatológicas e de cirurgia plástica", "Consultórios odontológicos (harmonização)", "Empreendedorismo em estética"], // MOCK
+            mercado: ["Clínicas de estética avançada e dermatologia", "Clínicas de cirurgia plástica", "Harmonização orofacial em consultórios odontológicos", "Empreendedorismo em estética e cosmetologia"],
             foto: "/images/cursos/estetica-avancada-injetaveis.jpg",
           },
         ],
