@@ -6,14 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:medicina": "npm run dev -w medicina",
-    "build:medicina": "npm run build -w medicina",
-    "dev:graduacao": "npm run dev -w graduacao",
-    "build:graduacao": "npm run build -w graduacao",
-    "dev:pos": "npm run dev -w pos-graduacao",
-    "build:pos": "npm run build -w pos-graduacao",
-    "dev:tecnico": "npm run dev -w tecnico",
-    "build:tecnico": "npm run build -w tecnico",
+    "dev": "npm run dev -w lps",
+    "dev:lps": "npm run dev -w lps",
+    "build:lps": "npm run build -w lps",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present"
   }
