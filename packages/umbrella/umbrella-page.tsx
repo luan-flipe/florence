@@ -7,6 +7,7 @@ import { Ingresso } from "./sections/ingresso";
 import { Financiamento } from "./sections/financiamento";
 import { Depoimentos } from "./sections/depoimentos";
 import { CtaFinal } from "./sections/cta-final";
+import { WhatsappButton } from "./whatsapp-button";
 import type { UmbrellaConfig, UtmParams } from "./types";
 
 interface UmbrellaPageProps {
@@ -27,6 +28,9 @@ export function UmbrellaPage({ config, cursoOptions, utm }: UmbrellaPageProps) {
         <Depoimentos depoimentos={config.depoimentos} />
         <CtaFinal ctaFinal={config.ctaFinal} formulario={config.formulario} cursoOptions={cursoOptions} utm={utm} />
       </main>
+      {config.whatsapp && (
+        <WhatsappButton numero={config.whatsapp.numero} mensagem={config.whatsapp.mensagem} />
+      )}
     </CursoInteresseProvider>
   );
 }

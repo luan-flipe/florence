@@ -189,6 +189,16 @@ export const config = {
           "Profissionais do mercado que ensinam o que realmente é feito no dia a dia.",
       },
       {
+        titulo: "Infraestrutura para a prática",
+        corpo:
+          "Laboratórios e ambientes que reproduzem o cenário profissional desde o início.",
+      },
+      {
+        titulo: "Parcerias com empresas",
+        corpo:
+          "Convênios que aproximam você do estágio e da primeira oportunidade no mercado.",
+      },
+      {
         titulo: "Formação rápida e direta ao ponto",
         corpo:
           "Qualificação técnica focada no que o mercado precisa, em menos tempo.",
@@ -240,6 +250,11 @@ export const config = {
     headline: "Recebemos o seu cadastro!",
     corpo: "Nosso time vai entrar em contato com você em breve.",
     ctaSecundario: { label: "Conhecer a Florence", href: "https://www.florence.edu.br" },
+  },
+
+  whatsapp: {
+    numero: "5598988630502",
+    mensagem: "Olá! Tenho interesse nos cursos técnicos da Florence.",
   },
 } satisfies UmbrellaConfig;
 

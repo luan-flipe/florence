@@ -61,4 +61,6 @@ export interface UmbrellaConfig {
     corpo: string;
     ctaSecundario: { label: string; href: string };
   };
+  /** Botao flutuante de WhatsApp (opcional). numero em formato internacional so digitos, ex "5598988630502". */
+  whatsapp?: { numero: string; mensagem?: string };
 }

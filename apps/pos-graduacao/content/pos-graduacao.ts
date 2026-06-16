@@ -469,6 +469,11 @@ export const config = {
     corpo: "Nosso time de admissões vai entrar em contato com você em breve.",
     ctaSecundario: { label: "Conhecer a Florence", href: "https://www.florence.edu.br" },
   },
+
+  whatsapp: {
+    numero: "5598988630502",
+    mensagem: "Olá! Tenho interesse nas especializações da Florence.",
+  },
 } satisfies UmbrellaConfig;
 
 // Lista achatada de nomes de curso para o dropdown do formulario.
