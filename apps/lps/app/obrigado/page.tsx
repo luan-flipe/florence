@@ -5,7 +5,7 @@ import { resolveLp } from "@/lib/registry";
 
 export default function ObrigadoPage() {
   const entry = resolveLp(headers().get("host"));
-  const ob = entry.config.obrigado;
+  const ob = entry.obrigado;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-950 to-blue-900 flex items-center justify-center px-4">
@@ -17,14 +17,16 @@ export default function ObrigadoPage() {
         <h1 className="text-2xl font-bold text-gray-900 mb-3">{ob.headline}</h1>
         <p className="text-gray-500 leading-relaxed mb-8">{ob.corpo}</p>
 
-        <Link
-          href={ob.ctaSecundario.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-blue-700 font-medium hover:text-blue-900 transition-colors text-sm"
-        >
-          {ob.ctaSecundario.label} →
-        </Link>
+        {ob.ctaSecundario && (
+          <Link
+            href={ob.ctaSecundario.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-blue-700 font-medium hover:text-blue-900 transition-colors text-sm"
+          >
+            {ob.ctaSecundario.label} →
+          </Link>
+        )}
       </div>
     </main>
   );

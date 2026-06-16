@@ -24,11 +24,11 @@ const dmSans = DM_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   const entry = resolveLp(headers().get("host"));
   return {
-    title: entry.config.meta.title,
-    description: entry.config.meta.description,
+    title: entry.meta.title,
+    description: entry.meta.description,
     openGraph: {
-      title: entry.config.meta.title,
-      description: entry.config.meta.description,
+      title: entry.meta.title,
+      description: entry.meta.description,
       locale: "pt_BR",
       type: "website",
     },

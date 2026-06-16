@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { UmbrellaPage } from "@florence/umbrella";
 import { resolveLp } from "@/lib/registry";
+import { MedicinaPage } from "@/components/medicina/medicina-page";
 import type { UtmParams } from "@florence/umbrella";
 
 export default function Home({ searchParams }: { searchParams: Record<string, string | undefined> }) {
@@ -13,6 +14,6 @@ export default function Home({ searchParams }: { searchParams: Record<string, st
     utm_content: searchParams.utm_content ?? null,
     utm_term: searchParams.utm_term ?? null,
   };
-  // entry.kind === "umbrella" (medicina entry added later)
+  if (entry.kind === "medicina") return <MedicinaPage utm={utm} />;
   return <UmbrellaPage config={entry.config} cursoOptions={entry.cursoOptions} utm={utm} />;
 }

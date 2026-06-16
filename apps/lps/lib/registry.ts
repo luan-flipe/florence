@@ -2,6 +2,7 @@ import type { UmbrellaConfig, UtmParams } from "@florence/umbrella";
 import { config as graduacaoConfig, cursoOptions as graduacaoOptions } from "@/content/graduacao";
 import { config as posConfig, cursoOptions as posOptions } from "@/content/pos-graduacao";
 import { config as tecnicoConfig, cursoOptions as tecnicoOptions } from "@/content/tecnico";
+import { config as medicinaConfig } from "@/content/medicina";
 
 export type { UtmParams };
 
@@ -12,10 +13,20 @@ export interface UmbrellaEntry {
   gtmId?: string;
   config: UmbrellaConfig;
   cursoOptions: string[];
+  meta: { title: string; description: string };
+  obrigado: { headline: string; corpo: string; ctaSecundario: { label: string; href: string } };
 }
 
-// A MedicinaEntry kind will be added later when medicina LP is folded in.
-export type LpEntry = UmbrellaEntry;
+export interface MedicinaEntry {
+  kind: "medicina";
+  slug: string;
+  displayName: string;
+  gtmId?: string;
+  meta: { title: string; description: string };
+  obrigado: { headline: string; corpo: string; ctaSecundario?: { label: string; href: string } };
+}
+
+export type LpEntry = UmbrellaEntry | MedicinaEntry;
 
 const BY_SLUG: Record<string, LpEntry> = {
   graduacao: {
@@ -24,6 +35,8 @@ const BY_SLUG: Record<string, LpEntry> = {
     displayName: "Graduação Florence",
     config: graduacaoConfig,
     cursoOptions: graduacaoOptions,
+    meta: graduacaoConfig.meta,
+    obrigado: graduacaoConfig.obrigado,
   },
   "pos-graduacao": {
     kind: "umbrella",
@@ -31,6 +44,8 @@ const BY_SLUG: Record<string, LpEntry> = {
     displayName: "Pós Florence",
     config: posConfig,
     cursoOptions: posOptions,
+    meta: posConfig.meta,
+    obrigado: posConfig.obrigado,
   },
   tecnico: {
     kind: "umbrella",
@@ -38,6 +53,16 @@ const BY_SLUG: Record<string, LpEntry> = {
     displayName: "Técnico Florence",
     config: tecnicoConfig,
     cursoOptions: tecnicoOptions,
+    meta: tecnicoConfig.meta,
+    obrigado: tecnicoConfig.obrigado,
+  },
+  medicina: {
+    kind: "medicina",
+    slug: "medicina",
+    displayName: "Medicina",
+    gtmId: "GTM-MMFZBTKD",
+    meta: medicinaConfig.meta,
+    obrigado: medicinaConfig.obrigado,
   },
 };
 
@@ -45,6 +70,7 @@ const BY_HOST: Record<string, string> = {
   "graduacao.florence.edu.br": "graduacao",
   "pos.florence.edu.br": "pos-graduacao",
   "tecnico.florence.edu.br": "tecnico",
+  "medicina.florence.edu.br": "medicina",
 };
 
 const DEFAULT_SLUG = "graduacao";
@@ -53,7 +79,7 @@ const DEFAULT_SLUG = "graduacao";
  * Resolve which LP to render.
  *
  * Priority:
- *  1. `override` query param (?lp=graduacao|pos-graduacao|tecnico) — for local/preview testing.
+ *  1. `override` query param (?lp=graduacao|pos-graduacao|tecnico|medicina) — for local/preview testing.
  *  2. Request hostname mapped via BY_HOST.
  *  3. Default slug (graduacao).
  */
