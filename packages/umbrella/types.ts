@@ -16,6 +16,8 @@ export interface UmbrellaConfig {
     headline: string;
     subheadline: string;
     imageAlt: string;
+    /** Override the hero background image. Defaults to "/images/hero.jpg". */
+    heroImage?: string;
     stats: { value: string; label: string }[];
   };
   prazo: { ativo: boolean; texto: string };

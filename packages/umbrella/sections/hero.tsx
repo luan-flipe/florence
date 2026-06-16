@@ -36,7 +36,7 @@ export function Hero({ hero, formulario, prazo, cursoOptions, utm }: HeroProps) 
       {/* ── Foto de fundo ─────────────────────────────── */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero.jpg"
+          src={hero.heroImage ?? "/images/hero.jpg"}
           alt={hero.imageAlt}
           fill
           sizes="100vw"
