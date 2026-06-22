@@ -70,6 +70,7 @@ const BY_HOST: Record<string, string> = {
   "graduacao.florence.edu.br": "graduacao",
   "pos.florence.edu.br": "pos-graduacao",
   "tecnico.florence.edu.br": "tecnico",
+  "curso-tecnico.florence.edu.br": "tecnico",
   "medicina.florence.edu.br": "medicina",
 };
 
