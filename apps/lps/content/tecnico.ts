@@ -14,6 +14,7 @@ export const config = {
       "Cursos técnicos presenciais em Saúde, Indústria e Meio Ambiente, com prática desde o início para você entrar logo no mercado de trabalho.",
     imageAlt: "Formação técnica na Florence",
     heroImage: "/images/tecnico/hero.jpg",
+    logo: { src: "/images/tecnico/logo-instituto-branco.png", width: 135, height: 60, alt: "Instituto Florence" },
     stats: [
       { value: "8", label: "cursos" },
       { value: "Presencial", label: "modalidade" },

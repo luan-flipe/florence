@@ -64,7 +64,11 @@ export function Hero({ hero, formulario, prazo, cursoOptions, utm }: HeroProps) 
 
         {/* Logo */}
         <div className="mb-10 lg:mb-12">
-          <Image src="/logo.svg" alt="Centro Universitário Florence" width={240} height={52} className="brightness-0 invert opacity-90" />
+          {hero.logo ? (
+            <Image src={hero.logo.src} alt={hero.logo.alt} width={hero.logo.width} height={hero.logo.height} className="opacity-90" />
+          ) : (
+            <Image src="/logo.svg" alt="Centro Universitário Florence" width={240} height={52} className="brightness-0 invert opacity-90" />
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start lg:items-center">

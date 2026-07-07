@@ -18,6 +18,8 @@ export interface UmbrellaConfig {
     imageAlt: string;
     /** Override the hero background image. Defaults to "/images/hero.jpg". */
     heroImage?: string;
+    /** Override the hero logo (defaults to the shared /logo.svg wordmark). Imagem ja em branco. */
+    logo?: { src: string; width: number; height: number; alt: string };
     stats: { value: string; label: string }[];
   };
   prazo: { ativo: boolean; texto: string };
