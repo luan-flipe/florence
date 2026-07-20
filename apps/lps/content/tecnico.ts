@@ -2,23 +2,23 @@ import type { UmbrellaConfig } from "@florence/umbrella";
 
 export const config = {
   meta: {
-    title: "Cursos Técnicos no Centro Universitário Florence | São Luís",
+    title: "Técnico em Enfermagem e Especializações | Centro Universitário Florence",
     description:
-      "Cursos técnicos em Saúde, Indústria e Meio Ambiente com formação prática e rápida. Entre logo no mercado de trabalho com a Florence.",
+      "Forme-se Técnico em Enfermagem em São Luís e avance com as especializações em Instrumentação Cirúrgica e Enfermagem do Trabalho. Prática em hospitais e clínicas desde o início.",
   },
 
   hero: {
-    eyebrow: "Curso Técnico · São Luís, MA",
-    headline: "Uma profissão técnica em menos tempo.",
+    eyebrow: "Técnico em Enfermagem · São Luís, MA",
+    headline: "Sua carreira na saúde\ncomeça aqui.",
     subheadline:
-      "Cursos técnicos presenciais em Saúde, Indústria e Meio Ambiente, com prática desde o início para você entrar logo no mercado de trabalho.",
-    imageAlt: "Formação técnica na Florence",
+      "Forme-se Técnico em Enfermagem com prática supervisionada em hospitais, clínicas e unidades de saúde. E vá além com as especializações em Instrumentação Cirúrgica e Enfermagem do Trabalho.",
+    imageAlt: "Profissional de enfermagem em atendimento hospitalar",
     heroImage: "/images/tecnico/hero.jpg",
     logo: { src: "/images/tecnico/logo-instituto-branco.png", width: 135, height: 60, alt: "Instituto Florence" },
     stats: [
-      { value: "8", label: "cursos" },
+      { value: "Enfermagem", label: "curso técnico" },
+      { value: "2", label: "especializações" },
       { value: "Presencial", label: "modalidade" },
-      { value: "3", label: "áreas" },
     ],
   },
 
@@ -27,7 +27,7 @@ export const config = {
 
   formulario: {
     titulo: "Dê o primeiro passo.",
-    subtitulo: "Escolha seu curso técnico e nosso time entra em contato.",
+    subtitulo: "Escolha o curso e nosso time entra em contato.",
     cta: "Quero me matricular",
     lgpd: "Ao enviar, você autoriza o contato da Florence. Não compartilhamos seus dados.",
     cursoLabel: "Curso de interesse",
@@ -35,15 +35,15 @@ export const config = {
   },
 
   cursos: {
-    eyebrow: "Cursos técnicos",
-    titulo: "Encontre seu\ncurso técnico.",
-    subtitulo: "Escolha a área e comece a se qualificar.",
+    eyebrow: "Cursos",
+    titulo: "Técnico e\nespecializações.",
+    subtitulo: "Comece pelo curso técnico e avance com as especializações.",
     grupos: [
       {
-        area: "Saúde",
+        area: "Curso Técnico",
         itens: [
           {
-            slug: "tecnico-enfermagem", nome: "Técnico em Enfermagem", area: "Saúde",
+            slug: "tecnico-enfermagem", nome: "Técnico em Enfermagem", area: "Curso Técnico",
             titulacao: "Curso Técnico", duracao: "22 meses",
             turnos: [], modalidade: "Presencial",
             resumo: "Elo entre paciente e equipe médica, com prática supervisionada em hospitais, clínicas e unidades básicas de saúde.",
@@ -57,120 +57,40 @@ export const config = {
             mercado: ["Hospitais e UTIs", "Centros cirúrgicos", "Unidades Básicas de Saúde", "Clínicas e consultórios", "Home care e casas de repouso"],
             foto: "/images/tecnico/cursos/tecnico-enfermagem.jpg",
           },
-          {
-            slug: "tecnico-estetica", nome: "Técnico em Estética", area: "Saúde",
-            titulacao: "Curso Técnico", duracao: "20 meses",
-            turnos: [], modalidade: "Presencial",
-            resumo: "Procedimentos estéticos faciais e corporais com base em saúde da pele, cosmetologia e operação de equipamentos profissionais.",
-            descricao:
-              "O curso forma o profissional responsável pela segurança do paciente durante procedimentos estéticos: você aprende sobre saúde da pele, cosméticos, massagens corporais e operação de equipamentos estéticos. São 1.275 horas de aulas teórico-práticas e 200 horas de estágio supervisionado. A saída profissional é ampla, de clínicas e spas ao atendimento autônomo em parceria com dermatologistas e fisioterapeutas.",
-            diferenciais: [
-              "Laboratório de práticas estéticas equipado para treino real",
-              "Currículo que cobre saúde da pele, cosmetologia e equipamentos estéticos",
-              "Estágio supervisionado de 200 horas garantido pela instituição",
-            ],
-            mercado: ["Clínicas de estética e dermatologia", "Spas e salões", "Centros de bem-estar", "Atendimento autônomo", "Suporte a fisioterapeutas e nutricionistas"],
-            foto: "/images/tecnico/cursos/tecnico-estetica.jpg",
-          },
-          {
-            slug: "tecnico-analises-clinicas", nome: "Técnico em Análises Clínicas", area: "Saúde",
-            titulacao: "Curso Técnico", duracao: "20 meses",
-            turnos: [], modalidade: "Presencial",
-            resumo: "Análises laboratoriais com coleta, processamento e operação de equipamentos em laboratórios clínicos e bancos de sangue.",
-            descricao:
-              "Você aprende a executar rotinas laboratoriais, coletar e distribuir material biológico, operar equipamentos de análise e auxiliar em urgências clínicas. O curso soma 1.275 horas de aulas práticas e teóricas com 200 horas de estágio obrigatório garantido. Formados atuam em laboratórios privados, bancos de sangue, hospitais e clínicas universitárias.",
-            diferenciais: [
-              "Laboratório de análises clínicas com equipamentos de uso profissional",
-              "Estágio obrigatório garantido pela instituição",
-              "Metodologia focada em atividades práticas que simulam o ambiente real de trabalho",
-            ],
-            mercado: ["Laboratórios clínicos privados", "Bancos de sangue", "Hospitais e unidades de saúde", "Laboratórios universitários", "Clínicas diagnósticas"],
-            foto: "/images/tecnico/cursos/tecnico-analises-clinicas.jpg",
-          },
-          {
-            slug: "tecnico-saude-bucal", nome: "Técnico em Saúde Bucal", area: "Saúde",
-            titulacao: "Curso Técnico", duracao: "20 meses",
-            turnos: [], modalidade: "Presencial",
-            resumo: "Suporte especializado ao cirurgião-dentista em procedimentos clínicos, esterilização de equipamentos e promoção de saúde bucal.",
-            descricao:
-              "Você aprende a auxiliar em procedimentos odontológicos, esterilizar instrumentais, orientar pacientes sobre prevenção e atuar em programas de saúde bucal coletiva. O curso reúne 1.200 horas de formação teórico-prática e 200 horas de estágio supervisionado em clínicas e unidades de saúde. Ao se formar, você pode atuar no SUS, em hospitais públicos e privados e em consultórios odontológicos.",
-            diferenciais: [
-              "Laboratórios modernos com metodologia centrada na prática clínica",
-              "Estágio supervisionado de 200 horas em ambientes odontológicos reais",
-              "Formação válida para atuação no SUS e em consultórios privados",
-            ],
-            mercado: ["Consultórios odontológicos", "Unidades Básicas de Saúde", "Hospitais públicos e privados", "Programas de saúde bucal escolar", "Clínicas especializadas"],
-            foto: "/images/tecnico/cursos/tecnico-saude-bucal.jpg",
-          },
-          {
-            slug: "tecnico-nutricao", nome: "Técnico em Nutrição", area: "Saúde",
-            titulacao: "Curso Técnico", duracao: "20 meses",
-            turnos: [], modalidade: "Presencial",
-            resumo: "Apoio técnico ao nutricionista no preparo de dietas, monitoramento alimentar e orientação em serviços de saúde e alimentação coletiva.",
-            descricao:
-              "O curso prepara você para monitorar o preparo de alimentos, compreender as necessidades nutricionais dos pacientes e apoiar o nutricionista em clínicas, hospitais e serviços de alimentação coletiva. São 1.200 horas de aulas teórico-práticas e 200 horas de estágio supervisionado. A formação abre portas em hospitais, escolas, empresas e serviços de nutrição clínica.",
-            diferenciais: [
-              "Infraestrutura prática projetada para simular ambientes reais de trabalho",
-              "Currículo que integra técnica dietética, nutrição clínica e alimentação coletiva",
-              "Estágio supervisionado de 200 horas garantido pela instituição",
-            ],
-            mercado: ["Hospitais e clínicas", "Serviços de alimentação coletiva (UAN)", "Escolas e creches", "Empresas com restaurante corporativo", "Consultórios de nutrição"],
-            foto: "/images/tecnico/cursos/tecnico-nutricao.jpg",
-          },
         ],
       },
       {
-        area: "Indústria & Tecnologia",
+        area: "Especializações Técnicas",
         itens: [
           {
-            slug: "tecnico-eletromecanica", nome: "Técnico em Eletromecânica", area: "Indústria & Tecnologia",
-            titulacao: "Curso Técnico", duracao: "20 meses",
+            slug: "instrumentacao-cirurgica", nome: "Instrumentação Cirúrgica", area: "Especializações Técnicas",
+            titulacao: "Especialização Técnica", duracao: "9 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Manutenção, instalação e operação de sistemas elétricos e mecânicos em indústrias de qualquer porte.",
+            resumo: "Especialização que prepara o técnico para instrumentar cirurgias em centro cirúrgico, ao lado de cirurgiões e enfermeiros.",
             descricao:
-              "Você aprende a analisar a qualidade e o funcionamento de máquinas, operar e manter sistemas eletromecânicos e atuar em projetos industriais que exigem conhecimento integrado de elétrica e mecânica. O curso soma 1.200 horas de aulas teórico-práticas e 180 horas de estágio supervisionado. As oportunidades de trabalho vão de empresas de energia e usinas a indústrias de manufatura em geral.",
+              "Você se especializa para instrumentar cirurgias de diferentes níveis de complexidade, atuando ao lado de cirurgiões e enfermeiros no centro cirúrgico. O curso reúne 220 horas teóricas e 105 horas de estágio supervisionado, com foco em limpeza, esterilização e manejo dos instrumentais. Ao concluir, você está apto a atuar em salas de cirurgia, salas de anestesia e centrais de material e esterilização.",
             diferenciais: [
-              "Infraestrutura que replica condições reais de chão de fábrica",
-              "Currículo integrado de eletricidade e mecânica industrial",
-              "Estágio supervisionado de 180 horas em ambiente industrial",
+              "Estágio supervisionado de 105 horas em ambiente cirúrgico real",
+              "Formação específica em esterilização e manejo de instrumentais",
+              "Atuação integrada com a equipe médica e de enfermagem",
             ],
-            mercado: ["Indústrias de manufatura", "Empresas de energia e geração", "Usinas e refinarias", "Manutenção industrial", "Automação e controle de processos"],
-            foto: "/images/tecnico/cursos/tecnico-eletromecanica.jpg",
+            mercado: ["Salas de cirurgia", "Salas de anestesia", "Centrais de material e esterilização", "Hospitais e clínicas"],
+            foto: "/images/tecnico/cursos/instrumentacao-cirurgica.jpg",
           },
           {
-            slug: "tecnico-eletrotecnica", nome: "Técnico em Eletrotécnica", area: "Indústria & Tecnologia",
-            titulacao: "Curso Técnico", duracao: "22 meses",
+            slug: "enfermagem-do-trabalho", nome: "Enfermagem do Trabalho", area: "Especializações Técnicas",
+            titulacao: "Especialização Técnica", duracao: "9 meses",
             turnos: [], modalidade: "Presencial",
-            resumo: "Instalação, operação e manutenção de sistemas elétricos residenciais, comerciais e industriais, com foco em energia e telecomunicações.",
+            resumo: "Especialização em saúde e segurança ocupacional para atuar no cuidado à saúde do trabalhador.",
             descricao:
-              "Você aprende a instalar e manter sistemas de geração, transmissão e distribuição de energia elétrica, além de desenvolver projetos elétricos e de infraestrutura de telecomunicações para edificações. O curso combina 1.200 horas de formação teórico-prática com 200 horas de estágio supervisionado. O mercado é amplo: das construtoras às empresas de energia alternativa, passando por indústrias e telecomunicações.",
+              "Você se especializa em saúde e segurança ocupacional, uma das áreas que mais crescem na enfermagem. A formação atende à Norma Regulamentadora NR-4, que exige o enfermeiro do trabalho nas equipes de SESMT, e soma 305 horas teóricas com 40 horas de estágio supervisionado. Ao concluir, você pode atuar em empresas, hospitais e clínicas cuidando da saúde do trabalhador.",
             diferenciais: [
-              "Formação 360 graus: instalações residenciais, comerciais e industriais",
-              "Laboratórios equipados para prática em sistemas elétricos reais",
-              "Estágio supervisionado de 200 horas garantido pela instituição",
+              "Formação alinhada à Norma Regulamentadora NR-4",
+              "Estágio supervisionado em saúde ocupacional",
+              "Atuação nas equipes de SESMT das empresas",
             ],
-            mercado: ["Empresas de geração e distribuição de energia", "Construtoras e incorporadoras", "Indústrias", "Energia alternativa e renovável", "Projetos de telecomunicações e infraestrutura"],
-            foto: "/images/tecnico/cursos/tecnico-eletrotecnica.jpg",
-          },
-        ],
-      },
-      {
-        area: "Meio Ambiente",
-        itens: [
-          {
-            slug: "tecnico-meio-ambiente", nome: "Técnico em Meio Ambiente", area: "Meio Ambiente",
-            titulacao: "Curso Técnico", duracao: "14 meses",
-            turnos: [], modalidade: "Presencial",
-            resumo: "Monitoramento ambiental, conformidade legal e gestão de programas de sustentabilidade em empresas e órgãos públicos.",
-            descricao:
-              "Você aprende a apoiar engenheiros ambientais no monitoramento de conformidade legal, organizar programas de educação ambiental e desenvolver projetos de preservação para empresas que utilizam recursos naturais. O curso reúne 800 horas de aulas teórico-práticas e 200 horas de estágio supervisionado, formando o profissional em pouco mais de um ano. A demanda cresce à medida que empresas adotam práticas ecologicamente responsáveis.",
-            diferenciais: [
-              "Formação concluída em 14 meses, com entrada rápida no mercado",
-              "Currículo focado em legislação ambiental, gestão de riscos e educação ambiental",
-              "Estágio supervisionado de 200 horas garantido pela instituição",
-            ],
-            mercado: ["Empresas mineradoras e madeireiras", "Indústrias com licenciamento ambiental", "Órgãos públicos de meio ambiente", "Consultorias ambientais", "Saneamento básico"],
-            foto: "/images/tecnico/cursos/tecnico-meio-ambiente.jpg",
+            mercado: ["Empresas e indústrias", "Equipes de SESMT", "Hospitais e clínicas", "Instituições de saúde"],
+            foto: "/images/tecnico/cursos/enfermagem-do-trabalho.jpg",
           },
         ],
       },
@@ -180,9 +100,9 @@ export const config = {
   diferenciais: {
     eyebrow: "Por que a Florence.",
     lead: {
-      titulo: "Formação prática\npara o mercado.",
+      titulo: "Formação prática\npara a saúde.",
       corpo:
-        "Você aprende fazendo, com laboratórios e prática desde o início, para sair pronto para trabalhar.",
+        "Você aprende fazendo, com laboratórios e prática desde o início, para sair pronto para cuidar de pessoas.",
     },
     pontos: [
       {
@@ -244,7 +164,7 @@ export const config = {
   },
 
   ctaFinal: {
-    headline: "Comece a sua qualificação técnica.",
+    headline: "Comece a sua carreira na enfermagem.",
     microcopy: "Preencha e fale com o nosso time hoje.",
   },
 
@@ -256,7 +176,7 @@ export const config = {
 
   whatsapp: {
     numero: "5598988630502",
-    mensagem: "Olá! Tenho interesse nos cursos técnicos da Florence.",
+    mensagem: "Olá! Tenho interesse no Técnico em Enfermagem da Florence.",
   },
 } satisfies UmbrellaConfig;
 

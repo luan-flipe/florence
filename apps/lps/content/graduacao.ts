@@ -4,7 +4,7 @@ export const config = {
   meta: {
     title: "Graduação no Centro Universitário Florence | 11 cursos em São Luís",
     description:
-      "Estude com prática desde o início e corpo docente atuante. 11 cursos de graduação, 6 formas de ingresso, bolsas de até 60%, FIES e ProUni. Inscreva-se.",
+      "Estude com prática desde o início e corpo docente atuante. 11 cursos de graduação, 6 formas de ingresso, bolsas de até 77%, FIES e ProUni. Inscreva-se.",
   },
 
   hero: {
@@ -17,7 +17,7 @@ export const config = {
     stats: [
       { value: "11", label: "cursos" },
       { value: "6", label: "formas de ingresso" },
-      { value: "60%", label: "em bolsas" },
+      { value: "77%", label: "em bolsas" },
     ],
   },
 
@@ -65,6 +65,7 @@ export const config = {
             descricao:
               "O curso forma profissionais para pesquisar doenças, analisar alterações patológicas e aprimorar diagnósticos, com base em ciências exatas, biológicas e da saúde. A grade inclui formação em biologia molecular, genética, toxicologia, reprodução humana e diagnóstico por imagem, integrando teoria e prática em laboratórios e clínicas especializadas.",
             diferenciais: [
+              "Curso reconhecido com a nota máxima na avaliação do MEC",
               "Formação em 32 habilitações reconhecidas pelo CFBio",
               "Laboratórios de análises clínicas, biomolecular e toxicologia",
               "Experiência em equipes multidisciplinares de saúde",
@@ -235,6 +236,16 @@ export const config = {
         corpo:
           "Ambientes que reproduzem o dia a dia da profissão, para você chegar pronto ao estágio e ao trabalho.",
       },
+      {
+        titulo: "Estrutura nota máxima no MEC",
+        corpo:
+          "Nossa infraestrutura recebeu Nota 5, a nota máxima na avaliação do MEC.",
+      },
+      {
+        titulo: "Biomedicina nota máxima no MEC",
+        corpo:
+          "O curso de Biomedicina foi reconhecido com a nota máxima do MEC.",
+      },
     ],
   },
 
@@ -256,9 +267,9 @@ export const config = {
     eyebrow: "Bolsas & Financiamento",
     titulo: "Estudar pode custar menos\ndo que você imagina.",
     descricao:
-      "Bolsas de até 60%, FIES, ProUni e o programa Corporativo Florence para quem trabalha em empresas parceiras.",
+      "Bolsas de até 77%, FIES, ProUni e o programa Corporativo Florence para quem trabalha em empresas parceiras.",
     itens: [
-      { nome: "Bolsas até 60%", descricao: "Bolsas especiais limitadas, válidas até o fim do curso." },
+      { nome: "Bolsas até 77%", descricao: "Bolsas especiais limitadas, válidas até o fim do curso." },
       { nome: "FIES", descricao: "Financiamento estudantil do Governo Federal." },
       { nome: "ProUni", descricao: "Bolsas de 50% e 100% para quem se enquadra." },
       { nome: "Corporativo Florence", descricao: "Desconto para funcionários de empresas parceiras." },

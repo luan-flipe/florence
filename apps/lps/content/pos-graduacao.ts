@@ -277,7 +277,7 @@ export const config = {
           },
           {
             slug: "clareamento-dental",
-            nome: "Clareamento Dental",
+            nome: "Clareamento Dental Sem Dor",
             area: "Odontologia",
             titulacao: "Aperfeiçoamento",
             duracao: "3 dias (intensivo)",
