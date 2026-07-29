@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Florence · Mockup Home e Página de Curso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#00508c; --navy-deep:#002d4f; --navy-dark:#001a2e;
+  --sky:#0096d2; --sky-light:#33b5e8; --sky-pale:#e8f6fd;
+  --gold:#F5C842; --gold-dark:#D4A017;
+  --cream:#F8F9FA; --ink:#0d1b26; --muted:#5b6b78; --line:#e3e9ee;
+  --display:'Plus Jakarta Sans',sans-serif; --sans:'DM Sans',sans-serif;
+  --shell:min(1240px,92vw);
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.05;letter-spacing:-.03em;font-weight:800}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.shell{width:var(--shell);margin-inline:auto}
+
+/* ---------- Barra de demonstração ---------- */
+.demo{position:sticky;top:0;z-index:100;background:var(--navy-dark);color:#fff;font-size:.78rem;letter-spacing:.02em}
+.demo .shell{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:.6rem 0;flex-wrap:wrap}
+.demo b{font-family:var(--display);font-weight:700}
+.demo nav{display:flex;gap:.4rem}
+.demo nav a{padding:.35rem .8rem;border:1px solid rgba(255,255,255,.25);border-radius:999px;transition:.2s var(--ease)}
+.demo nav a:hover{background:#fff;color:var(--navy-dark);border-color:#fff}
+
+/* ---------- Cabeçalho ---------- */
+.util{background:var(--navy-dark);color:#cfe3f0;font-size:.8rem}
+.util .shell{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;flex-wrap:wrap}
+.util a:hover{color:#fff}
+.util .links{display:flex;gap:1.25rem;flex-wrap:wrap}
+header.site{position:relative;background:#fff;border-bottom:1px solid var(--line)}
+header.site .shell{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.1rem 0}
+.brand{display:flex;align-items:center;gap:.85rem}
+.brand img{height:52px;width:auto}
+.brand.on-dark img{filter:brightness(0) invert(1)}
+nav.main{display:flex;gap:1.9rem;font-size:.93rem;font-weight:500}
+nav.main a{position:relative;padding:.3rem 0;color:#20323f}
+nav.main a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--sky);transition:right .35s var(--ease)}
+nav.main a:hover::after{right:0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;font-size:.95rem;padding:.85rem 1.5rem;border-radius:999px;transition:.25s var(--ease);border:1px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy-dark);box-shadow:0 1px 0 rgba(255,255,255,.6) inset}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-1px)}
+.btn-gold:active{transform:translateY(1px) scale(.99)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-line{border-color:var(--line);color:var(--navy)}
+.btn-line:hover{border-color:var(--navy);background:var(--sky-pale)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--navy-dark);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 12% 40%,rgba(0,150,210,.5) 0%,transparent 55%),
+  radial-gradient(ellipse at 85% 10%,rgba(0,80,140,.75) 0%,transparent 50%);}
+.hero .shell{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center;padding:5.5rem 0 4rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(2.6rem,5vw,4.15rem);max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--sky-light)}
+.hero p.lead{margin-top:1.5rem;font-size:1.12rem;color:#c3d8e6;max-width:52ch}
+.hero-cta{display:flex;gap:.9rem;margin-top:2.4rem;flex-wrap:wrap}
+.hero-art{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:var(--navy-deep);box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
+.hero-art img{width:100%;height:100%;object-fit:cover}
+.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,26,46,.55),transparent 55%)}
+.badge-mec{position:absolute;left:-26px;bottom:38px;background:#fff;color:var(--navy-dark);border-radius:18px;padding:1rem 1.2rem;box-shadow:0 20px 45px -18px rgba(0,0,0,.55);display:flex;gap:.8rem;align-items:center;max-width:250px}
+.badge-mec .n{font-family:var(--display);font-weight:800;font-size:2.1rem;color:var(--navy);line-height:1}
+.badge-mec small{display:block;font-size:.76rem;color:var(--muted);line-height:1.35}
+/* faixa de credibilidade */
+.credit{position:relative;border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.22)}
+.credit .shell{display:flex;flex-wrap:wrap;gap:2.5rem;padding:1.15rem 0;font-size:.87rem;color:#b9d2e2}
+.credit b{font-family:var(--display);color:#fff;font-weight:700}
+
+/* ---------- Seções ---------- */
+section{padding:6rem 0}
+.sec-head{display:flex;gap:3rem;align-items:end;justify-content:space-between;margin-bottom:3.2rem;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,3.4vw,2.9rem);max-width:18ch}
+.sec-head p{color:var(--muted);max-width:44ch}
+.kicker{font-family:var(--display);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sky);margin-bottom:.9rem}
+
+/* caminhos: layout editorial assimétrico (não 3 cards iguais) */
+.paths{display:grid;grid-template-columns:1.3fr 1fr;gap:1.4rem}
+.path{position:relative;border-radius:22px;padding:2.2rem;border:1px solid var(--line);background:#fff;transition:.3s var(--ease);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:230px}
+.path:hover{border-color:var(--sky);transform:translateY(-3px);box-shadow:0 26px 50px -30px rgba(0,80,140,.45)}
+.path.lead-path{grid-row:span 2;color:#fff;border-color:transparent;background:var(--navy-deep);isolation:isolate}
+.path.lead-path .bg{position:absolute;inset:0;z-index:-1}
+.path.lead-path .bg img{width:100%;height:100%;object-fit:cover}
+.path.lead-path .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(165deg,rgba(0,45,79,.93),rgba(0,26,46,.88))}
+.path .thumb{margin:-2.2rem -2.2rem 1.6rem;height:132px;overflow:hidden}
+.path .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.path:hover .thumb img{transform:scale(1.05)}
+.path h3{font-size:1.6rem;margin-bottom:.7rem}
+.path.lead-path h3{font-size:2.1rem}
+.path p{color:var(--muted);font-size:.98rem}
+.path.lead-path p{color:#bcd6e7}
+.path .go{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;font-size:.92rem;color:var(--navy)}
+.path.lead-path .go{color:var(--gold)}
+.path .go svg{transition:transform .3s var(--ease)}
+.path:hover .go svg{transform:translateX(5px)}
+.path .num{font-family:var(--display);font-size:.72rem;letter-spacing:.16em;color:var(--sky);font-weight:700;margin-bottom:1rem}
+.path.lead-path .num{color:var(--gold)}
+
+/* prova / diferenciais */
+.proof{background:var(--cream)}
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.pitem{padding:2.4rem 2.4rem 2.4rem 0;border-bottom:1px solid var(--line)}
+.pitem:nth-child(even){padding-left:2.4rem;border-left:1px solid var(--line)}
+.pitem h3{font-size:1.28rem;margin-bottom:.6rem}
+.pitem p{color:var(--muted);font-size:.97rem}
+.pitem .idx{font-family:var(--display);font-weight:800;font-size:.8rem;color:var(--sky);letter-spacing:.1em;margin-bottom:.9rem}
+
+/* bolsas */
+.money{background:linear-gradient(150deg,var(--navy-dark),var(--navy-deep));color:#fff}
+.money .shell{display:grid;grid-template-columns:1fr .8fr;gap:4rem;align-items:center}
+.money h2{font-size:clamp(2rem,3.6vw,3rem)}
+.money p{color:#bcd6e7;margin-top:1.2rem;font-size:1.05rem;max-width:46ch}
+.money .note{font-size:.84rem;color:#8fb2c8;margin-top:1rem}
+.sim{background:#fff;color:var(--ink);border-radius:24px;padding:2.2rem}
+.sim label{display:block;font-size:.78rem;font-weight:700;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+.sim select,.sim input{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:.97rem;margin-bottom:1.1rem;background:#fff;color:var(--ink)}
+.sim select:focus,.sim input:focus{outline:2px solid var(--sky);outline-offset:1px;border-color:var(--sky)}
+.sim .btn{width:100%;justify-content:center}
+
+/* ingresso */
+.ways{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3.5rem}
+.way{display:flex;gap:1.3rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.way b{font-family:var(--display);font-size:1.05rem;min-width:max-content}
+.way span{color:var(--muted);font-size:.95rem}
+.way i{font-family:var(--display);font-style:normal;font-weight:800;color:var(--sky-light);font-size:.85rem}
+
+/* depoimentos (MOCK) */
+.mock-flag{display:inline-flex;align-items:center;gap:.5rem;background:#fff4d6;color:#7a5b00;border:1px dashed var(--gold-dark);border-radius:999px;padding:.4rem 1rem;font-size:.78rem;font-family:var(--display);font-weight:700;margin-bottom:1.6rem}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.quote{border:1px solid var(--line);border-radius:20px;padding:2rem;background:#fff;position:relative}
+.quote::before{content:"“";position:absolute;top:.4rem;left:1.4rem;font-family:var(--display);font-size:4.5rem;color:var(--sky-pale);line-height:1}
+.quote p{position:relative;font-size:1rem;color:#263a48}
+.quote footer{display:flex;align-items:center;gap:.85rem;margin-top:1.6rem}
+.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(140deg,var(--sky),var(--navy));display:grid;place-items:center;color:#fff;font-family:var(--display);font-weight:700;font-size:.95rem}
+.quote strong{display:block;font-family:var(--display);font-size:.95rem}
+.quote small{color:var(--muted);font-size:.82rem}
+
+/* CTA final */
+.final{background:var(--gold);color:var(--navy-dark);text-align:center}
+.final h2{font-size:clamp(2.1rem,4vw,3.3rem);max-width:20ch;margin-inline:auto}
+.final p{margin:1.3rem auto 2.2rem;max-width:48ch;color:#5c4708;font-size:1.06rem}
+.btn-navy{background:var(--navy-dark);color:#fff}
+.btn-navy:hover{background:var(--navy);transform:translateY(-1px)}
+
+/* ---------- Página de curso ---------- */
+.course-hero{background:var(--navy-dark);color:#fff;position:relative;overflow:hidden}
+.course-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(0,150,210,.42),transparent 55%)}
+.course-hero .shell{position:relative;padding:4.5rem 0 0}
+.crumb{font-size:.83rem;color:#8fb2c8;margin-bottom:1.8rem}
+.crumb a:hover{color:#fff}
+.course-hero h1{font-size:clamp(2.4rem,4.6vw,3.7rem);max-width:16ch}
+.course-hero .lead{margin-top:1.3rem;color:#c3d8e6;font-size:1.08rem;max-width:54ch}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:3rem;border-top:1px solid rgba(255,255,255,.16)}
+.fact{padding:1.5rem 2.5rem 1.5rem 0;margin-right:2.5rem;border-right:1px solid rgba(255,255,255,.16)}
+.fact:last-child{border-right:0}
+.fact span{display:block;font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;color:#8fb2c8;font-family:var(--display);font-weight:700;margin-bottom:.35rem}
+.fact b{font-family:var(--display);font-size:1.12rem;font-weight:700}
+.course-body{display:grid;grid-template-columns:1fr 370px;gap:4.5rem;align-items:start;padding:5rem 0}
+.course-main h2{font-size:1.9rem;margin-bottom:1.1rem}
+.course-main section{padding:0 0 3.2rem}
+.course-main p{color:#3c4d5a;font-size:1.04rem}
+.course-main ul{margin:1.2rem 0 0;padding:0;list-style:none;display:grid;gap:.85rem}
+.course-main li{display:flex;gap:.85rem;align-items:flex-start;color:#3c4d5a}
+.tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--sky-pale);display:grid;place-items:center;margin-top:.15rem}
+.grade{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:1.4rem}
+.grade div{display:flex;justify-content:space-between;padding:1rem 1.3rem;border-bottom:1px solid var(--line);font-size:.96rem}
+.grade div:last-child{border-bottom:0}
+.grade b{font-family:var(--display)}
+.grade span{color:var(--muted);font-size:.9rem}
+/* sidebar sticky de conversão */
+.enroll{position:sticky;top:96px;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5);background:#fff}
+.enroll .price{font-family:var(--display);font-size:2.3rem;font-weight:800;color:var(--navy);line-height:1}
+.enroll .price small{display:block;font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:0;margin-bottom:.4rem;font-family:var(--sans)}
+.enroll hr{border:0;border-top:1px solid var(--line);margin:1.5rem 0}
+.enroll .btn{width:100%;justify-content:center;margin-bottom:.7rem}
+.enroll ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.7rem;font-size:.9rem;color:var(--muted)}
+.enroll li{display:flex;gap:.6rem;align-items:center}
+
+/* rodapé */
+footer.site{background:var(--navy-dark);color:#9fc0d4;padding:4.5rem 0 2rem;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-grid h4{color:#fff;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
+.foot-grid a{display:block;padding:.32rem 0}
+.foot-grid a:hover{color:#fff}
+.foot-bot{padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:#6d90a6}
+
+.divider{background:var(--navy-dark);color:#fff;padding:3rem 0;text-align:center}
+.divider h2{font-size:1.5rem;color:var(--gold)}
+.divider p{color:#9fc0d4;margin-top:.6rem;font-size:.95rem}
+
+@media(max-width:980px){
+  .hero .shell,.money .shell,.course-body{grid-template-columns:1fr;gap:2.5rem}
+  .hero-art{aspect-ratio:16/11}
+  .badge-mec{left:auto;right:14px;bottom:14px}
+  .paths,.proof-grid,.ways,.quotes{grid-template-columns:1fr}
+  .path.lead-path{grid-row:auto}
+  .pitem{padding:2rem 0}
+  .pitem:nth-child(even){padding-left:0;border-left:0}
+  nav.main,.util .links{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  section{padding:4rem 0}
+  .enroll{position:static}
+  .fact{border-right:0;padding-right:0;margin-right:2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">
+  <div class="shell">
+    <b>MOCKUP para aprovação</b>
+    <nav><a href="#home">Home</a><a href="#curso">Página de Curso</a></nav>
+  </div>
+</div>
+
+<!-- ============ HOME ============ -->
+<a id="home"></a>
+
+<div class="util">
+  <div class="shell">
+    <div class="links"><a href="#">AVA e.Florence</a><a href="#">Portal do Aluno</a><a href="#">Canal do Professor</a><a href="#">Biblioteca</a></div>
+    <div class="links"><a href="#">Ouvidoria</a><a href="#">(98) 3878-2120</a></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="shell">
+    <a href="#home" class="brand"><img src="img/logo.svg" alt="Centro Universitário Florence"></a>
+    <nav class="main">
+      <a href="#">Institucional</a><a href="#">Cursos</a><a href="#">Como entrar</a><a href="#">Bolsas</a><a href="#">Notícias</a><a href="#">Contato</a>
+    </nav>
+    <a href="#" class="btn btn-gold">Quero minha vaga</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="shell">
+    <div>
+      <div class="eyebrow">Inscrições abertas · 2026.2</div>
+      <h1>Sua carreira em saúde começa com a <em>prática</em>, não com a teoria.</h1>
+      <p class="lead">Graduação, técnico e pós-graduação no Centro Universitário Florence. Estrutura reconhecida com nota máxima pelo MEC e professores que atuam no mercado.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-gold">Quero minha vaga</a>
+        <a href="#" class="btn btn-ghost">Ver cursos e valores</a>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="hero-art"><img src="img/hero-pratica.jpg" alt="Estudantes de enfermagem em prática supervisionada no leito"></div>
+      <div class="badge-mec">
+        <div class="n">5</div>
+        <div><small><strong style="color:var(--navy-dark)">Nota máxima do MEC</strong><br>no recredenciamento institucional</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="credit">
+    <div class="shell">
+      <div><b>11</b> cursos de graduação</div>
+      <div><b>6</b> formas de ingresso</div>
+      <div><b>FIES</b> e <b>ProUni</b></div>
+      <div><b>Prática</b> desde os primeiros períodos</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="shell">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Escolha seu caminho</div>
+        <h2>Qual é o seu próximo passo?</h2>
+      </div>
+      <p>Três formas de estudar na Florence, cada uma pensada para um momento diferente de carreira.</p>
+    </div>
+    <div class="paths">
+      <a href="#" class="path lead-path">
+        <div class="bg"><img src="img/lab.jpg" alt=""></div>
+        <div>
+          <div class="num">01 · GRADUAÇÃO</div>
+          <h3>Onze cursos com prática desde o primeiro período</h3>
+          <p>Você começa a atuar antes mesmo de se formar, em laboratórios e clínicas-escola.</p>
+        </div>
+        <span class="go">Ver cursos de graduação <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="#" class="path">
+        <div class="thumb"><img src="img/cirurgico.jpg" alt=""></div>
+        <div>
+          <div class="num">02 · TÉCNICO</div>
+          <h3>Entre no mercado em menos tempo</h3>
+          <p>Formação rápida e direta, com estágio supervisionado em serviços reais de saúde.</p>
+        </div>
+        <span class="go">Ver cursos técnicos <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a href="#" class="path">
+        <div class="thumb"><img src="img/equipe.jpg" alt=""></div>
+        <div>
+          <div class="num">03 · PÓS-GRADUAÇÃO</div>
+          <h3>Especialize-se sem pausar a carreira</h3>
+          <p>Conclusão a partir de 12 meses, com quem atua na área todos os dias.</p>
+        </div>
+        <span class="go">Ver especializações <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="shell">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Por que Florence</div>
+        <h2>A estrutura tem nota máxima. A sua formação também deveria.</h2>
+      </div>
+      <p>O MEC avaliou a instituição com a nota máxima no recredenciamento. Na prática, isso significa laboratórios e equipamentos que você usa desde o começo do curso.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="pitem"><div class="idx">01</div><h3>Nota máxima do MEC</h3><p>Reconhecimento oficial no recredenciamento institucional. Você aprende nos mesmos equipamentos que vai encontrar no mercado.</p></div>
+      <div class="pitem"><div class="idx">02</div><h3>Professores que atuam na área</h3><p>Mestres e doutores que trabalham no que ensinam e trazem casos reais para dentro da sala de aula.</p></div>
+      <div class="pitem"><div class="idx">03</div><h3>Prática desde o início</h3><p>Você não espera o último ano para atender. A vivência clínica começa nos primeiros períodos.</p></div>
+      <div class="pitem"><div class="idx">04</div><h3>Estágio em serviços reais</h3><p>Convênios com hospitais, clínicas e unidades de saúde que aproximam você da primeira oportunidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="money">
+  <div class="shell">
+    <div>
+      <div class="kicker" style="color:var(--gold)">Bolsas e financiamento</div>
+      <h2>Estudar custa menos do que você imagina.</h2>
+      <p>FIES, ProUni, o programa Corporativo Florence e bolsas de até 77% para servidores públicos e funcionários de empresas parceiras, incluindo dependentes.</p>
+      <p class="note">A condição de 77% é da campanha Mega Vestibular do Servidor e Empresas Parceiras. Confirmar vigência antes de publicar.</p>
+    </div>
+    <form class="sim" onsubmit="return false">
+      <label for="c">Curso de interesse</label>
+      <select id="c"><option>Escolha um curso</option><option>Enfermagem</option><option>Biomedicina</option><option>Medicina</option><option>Direito</option></select>
+      <label for="p">Seu perfil</label>
+      <select id="p"><option>Selecione</option><option>Vou prestar vestibular</option><option>Servidor público</option><option>Empresa parceira</option><option>Já tenho graduação</option></select>
+      <label for="w">WhatsApp</label>
+      <input id="w" type="tel" placeholder="(98) 90000-0000">
+      <button class="btn btn-gold">Simular minha bolsa</button>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="shell">
+    <div class="sec-head">
+      <div>
+        <div class="kicker">Como entrar</div>
+        <h2>Seis formas de entrar. Escolha a que combina com o seu momento.</h2>
+      </div>
+      <a href="#" class="btn btn-line">Fazer minha inscrição</a>
+    </div>
+    <div class="ways">
+      <div class="way"><i>01</i><b>Vestibular digital</b><span>Prova online, com data e horário flexíveis.</span></div>
+      <div class="way"><i>02</i><b>Nota do ENEM</b><span>Use a nota que você já tem.</span></div>
+      <div class="way"><i>03</i><b>Histórico escolar</b><span>Aproveite seu desempenho no ensino médio.</span></div>
+      <div class="way"><i>04</i><b>Transferência</b><span>Venha de outra instituição.</span></div>
+      <div class="way"><i>05</i><b>Segunda graduação</b><span>Para quem já tem diploma.</span></div>
+      <div class="way"><i>06</i><b>Volte a estudar</b><span>Retome de onde você parou.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="shell">
+    <div class="mock-flag">CONTEÚDO DE EXEMPLO · substituir por depoimentos reais de alunos</div>
+    <div class="sec-head">
+      <div><div class="kicker">Quem estuda aqui</div><h2>A prova que mais convence é a de quem já passou por aqui.</h2></div>
+      <p>Espaço reservado para depoimentos reais. Sugestão: 3 alunos de cursos e momentos diferentes, com foto e turma.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p>No terceiro período eu já estava atendendo na clínica-escola. Quando cheguei no estágio, o ambiente hospitalar não era novidade para mim.</p>
+        <footer><div class="avatar">RA</div><div><strong>Rafaela Andrade</strong><small>Enfermagem · turma 2024</small></div></footer>
+      </div>
+      <div class="quote">
+        <p>Eu trabalhava durante o dia e achava que não ia conseguir. A bolsa do convênio da empresa resolveu a parte financeira e eu consegui seguir.</p>
+        <footer><div class="avatar">TM</div><div><strong>Thiago Marinho</strong><small>Biomedicina · turma 2023</small></div></footer>
+      </div>
+      <div class="quote">
+        <p>Voltei a estudar depois de doze anos parada. O que me segurou foi o acolhimento dos professores logo nas primeiras semanas.</p>
+        <footer><div class="avatar">CS</div><div><strong>Cláudia Serrão</strong><small>Direito · turma 2025</small></div></footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="shell">
+    <h2>As inscrições estão abertas. A sua vaga, ainda não.</h2>
+    <p>Preencha seus dados e nosso time de admissões entra em contato para orientar sua inscrição e simular sua bolsa.</p>
+    <a href="#" class="btn btn-navy">Garantir minha vaga</a>
+  </div>
+</section>
+
+<!-- ============ DIVISOR ============ -->
+<a id="curso"></a>
+<div class="divider">
+  <div class="shell">
+    <h2>Template: Página de Curso</h2>
+    <p>Este mesmo layout serve graduação, técnico e pós. Os campos em destaque vêm do cadastro do curso no painel.</p>
+  </div>
+</div>
+
+<!-- ============ PÁGINA DE CURSO ============ -->
+<div class="course-hero">
+  <div class="shell">
+    <div class="crumb"><a href="#">Início</a> · <a href="#">Cursos</a> · <a href="#">Graduação</a> · Enfermagem</div>
+    <h1>Enfermagem</h1>
+    <p class="lead">Formação generalista com prática clínica supervisionada desde os primeiros períodos e compromisso com o SUS.</p>
+    <div class="facts">
+      <div class="fact"><span>Duração</span><b>5 anos · 10 semestres</b></div>
+      <div class="fact"><span>Modalidade</span><b>Presencial</b></div>
+      <div class="fact"><span>Turnos</span><b>Matutino e Noturno</b></div>
+      <div class="fact"><span>Titulação</span><b>Bacharelado</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+  <div class="course-body">
+    <div class="course-main">
+      <section>
+        <img src="img/turma.jpg" alt="Estudantes de enfermagem em aula prática" style="width:100%;border-radius:18px;margin-bottom:2rem;aspect-ratio:16/8;object-fit:cover">
+        <h2>O que você vai fazer nesse curso</h2>
+        <p>Você aprende a cuidar de pessoas em todos os níveis de atenção à saúde, da prevenção à reabilitação. A formação integra conteúdo técnico-científico, pesquisa e atuação em equipes multidisciplinares, com prática supervisionada em hospitais, clínicas e unidades básicas de saúde desde os primeiros períodos.</p>
+      </section>
+
+      <section>
+        <h2>Onde você vai trabalhar depois de formado</h2>
+        <ul>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Hospitais, UTIs e centros cirúrgicos</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Atenção básica e Estratégia Saúde da Família</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Home care e serviços de reabilitação</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Saúde corporativa e ocupacional</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O que você estuda, período a período</h2>
+        <div class="grade">
+          <div><b>1º e 2º períodos</b><span>Bases biológicas, anatomia e fundamentos do cuidado</span></div>
+          <div><b>3º ao 5º período</b><span>Semiologia, primeiras práticas na clínica-escola</span></div>
+          <div><b>6º ao 8º período</b><span>Saúde do adulto, materno-infantil e saúde coletiva</span></div>
+          <div><b>9º e 10º períodos</b><span>Estágio supervisionado em serviços reais e TCC</span></div>
+        </div>
+        <a href="#" class="btn btn-line" style="margin-top:1.5rem">Baixar matriz completa</a>
+      </section>
+
+      <section>
+        <h2>Como entrar em Enfermagem</h2>
+        <ul>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Vestibular digital, com data e horário flexíveis</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Nota do ENEM</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Transferência ou segunda graduação</li>
+        </ul>
+      </section>
+    </div>
+
+    <aside>
+      <div class="enroll">
+        <div class="price"><small>Mensalidade a partir de</small>R$ 000,00</div>
+        <hr>
+        <a href="#" class="btn btn-gold">Quero minha vaga em Enfermagem</a>
+        <a href="#" class="btn btn-line" style="width:100%;justify-content:center">Simular minha mensalidade</a>
+        <ul>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FIES e ProUni aceitos</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Desconto para empresas parceiras</li>
+          <li><span class="tick"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="#0096d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Inscrição sem taxa</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="final">
+  <div class="shell">
+    <h2>Comece Enfermagem na próxima turma.</h2>
+    <p>Preencha seus dados e nosso time entra em contato para orientar sua inscrição.</p>
+    <a href="#" class="btn btn-navy">Quero minha vaga em Enfermagem</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="shell">
+    <div class="foot-grid">
+      <div>
+        <div class="brand on-dark" style="margin-bottom:1.4rem"><img src="img/logo.svg" alt="Centro Universitário Florence"></div>
+        <p style="color:#9fc0d4;font-size:.9rem;max-width:34ch">Instituição reconhecida com nota máxima no recredenciamento do MEC.</p>
+      </div>
+      <div><h4>Cursos</h4><a href="#">Graduação</a><a href="#">Técnico</a><a href="#">Pós-graduação</a><a href="#">Cursos livres</a></div>
+      <div><h4>Institucional</h4><a href="#">Nossa história</a><a href="#">Estrutura</a><a href="#">CPA</a><a href="#">Trabalhe conosco</a></div>
+      <div><h4>Serviços</h4><a href="#">Portal do aluno</a><a href="#">AVA e.Florence</a><a href="#">Biblioteca</a><a href="#">Ouvidoria</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Centro Universitário Florence</span>
+      <span>Mockup para aprovação · conteúdo de exemplo</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
