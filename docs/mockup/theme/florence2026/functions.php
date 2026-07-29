@@ -57,6 +57,52 @@ function florence2026_menu( $location, $class = '' ) {
 	}
 }
 
+/**
+ * Formas de ingresso e seus funis reais no CRM Educacional.
+ * A copia (rotulo + descricao) mora em textos.php, junto do resto do site;
+ * aqui so garantimos que exista o link, com um fallback caso a copy venha
+ * sem a URL. Filtravel para o dia em que a instituicao trocar de funil.
+ */
+function florence2026_formas_ingresso() {
+	$t    = florence2026_txt();
+	$vias = isset( $t['ways'] ) ? $t['ways'] : array();
+	$saida = array();
+	foreach ( $vias as $via ) {
+		$saida[] = array(
+			'rotulo'    => isset( $via[0] ) ? $via[0] : '',
+			'descricao' => isset( $via[1] ) ? $via[1] : '',
+			'url'       => isset( $via[2] ) ? $via[2] : florence2026_url_inscricao(),
+		);
+	}
+	return apply_filters( 'florence2026_formas_ingresso', $saida );
+}
+
+/** Funil principal de inscricao (vestibular digital). Usado nos CTAs gerais. */
+function florence2026_url_inscricao() {
+	$t   = florence2026_txt();
+	$url = isset( $t['ways'][0][2] ) ? $t['ways'][0][2] : 'https://florence.inscricao.crmeducacional.com/login/247';
+	return apply_filters( 'florence2026_url_inscricao', $url );
+}
+
+/**
+ * Links institucionais de acesso rapido (barra do topo e rodape).
+ * Reune em um lugar so o que hoje esta espalhado e apontando para "#".
+ */
+function florence2026_links_uteis() {
+	return array(
+		// Sistemas externos: abrem em outra aba.
+		'acesso' => array(
+			array( 'AVA e.Florence',     'https://e.florence.edu.br/login/index.php',                      true ),
+			array( 'Portal do Aluno',    'https://estudeflex.inforgeneses.com.br/login/instituicao/flore', true ),
+			array( 'Canal do Professor', 'https://ensineflex.inforgeneses.com.br/login/instituicao/flore', true ),
+			array( 'Biblioteca',         'https://biblioteca.florence.edu.br/',                            true ),
+		),
+		'ouvidoria' => home_url( '/ouvidoria/' ),
+		'whatsapp'  => 'https://api.whatsapp.com/send?phone=5598988630502',
+		'telefone'  => array( '(98) 3878-2120', 'tel:+559838782120' ),
+	);
+}
+
 /** CPTs de curso do site legado (Toolset). Serao unificados na migracao ACF. */
 function florence2026_cpts_curso() {
 	return array(

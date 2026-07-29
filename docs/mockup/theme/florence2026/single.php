@@ -84,7 +84,7 @@ while ( have_posts() ) :
 								<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
 								<hr>
 							<?php endif; ?>
-							<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : home_url( '/#inscricao' ) ); ?>" class="btn btn-gold"<?php echo $c['inscricao'] ? ' target="_blank" rel="noopener"' : ''; ?>>Quero minha vaga</a>
+							<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao() ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
 							<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-line" style="width:100%;justify-content:center">Simular minha mensalidade</a>
 							<ul>
 								<?php if ( $c['duracao'] ) : ?><li><span class="tick"></span><?php echo esc_html( $c['duracao'] ); ?></li><?php endif; ?>
@@ -124,11 +124,32 @@ while ( have_posts() ) :
 			</div>
 		</div>
 
+		<section class="ingresso">
+			<div class="shell">
+				<div class="sec-head">
+					<div>
+						<div class="kicker">Processo seletivo</div>
+						<h2>Seis formas de ingressar. Escolha a que combina com você.</h2>
+					</div>
+					<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-line" target="_blank" rel="noopener">Fazer minha inscrição</a>
+				</div>
+				<div class="ways">
+					<?php foreach ( florence2026_formas_ingresso() as $i => $via ) : ?>
+						<a class="way" href="<?php echo esc_url( $via['url'] ); ?>" target="_blank" rel="noopener">
+							<i><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></i>
+							<b><?php echo esc_html( $via['rotulo'] ); ?></b>
+							<span><?php echo esc_html( $via['descricao'] ); ?></span>
+						</a>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+
 		<section class="final">
 			<div class="shell">
 				<h2>Comece <?php the_title(); ?> na próxima turma.</h2>
 				<p>Preencha seus dados e nosso time entra em contato para orientar sua inscrição.</p>
-				<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : home_url( '/#inscricao' ) ); ?>" class="btn btn-navy"<?php echo $c['inscricao'] ? ' target="_blank" rel="noopener"' : ''; ?>>Quero minha vaga</a>
+				<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao() ); ?>" class="btn btn-navy" target="_blank" rel="noopener">Quero minha vaga</a>
 			</div>
 		</section>
 

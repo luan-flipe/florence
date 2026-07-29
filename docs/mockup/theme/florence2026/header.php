@@ -11,14 +11,27 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php $florence_uteis = florence2026_links_uteis(); ?>
 <div class="util">
 	<div class="shell">
 		<div class="links">
-			<?php if ( has_nav_menu( 'utilitario' ) ) { florence2026_menu( 'utilitario' ); } else { ?>
-				<a href="#">AVA e.Florence</a><a href="#">Portal do Aluno</a><a href="#">Canal do Professor</a><a href="#">Biblioteca</a>
-			<?php } ?>
+			<?php if ( has_nav_menu( 'utilitario' ) ) {
+				florence2026_menu( 'utilitario' );
+			} else {
+				foreach ( $florence_uteis['acesso'] as $item ) {
+					printf(
+						'<a href="%s" target="_blank" rel="noopener">%s</a>',
+						esc_url( $item[1] ),
+						esc_html( $item[0] )
+					);
+				}
+			} ?>
 		</div>
-		<div class="links"><a href="#">Ouvidoria</a><a href="tel:+559838782120">(98) 3878-2120</a></div>
+		<div class="links">
+			<a href="<?php echo esc_url( $florence_uteis['ouvidoria'] ); ?>">Ouvidoria</a>
+			<a href="<?php echo esc_url( $florence_uteis['whatsapp'] ); ?>" target="_blank" rel="noopener">WhatsApp</a>
+			<a href="<?php echo esc_url( $florence_uteis['telefone'][1] ); ?>"><?php echo esc_html( $florence_uteis['telefone'][0] ); ?></a>
+		</div>
 	</div>
 </div>
 
@@ -34,6 +47,6 @@
 				<a href="#">Institucional</a><a href="#">Cursos</a><a href="#">Como entrar</a><a href="#">Bolsas</a><a href="#">Notícias</a><a href="#">Contato</a>
 			<?php } ?>
 		</nav>
-		<a href="#inscricao" class="btn btn-gold">Quero minha vaga</a>
+		<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
 	</div>
 </header>

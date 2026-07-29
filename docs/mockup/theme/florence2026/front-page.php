@@ -13,7 +13,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			<h1><?php echo esc_html( $t['hero_h1_a'] ); ?><em><?php echo esc_html( $t['hero_h1_em'] ); ?></em><?php echo esc_html( $t['hero_h1_b'] ); ?></h1>
 			<p class="lead"><?php echo esc_html( $t['hero_lead'] ); ?></p>
 			<div class="hero-cta">
-				<a href="#inscricao" class="btn btn-gold"><?php echo esc_html( $t['cta_vaga'] ); ?></a>
+				<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-gold" target="_blank" rel="noopener"><?php echo esc_html( $t['cta_vaga'] ); ?></a>
 				<a href="#cursos" class="btn btn-ghost"><?php echo esc_html( $t['cta_cursos'] ); ?></a>
 			</div>
 		</div>
@@ -106,15 +106,15 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 	<div class="shell">
 		<div class="sec-head">
 			<div><div class="kicker"><?php echo esc_html( $t['ways_kicker'] ); ?></div><h2><?php echo esc_html( $t['ways_h2'] ); ?></h2></div>
-			<a href="#inscricao" class="btn btn-line"><?php echo esc_html( $t['ways_cta'] ); ?></a>
+			<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-line" target="_blank" rel="noopener"><?php echo esc_html( $t['ways_cta'] ); ?></a>
 		</div>
 		<div class="ways">
 			<?php foreach ( $t['ways'] as $i => $w ) : ?>
-				<div class="way">
+				<a class="way" href="<?php echo esc_url( isset( $w[2] ) ? $w[2] : florence2026_url_inscricao() ); ?>" target="_blank" rel="noopener">
 					<i><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></i>
 					<b><?php echo esc_html( $w[0] ); ?></b>
 					<span><?php echo esc_html( $w[1] ); ?></span>
-				</div>
+				</a>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -148,7 +148,7 @@ if ( $noticias->have_posts() ) :
 	<div class="shell">
 		<h2><?php echo esc_html( $t['final_h2'] ); ?></h2>
 		<p><?php echo esc_html( $t['final_p'] ); ?></p>
-		<a href="#inscricao" class="btn btn-navy"><?php echo esc_html( $t['final_cta'] ); ?></a>
+		<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-navy" target="_blank" rel="noopener"><?php echo esc_html( $t['final_cta'] ); ?></a>
 	</div>
 </section>
 <?php get_footer();
