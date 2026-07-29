@@ -55,7 +55,7 @@ $rotulo = $obj ? $obj->labels->name : '';
 							<?php if ( $campos['titulacao'] ) : ?>
 								<span class="curso-tag"><?php echo esc_html( $campos['titulacao'] ); ?></span>
 							<?php endif; ?>
-							<h3><?php the_title(); ?></h3>
+							<h2><?php the_title(); ?></h2>
 							<?php if ( $campos['resumo'] ) : ?>
 								<p><?php echo esc_html( wp_trim_words( $campos['resumo'], 18 ) ); ?></p>
 							<?php endif; ?>

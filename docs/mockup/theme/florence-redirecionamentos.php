@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Florence — Redirecionamentos da migração
  * Description: 301 das URLs antigas de curso para o modelo novo. Etapa 4.
- * Version: 0.1.0
+ * Version: 0.2.0
  *
  * Preserva SEO: cada curso legado aponta para o seu equivalente migrado,
  * usando origem_cpt/origem_id. Arquivos antigos vao para a listagem filtrada.
@@ -118,8 +118,43 @@ function florence_301_por_slug() {
 		exit;
 	}
 
-	// /{cpt-antigo}/{slug}/ -> curso novo de mesmo slug
-	$slug  = sanitize_title( $partes[1] );
+	$slug = sanitize_title( $partes[1] );
+
+	/*
+	 * Caminho preferido: acha o post legado pelo slug (ele continua no banco
+	 * mesmo com o Toolset desativado, so nao esta registrado) e usa o rastro
+	 * origem_cpt/origem_id para chegar no curso novo. E exato e nao quebra
+	 * quando o slug do curso novo muda.
+	 */
+	global $wpdb;
+	$legado = (int) $wpdb->get_var( $wpdb->prepare(
+		"SELECT ID FROM {$wpdb->posts} WHERE post_name = %s AND post_type = %s LIMIT 1",
+		$slug,
+		$base
+	) );
+	if ( $legado ) {
+		$novo = florence_curso_equivalente( $base, $legado );
+		if ( $novo ) {
+			wp_safe_redirect( get_permalink( $novo ), 301 );
+			exit;
+		}
+	}
+
+	// Rede secundaria: curso novo de mesmo slug e mesmo nivel.
+	$iguais = get_posts( array(
+		'post_type'   => 'curso',
+		'post_status' => 'publish',
+		'numberposts' => 1,
+		'fields'      => 'ids',
+		'name'        => $slug,
+		'meta_query'  => array( array( 'key' => 'nivel', 'value' => $mapa[ $base ] ) ),
+	) );
+	if ( $iguais ) {
+		wp_safe_redirect( get_permalink( $iguais[0] ), 301 );
+		exit;
+	}
+
+	// Ultima tentativa: qualquer curso com aquele slug.
 	$curso = get_page_by_path( $slug, OBJECT, 'curso' );
 	if ( $curso ) {
 		wp_safe_redirect( get_permalink( $curso->ID ), 301 );

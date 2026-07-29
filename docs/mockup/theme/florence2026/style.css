@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.3.0
+Version: 0.5.0
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -215,7 +215,7 @@ footer.site{background:var(--navy-dark);color:#9fc0d4;padding:4.5rem 0 2rem;font
 .curso-card:hover .curso-thumb img{transform:scale(1.05)}
 .curso-body{padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
 .curso-tag{align-self:flex-start;font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--sky-pale);padding:.35rem .7rem;border-radius:999px}
-.curso-card h3{font-size:1.22rem;line-height:1.2}
+.curso-card h2{font-size:1.22rem;line-height:1.2;margin:0}
 .curso-body p{color:var(--muted);font-size:.94rem;flex:1}
 .curso-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.3rem}
 .curso-meta span{font-size:.78rem;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:.28rem .7rem}
@@ -286,3 +286,8 @@ nav.main > ul > li > a:hover::after{right:0}
 /* paginas muito longas ganham respiro extra entre blocos */
 .course-main .conteudo.longa h3{margin-top:3.2rem}
 .pagina-vazia{border:1px dashed var(--line);border-radius:16px;padding:2.2rem;color:var(--muted);background:var(--cream)}
+
+/* Paginas montadas no Elementor: layout proprio, largura total.
+   Nao limitamos largura nem tipografia aqui para nao brigar com o construtor. */
+.pagina-elementor{padding:0 0 4rem}
+.pagina-elementor img{max-width:100%;height:auto}
