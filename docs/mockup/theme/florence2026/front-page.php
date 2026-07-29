@@ -78,6 +78,27 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 	</div>
 </section>
 
+<section class="clinica">
+	<div class="shell">
+		<div class="sec-head">
+			<div>
+				<div class="kicker"><?php echo esc_html( $t['clinica_kicker'] ); ?></div>
+				<h2><?php echo esc_html( $t['clinica_h2'] ); ?></h2>
+			</div>
+			<p><?php echo esc_html( $t['clinica_lead'] ); ?></p>
+		</div>
+		<div class="fotos-estrutura">
+			<?php foreach ( $t['clinica_fotos'] as $f ) : ?>
+				<figure>
+					<img src="<?php echo esc_url( $img . '/' . $f[0] ); ?>" alt="<?php echo esc_attr( $f[1] ); ?>" loading="lazy">
+					<figcaption><?php echo esc_html( $f[1] ); ?></figcaption>
+				</figure>
+			<?php endforeach; ?>
+		</div>
+		<a href="<?php echo esc_url( home_url( '/clinica-escola/' ) ); ?>" class="btn btn-line"><?php echo esc_html( $t['clinica_cta'] ); ?></a>
+	</div>
+</section>
+
 <section class="money" id="inscricao">
 	<div class="shell">
 		<div>
