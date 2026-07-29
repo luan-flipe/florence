@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.5.0
+Version: 0.8.0
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 header.site{position:relative;background:#fff;border-bottom:1px solid var(--line)}
 header.site .shell{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1.1rem 0}
 .brand{display:flex;align-items:center;gap:.85rem}
-.brand img{height:52px;width:auto}
+.brand img{height:68px;width:auto}
 .brand.on-dark img{filter:brightness(0) invert(1)}
 nav.main{display:flex;gap:1.9rem;font-size:.93rem;font-weight:500}
 nav.main a{position:relative;padding:.3rem 0;color:#20323f}
@@ -170,8 +170,16 @@ section{padding:6rem 0}
 .grade div:last-child{border-bottom:0}
 .grade b{font-family:var(--display)}
 .grade span{color:var(--muted);font-size:.9rem}
-/* sidebar sticky de conversão */
-.enroll{position:sticky;top:96px;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5);background:#fff}
+/* sidebar sticky de conversão
+   O sticky vive na pilha, nao no primeiro card: se ficasse no card de cima,
+   ele travaria e os cards de baixo passariam por tras dele. */
+.lateral{position:sticky;top:96px;display:grid;gap:1.1rem;
+  /* A pilha e mais alta que telas pequenas. Sem a trava, o ultimo card
+     ficaria cortado e o usuario nunca chegaria nele. Em tela alta a trava
+     nem entra em acao. */
+  max-height:calc(100vh - 8rem);overflow-y:auto;
+  scrollbar-width:thin;padding-right:.3rem}
+.enroll{border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5);background:#fff}
 .enroll .price{font-family:var(--display);font-size:2.3rem;font-weight:800;color:var(--navy);line-height:1}
 .enroll .price small{display:block;font-size:.8rem;color:var(--muted);font-weight:500;letter-spacing:0;margin-bottom:.4rem;font-family:var(--sans)}
 .enroll hr{border:0;border-top:1px solid var(--line);margin:1.5rem 0}
@@ -179,8 +187,21 @@ section{padding:6rem 0}
 .enroll ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.7rem;font-size:.9rem;color:var(--muted)}
 .enroll li{display:flex;gap:.6rem;align-items:center}
 
+/* cards de apoio da lateral: mais leves que o card de conversão,
+   para nao competir com ele pela atenção */
+.card-lat{border:1px solid var(--line);border-radius:20px;padding:1.6rem;background:#fff}
+.card-lat h2{font-family:var(--display);font-size:1.02rem;font-weight:700;color:var(--navy-dark);margin:0 0 .9rem;letter-spacing:-.01em;line-height:1.25}
+.card-lat p{color:var(--muted);font-size:.9rem;line-height:1.55;margin:0}
+.card-lat ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;font-size:.88rem;color:#3c4d5a}
+.card-lat li{display:flex;gap:.6rem;align-items:flex-start;line-height:1.45}
+.card-lat .btn{width:100%;justify-content:center;margin-top:1.1rem;font-size:.88rem;padding:.75rem 1rem}
+.card-lat .nome{font-family:var(--display);font-weight:700;color:var(--ink);font-size:1rem;line-height:1.3}
+.card-lat .lattes{display:inline-block;margin-top:.6rem;color:var(--navy);font-size:.88rem;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,150,210,.45)}
+.card-lat .lattes:hover{color:var(--sky);text-decoration-color:var(--sky)}
+
 /* rodapé */
 footer.site{background:var(--navy-dark);color:#9fc0d4;padding:4.5rem 0 2rem;font-size:.92rem}
+footer.site .brand img{height:82px}
 .foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-grid h4{color:#fff;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
 .foot-grid a{display:block;padding:.32rem 0}
@@ -202,7 +223,7 @@ footer.site{background:var(--navy-dark);color:#9fc0d4;padding:4.5rem 0 2rem;font
   nav.main,.util .links{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:2rem}
   section{padding:4rem 0}
-  .enroll{position:static}
+  .lateral{position:static;max-height:none;overflow:visible;padding-right:0}
   .fact{border-right:0;padding-right:0;margin-right:2rem}
 }
 

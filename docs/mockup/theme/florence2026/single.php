@@ -75,47 +75,50 @@ while ( have_posts() ) :
 						<section><?php the_content(); ?></section>
 					<?php endif; ?>
 
-					<?php if ( $c['coordenador'] ) : ?>
-						<section>
-							<h2>Coordenação</h2>
-							<p><strong><?php echo esc_html( $c['coordenador'] ); ?></strong></p>
-							<?php if ( $c['lattes'] ) : ?>
-								<p><a href="<?php echo esc_url( $c['lattes'] ); ?>" target="_blank" rel="noopener">Ver currículo Lattes</a></p>
-							<?php endif; ?>
-						</section>
-					<?php endif; ?>
-
-					<?php if ( $c['matriz'] ) : ?>
-						<section>
-							<h2>Matriz curricular</h2>
-							<p>Veja as disciplinas e a carga horária completa do curso.</p>
-							<a href="<?php echo esc_url( $c['matriz'] ); ?>" class="btn btn-line" target="_blank" rel="noopener" style="margin-top:1.2rem">Baixar matriz curricular</a>
-						</section>
-					<?php endif; ?>
-
-					<section>
-						<h2>Como entrar</h2>
-						<ul>
-							<li><span class="tick"></span>Inscrição sem taxa, feita totalmente online</li>
-							<li><span class="tick"></span>FIES, ProUni e o programa Corporativo Florence</li>
-							<li><span class="tick"></span>Time de admissões para orientar sua matrícula</li>
-						</ul>
-					</section>
 				</div>
 
 				<aside>
-					<div class="enroll">
-						<?php if ( $c['investimento'] ) : ?>
-							<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
-							<hr>
+					<div class="lateral">
+						<div class="enroll">
+							<?php if ( $c['investimento'] ) : ?>
+								<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
+								<hr>
+							<?php endif; ?>
+							<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : home_url( '/#inscricao' ) ); ?>" class="btn btn-gold"<?php echo $c['inscricao'] ? ' target="_blank" rel="noopener"' : ''; ?>>Quero minha vaga</a>
+							<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-line" style="width:100%;justify-content:center">Simular minha mensalidade</a>
+							<ul>
+								<?php if ( $c['duracao'] ) : ?><li><span class="tick"></span><?php echo esc_html( $c['duracao'] ); ?></li><?php endif; ?>
+								<?php if ( $c['modalidade'] ) : ?><li><span class="tick"></span><?php echo esc_html( wp_trim_words( $c['modalidade'], 6 ) ); ?></li><?php endif; ?>
+								<li><span class="tick"></span>Inscrições abertas</li>
+							</ul>
+						</div>
+
+						<div class="card-lat">
+							<h2>Como entrar</h2>
+							<ul>
+								<li><span class="tick"></span>Inscrição sem taxa, feita totalmente online</li>
+								<li><span class="tick"></span>FIES, ProUni e o programa Corporativo Florence</li>
+								<li><span class="tick"></span>Time de admissões para orientar sua matrícula</li>
+							</ul>
+						</div>
+
+						<?php if ( $c['matriz'] ) : ?>
+							<div class="card-lat">
+								<h2>Matriz curricular</h2>
+								<p>As disciplinas e a carga horária completa do curso.</p>
+								<a href="<?php echo esc_url( $c['matriz'] ); ?>" class="btn btn-line" target="_blank" rel="noopener">Baixar matriz curricular</a>
+							</div>
 						<?php endif; ?>
-						<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : home_url( '/#inscricao' ) ); ?>" class="btn btn-gold"<?php echo $c['inscricao'] ? ' target="_blank" rel="noopener"' : ''; ?>>Quero minha vaga</a>
-						<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-line" style="width:100%;justify-content:center">Simular minha mensalidade</a>
-						<ul>
-							<?php if ( $c['duracao'] ) : ?><li><span class="tick"></span><?php echo esc_html( $c['duracao'] ); ?></li><?php endif; ?>
-							<?php if ( $c['modalidade'] ) : ?><li><span class="tick"></span><?php echo esc_html( wp_trim_words( $c['modalidade'], 6 ) ); ?></li><?php endif; ?>
-							<li><span class="tick"></span>Inscrições abertas</li>
-						</ul>
+
+						<?php if ( $c['coordenador'] ) : ?>
+							<div class="card-lat">
+								<h2>Coordenação</h2>
+								<p class="nome"><?php echo esc_html( $c['coordenador'] ); ?></p>
+								<?php if ( $c['lattes'] ) : ?>
+									<a class="lattes" href="<?php echo esc_url( $c['lattes'] ); ?>" target="_blank" rel="noopener">Ver currículo Lattes</a>
+								<?php endif; ?>
+							</div>
+						<?php endif; ?>
 					</div>
 				</aside>
 			</div>

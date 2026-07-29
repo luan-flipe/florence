@@ -8,7 +8,20 @@
 				</div>
 				<p style="color:#9fc0d4;font-size:.9rem;max-width:34ch">Instituição reconhecida com nota máxima no recredenciamento do MEC.</p>
 			</div>
-			<div><h4>Cursos</h4><a href="#">Graduação</a><a href="#">Técnico</a><a href="#">Pós-graduação</a><a href="#">Cursos livres</a></div>
+			<div><h4>Cursos</h4><?php
+				$base_cursos = get_post_type_archive_link( 'curso' );
+				$niveis_rodape = array(
+					'graduacao' => 'Graduação',
+					'tecnico'   => 'Técnico',
+					'pos'       => 'Pós-graduação',
+					'livre'     => 'Cursos livres',
+				);
+				foreach ( $niveis_rodape as $chave => $rotulo ) {
+					printf( '<a href="%s">%s</a>',
+						esc_url( add_query_arg( 'nivel', $chave, $base_cursos ) ),
+						esc_html( $rotulo ) );
+				}
+				?></div>
 			<div><h4>Institucional</h4><?php if ( has_nav_menu( 'rodape_inst' ) ) { florence2026_menu( 'rodape_inst' ); } else { ?><a href="#">Nossa história</a><a href="#">Estrutura</a><a href="#">CPA</a><a href="#">Trabalhe conosco</a><?php } ?></div>
 			<div><h4>Serviços</h4><?php if ( has_nav_menu( 'rodape_serv' ) ) { florence2026_menu( 'rodape_serv' ); } else { ?><a href="#">Portal do aluno</a><a href="#">AVA e.Florence</a><a href="#">Biblioteca</a><a href="#">Ouvidoria</a><?php } ?></div>
 		</div>
