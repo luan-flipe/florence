@@ -107,20 +107,11 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			<p><?php echo esc_html( $t['money_p'] ); ?></p>
 				<a href="<?php echo esc_url( home_url( '/bolsas-e-financiamento/' ) ); ?>" class="btn btn-line" style="margin-top:1.6rem">Ver bolsas e financiamento</a>
 		</div>
-		<form class="sim" onsubmit="return false">
-			<label for="curso"><?php echo esc_html( $t['sim_curso'] ); ?></label>
-			<select id="curso">
-				<option>Escolha um curso</option>
-				<option>Enfermagem</option><option>Biomedicina</option><option>Medicina</option><option>Direito</option>
-			</select>
-			<label for="perfil"><?php echo esc_html( $t['sim_perfil'] ); ?></label>
-			<select id="perfil">
-				<?php foreach ( $t['sim_perfis'] as $op ) : ?><option><?php echo esc_html( $op ); ?></option><?php endforeach; ?>
-			</select>
-			<label for="zap"><?php echo esc_html( $t['sim_zap'] ); ?></label>
-			<input id="zap" type="tel" placeholder="(98) 90000-0000">
-			<button class="btn btn-gold"><?php echo esc_html( $t['sim_cta'] ); ?></button>
-		</form>
+		<div class="lead-form">
+			<h3><?php echo esc_html( $t['sim_titulo'] ); ?></h3>
+			<p class="lead-form-sub"><?php echo esc_html( $t['sim_sub'] ); ?></p>
+			<?php echo do_shortcode( '[ninja_form id=10]' ); ?>
+		</div>
 	</div>
 </section>
 
