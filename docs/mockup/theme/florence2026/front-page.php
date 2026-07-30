@@ -105,6 +105,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			<div class="kicker" style="color:var(--gold)"><?php echo esc_html( $t['money_kicker'] ); ?></div>
 			<h2><?php echo esc_html( $t['money_h2'] ); ?></h2>
 			<p><?php echo esc_html( $t['money_p'] ); ?></p>
+				<a href="<?php echo esc_url( home_url( '/bolsas-e-financiamento/' ) ); ?>" class="btn btn-line" style="margin-top:1.6rem">Ver bolsas e financiamento</a>
 		</div>
 		<form class="sim" onsubmit="return false">
 			<label for="curso"><?php echo esc_html( $t['sim_curso'] ); ?></label>
