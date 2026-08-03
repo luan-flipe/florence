@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.12.0
+Version: 0.13.0
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -301,6 +301,26 @@ footer.site .brand img{height:82px}
 .curso-meta span{font-size:.78rem;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:.28rem .7rem}
 .tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--sky-pale);display:inline-grid;place-items:center;margin-top:.15rem;position:relative}
 .tick::after{content:"";width:9px;height:5px;border-left:2px solid var(--sky);border-bottom:2px solid var(--sky);transform:rotate(-45deg) translate(1px,-1px)}
+
+/* ---------- Listagem de noticias ---------- */
+.noticias-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem}
+.noticia-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:.3s var(--ease)}
+.noticia-card:hover{border-color:var(--sky);transform:translateY(-3px);box-shadow:0 26px 50px -32px rgba(0,80,140,.5)}
+.noticia-thumb{height:184px;overflow:hidden;background:var(--sky-pale)}
+.noticia-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.noticia-card:hover .noticia-thumb img{transform:scale(1.05)}
+.noticia-body{padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.noticia-tag{align-self:flex-start;font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);background:var(--sky-pale);padding:.35rem .7rem;border-radius:999px}
+.noticia-card h2{font-size:1.12rem;line-height:1.25;margin:0}
+.noticia-body p{color:var(--muted);font-size:.92rem;flex:1}
+.noticia-data{font-size:.78rem;color:var(--muted);font-family:var(--display);font-weight:600}
+
+/* ---------- Paginacao (WordPress) ---------- */
+.nav-links{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.nav-links .page-numbers{display:inline-grid;place-items:center;min-width:42px;height:42px;padding:0 .6rem;border:1px solid var(--line);border-radius:12px;color:var(--navy);font-family:var(--display);font-weight:600;background:#fff;transition:.2s var(--ease)}
+.nav-links a.page-numbers:hover{border-color:var(--sky);color:var(--sky)}
+.nav-links .page-numbers.current{background:var(--navy);color:#fff;border-color:var(--navy)}
+.nav-links .page-numbers.dots{border:0;background:none}
 
 /* ---------- Menus do WordPress (saida <ul><li><a>) ---------- */
 nav.main ul{display:flex;gap:1.9rem;list-style:none;margin:0;padding:0;align-items:center}

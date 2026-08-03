@@ -137,7 +137,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 // Puxa notícias reais do conteúdo migrado, provando que o tema consome o banco.
 $noticias = new WP_Query( array( 'posts_per_page' => 3, 'ignore_sticky_posts' => true ) );
 if ( $noticias->have_posts() ) :
-	$blog = get_option( 'page_for_posts' ) ? get_permalink( get_option( 'page_for_posts' ) ) : home_url( '/' );
+	$blog = get_option( 'page_for_posts' ) ? get_permalink( get_option( 'page_for_posts' ) ) : home_url( '/noticias/' );
 	?>
 <section class="proof">
 	<div class="shell">

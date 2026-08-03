@@ -20,24 +20,19 @@ get_header();
 </div>
 <section>
 	<div class="shell">
-		<div class="quotes">
-			<?php
-			if ( have_posts() ) :
+		<?php if ( have_posts() ) : ?>
+			<div class="noticias-grid">
+				<?php
 				while ( have_posts() ) :
 					the_post();
-					?>
-					<a class="quote" href="<?php the_permalink(); ?>" style="display:block">
-						<p style="font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25"><?php the_title(); ?></p>
-						<footer><small><?php echo esc_html( get_the_date() ); ?></small></footer>
-					</a>
-					<?php
+					get_template_part( 'content', 'noticia' );
 				endwhile;
-			else :
-				echo '<p>Nada encontrado.</p>';
-			endif;
-			?>
-		</div>
-		<div style="margin-top:2.5rem"><?php the_posts_pagination(); ?></div>
+				?>
+			</div>
+			<div style="margin-top:2.5rem"><?php the_posts_pagination(); ?></div>
+		<?php else : ?>
+			<p>Nada encontrado.</p>
+		<?php endif; ?>
 	</div>
 </section>
 <?php get_footer();
