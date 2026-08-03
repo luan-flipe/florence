@@ -9,7 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
 
 $zap    = 'https://api.whatsapp.com/send?phone=5598988630502';       // atendimento geral
-$zapcorp = 'https://api.whatsapp.com/send?phone=5598992422120';      // corporativo
 $insc   = florence2026_url_inscricao();
 
 $vias = array(
@@ -31,7 +30,7 @@ $vias = array(
 	array(
 		'nome' => 'Corporativo Florence',
 		'desc' => 'Sua empresa investe na formação da equipe e todos ganham. Condições especiais de mensalidade para funcionários e seus dependentes.',
-		'cta'  => 'Falar com o time corporativo', 'url' => $zapcorp, 'ext' => true,
+		'cta'  => 'Conhecer o Corporativo Florence', 'url' => home_url( '/empresas/' ), 'ext' => false,
 	),
 );
 ?>
