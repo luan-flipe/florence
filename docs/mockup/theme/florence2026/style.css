@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.13.0
+Version: 0.14.0
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -252,7 +252,9 @@ footer.site .brand img{height:82px}
 .contato-form h2{font-size:1.5rem;margin:0 0 1.4rem}
 .lead-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5)}
 .lead-form h3{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--navy-dark);margin:0 0 .4rem;line-height:1.25}
-.lead-form-sub{color:var(--muted);font-size:.95rem;margin:0 0 1.4rem;line-height:1.5}
+.lead-form-sub{color:#3c4a55;font-size:.95rem;margin:0 0 1.4rem;line-height:1.5}
+/* Titulo do proprio Ninja Forms e redundante: o card ja tem h3/h2 */
+.lead-form .nf-form-title,.contato-form .nf-form-title{display:none}
 
 /* Campos do Ninja Forms herdam o design system do tema */
 .nf-form-cont input[type=text],.nf-form-cont input[type=email],.nf-form-cont input[type=tel],
@@ -263,11 +265,17 @@ footer.site .brand img{height:82px}
   outline:0;border-color:var(--sky);box-shadow:0 0 0 3px rgba(0,150,210,.15)}
 .nf-form-cont .nf-field-label label{font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--ink)}
 .nf-form-cont .nf-field{margin-bottom:1rem}
-.nf-form-cont input[type=button]{
-  background:var(--gold);color:var(--navy-dark);border:0;border-radius:999px;
-  padding:.85rem 1.7rem;font-family:var(--display);font-weight:700;font-size:.95rem;
-  cursor:pointer;transition:.25s var(--ease);width:auto}
-.nf-form-cont input[type=button]:hover{background:var(--gold-dark);transform:translateY(-1px)}
+/* Especificidade reforcada + !important para vencer o CSS do proprio Ninja */
+.nf-form-cont .nf-field-element input[type=button],
+.nf-form-cont .nf-field-element input[type=submit],
+.nf-form-cont .nf-field-element button{
+  background:var(--gold)!important;color:var(--navy-dark)!important;border:0!important;
+  border-radius:999px!important;padding:.9rem 1.9rem!important;font-family:var(--display)!important;
+  font-weight:700!important;font-size:1rem!important;width:auto!important;height:auto!important;
+  cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.6) inset;transition:.25s var(--ease)}
+.nf-form-cont .nf-field-element input[type=button]:hover,
+.nf-form-cont .nf-field-element input[type=submit]:hover,
+.nf-form-cont .nf-field-element button:hover{background:var(--gold-dark)!important;transform:translateY(-1px)}
 
 @media(max-width:980px){
   .hero .shell,.money .shell,.course-body{grid-template-columns:1fr;gap:2.5rem}
