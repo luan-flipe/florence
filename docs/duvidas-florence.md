@@ -44,6 +44,13 @@ Queremos criar uma seção de Perguntas Frequentes (com marcação para o Google
 - **Reconhecimento MEC por curso**: quais cursos têm qual conceito/portaria (para exibir na página de cada curso)?
 - **A FAQ deve ser geral (institucional) ou por curso?** Uma FAQ por curso exige um bloco de perguntas e respostas para cada um; se preferirem, começamos com uma FAQ geral (ingresso, bolsas, documentos) e evoluímos depois.
 
+## 5. Corpo docente por curso — depende de conteúdo de vocês
+
+A página de cada curso hoje mostra o **coordenador** (nome e link do Lattes), que é o único dado de docente estruturado que existe no site. Se vocês quiserem exibir o **corpo docente** (os professores) na página do curso, precisamos da lista organizada:
+
+- **Por curso, quais professores exibir?** Para cada um: nome, titulação (mestre/doutor), e o link do Lattes (opcional). Foto é opcional.
+- Sem essa lista estruturada não montamos a seção, para não publicar nome de professor errado ou desatualizado.
+
 ---
 
 _(mais itens serão adicionados abaixo conforme o trabalho continua)_
