@@ -32,6 +32,18 @@ Reaproveitamos os formulários que já existem no site (Ninja Forms). Dois ponto
 - **Newsletter do rodapé:** hoje aparece quebrada no site atual (o código do formulário aparece como texto). Vocês querem manter uma newsletter no rodapé novo, ou podemos remover?
 - **Formulário de captação da home:** usamos o formulário "Vestibular" (Nome, E-mail, Celular, Curso de interesse). Confirmam que é para onde deve ir esse contato, ou querem um destino/campos diferentes?
 
+## 4. Perguntas Frequentes (FAQ) — depende de conteúdo de vocês
+
+Queremos criar uma seção de Perguntas Frequentes (com marcação para o Google, o que ajuda a aparecer melhor na busca). Só que uma FAQ boa precisa de respostas oficiais, e não vamos inventar. Precisamos de vocês:
+
+- **Documentos necessários para matrícula**, por nível (graduação, técnico, pós). Qual a lista?
+- **Valores / mensalidades**: o site novo não exibe preços hoje. Vocês querem exibir faixa de valores, "consulte", ou nada? Se sim, quais?
+- **Bolsas**: já temos "até 77% para servidores públicos e funcionários de empresas parceiras, incluindo dependentes". Confirmam os percentuais e quem tem direito? Como o candidato comprova?
+- **Vestibular digital**: como é a prova (duração, número de questões, conteúdo)? Há taxa?
+- **Calendário do processo seletivo 2026.2**: prazos de inscrição, prova e matrícula.
+- **Reconhecimento MEC por curso**: quais cursos têm qual conceito/portaria (para exibir na página de cada curso)?
+- **A FAQ deve ser geral (institucional) ou por curso?** Uma FAQ por curso exige um bloco de perguntas e respostas para cada um; se preferirem, começamos com uma FAQ geral (ingresso, bolsas, documentos) e evoluímos depois.
+
 ---
 
 _(mais itens serão adicionados abaixo conforme o trabalho continua)_
