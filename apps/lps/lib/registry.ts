@@ -33,6 +33,7 @@ const BY_SLUG: Record<string, LpEntry> = {
     kind: "umbrella",
     slug: "graduacao",
     displayName: "Graduação Florence",
+    gtmId: "GTM-PXFKW248",
     config: graduacaoConfig,
     cursoOptions: graduacaoOptions,
     meta: graduacaoConfig.meta,
