@@ -4,6 +4,14 @@ Lista de tudo que precisa de resposta ou material do cliente para concluir o red
 
 > Atualizado conforme o trabalho avança. Cada item diz por que precisamos e o que trava enquanto não vier.
 
+## Respostas recebidas (Lucas Antônio, 11/09/2026)
+
+- **1. SMTP:** tratar direto com o contato Giovani Murilo (TI/e-mail). Pendente.
+- **2. Contato:** endereço Rua Rio Branco, 216, Centro, São Luís, MA, 65020-470. Número único oficial (98) 98863-0502 (o atendimento distribui por setor; não há outros números). Atendimento das 8h às 21h. Aplicado no tema v0.15.0 (Contato com endereço, mapa e horário; Corporativo passou a usar o número oficial).
+- **3. Formulários:** campo Matrícula do Fale Conosco removido no clone em 05/10 (backup em ~/bkp-nf-campo35.sql). Newsletter fora; eles perguntaram como seria alimentada, responder. Captação da home segue no form Vestibular.
+- **4. FAQ:** com o Flavio, prometido para 12/09.
+- **5. Corpo docente:** atualizado no site oficial (View Toolset 18389, modal com nome + Lattes por curso de graduação). Importado em 05/10 para o repetidor ACF `corpo_docente` do CPT curso (7 cursos, 134 professores), seção "Quem dá aula" na página do curso. Vazios no oficial: Direito, Fisioterapia e também Nutrição (avisar o Lucas). Ao portar pro oficial, reimportar de lá.
+
 ---
 
 ## 1. E-mail e entrega de formulários (SMTP) — bloqueia captação

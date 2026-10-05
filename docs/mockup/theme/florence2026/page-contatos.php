@@ -1,9 +1,9 @@
 <?php
 /**
  * Contato (pagina 141, slug contatos). A versao antiga era quase vazia (so
- * dois telefones). Aqui reunimos os canais reais e o formulario Fale Conosco
- * (Ninja Forms id 4). Endereco/mapa e telefones por setor ficam pendentes
- * com a Florence (ver docs/duvidas-florence.md) e entram quando chegarem.
+ * dois telefones). Aqui reunimos os canais reais, endereco com mapa e o
+ * formulario Fale Conosco (Ninja Forms id 4). A Florence usa um numero unico,
+ * que distribui o atendimento por setor (resposta de 11/09/2026).
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
@@ -26,12 +26,16 @@ $uteis = florence2026_links_uteis();
 				<div class="canal">
 					<span>WhatsApp</span>
 					<a class="dest" href="<?php echo esc_url( $uteis['whatsapp'] ); ?>" target="_blank" rel="noopener">(98) 98863-0502</a>
-					<p>Atendimento rápido para candidatos e alunos.</p>
+					<p>Ligação ou mensagem, no mesmo número. O atendimento direciona você ao setor certo.</p>
 				</div>
 				<div class="canal">
-					<span>Telefone</span>
-					<a class="dest" href="tel:+559838782120">(98) 3878-2120</a>
-					<p>Central de atendimento da instituição.</p>
+					<span>Horário de atendimento</span>
+					<p class="dest"><?php echo esc_html( $uteis['horario'] ); ?></p>
+				</div>
+				<div class="canal">
+					<span>Endereço</span>
+					<p class="dest"><?php echo esc_html( $uteis['endereco'] ); ?></p>
+					<a href="<?php echo esc_url( 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( 'Centro Universitário Florence, ' . $uteis['endereco'] ) ); ?>" target="_blank" rel="noopener">Como chegar</a>
 				</div>
 				<div class="canal">
 					<span>Ouvidoria</span>
@@ -44,6 +48,8 @@ $uteis = florence2026_links_uteis();
 				<?php echo do_shortcode( '[ninja_form id=4]' ); ?>
 			</div>
 		</div>
+		<iframe class="contato-mapa" title="Mapa do campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+			src="<?php echo esc_url( 'https://www.google.com/maps?output=embed&q=' . rawurlencode( 'Centro Universitário Florence, ' . $uteis['endereco'] ) ); ?>"></iframe>
 	</div>
 </section>
 <?php get_footer();

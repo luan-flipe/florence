@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.14.0
+Version: 0.15.0
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -249,7 +249,13 @@ footer.site .brand img{height:82px}
 .canal span{display:block;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
 .canal .dest{font-family:var(--display);font-weight:800;font-size:1.25rem;color:var(--navy)}
 .canal p{color:var(--muted);font-size:.9rem;margin:.5rem 0 0;line-height:1.5}
+.canal p.dest{font-size:1.05rem;color:var(--navy);margin:0;line-height:1.4}
+.canal a:not(.dest){display:inline-block;margin-top:.6rem;font-weight:700;color:var(--navy)}
+.contato-mapa{display:block;width:100%;height:380px;border:0;border-radius:18px;margin-top:3rem}
 .contato-form h2{font-size:1.5rem;margin:0 0 1.4rem}
+.docentes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 2rem}
+.docentes li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.docentes a{font-size:.85rem;font-weight:700;color:var(--navy);white-space:nowrap}
 .lead-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5)}
 .lead-form h3{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--navy-dark);margin:0 0 .4rem;line-height:1.25}
 .lead-form-sub{color:#3c4a55;font-size:.95rem;margin:0 0 1.4rem;line-height:1.5}

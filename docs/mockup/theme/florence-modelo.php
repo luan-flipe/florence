@@ -180,6 +180,15 @@ function florence_campos_acf() {
 			$txt( 'matriz_curricular', 'Matriz curricular (arquivo ou link)', 'url' ),
 			$txt( 'coordenador', 'Coordenador', 'text', array( 'wrapper' => array( 'width' => 50 ) ) ),
 			$txt( 'lattes', 'Currículo Lattes', 'url', array( 'wrapper' => array( 'width' => 50 ) ) ),
+			$txt( 'corpo_docente', 'Corpo docente', 'repeater', array(
+				'layout'       => 'table',
+				'button_label' => 'Adicionar professor',
+				'instructions' => 'Aparece na página do curso. Deixe vazio para ocultar a seção.',
+				'sub_fields'   => array(
+					array( 'key' => 'field_curso_docente_nome', 'name' => 'nome', 'label' => 'Nome', 'type' => 'text', 'required' => 1 ),
+					array( 'key' => 'field_curso_docente_lattes', 'name' => 'lattes', 'label' => 'Currículo Lattes', 'type' => 'url' ),
+				),
+			) ),
 			$txt( 'reconhecimento_mec', 'Reconhecimento MEC', 'text', array(
 				'instructions' => 'Só preencher com informação oficial e verificável.',
 			) ),

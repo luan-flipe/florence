@@ -71,6 +71,22 @@ while ( have_posts() ) :
 						</section>
 					<?php endif; ?>
 
+					<?php if ( $c['docentes'] ) : ?>
+						<section>
+							<h2>Quem dá aula</h2>
+							<ul class="docentes">
+								<?php foreach ( $c['docentes'] as $d ) : ?>
+									<li>
+										<span><?php echo esc_html( $d['nome'] ); ?></span>
+										<?php if ( $d['lattes'] ) : ?>
+											<a href="<?php echo esc_url( $d['lattes'] ); ?>" target="_blank" rel="noopener">Lattes</a>
+										<?php endif; ?>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</section>
+					<?php endif; ?>
+
 					<?php if ( trim( wp_strip_all_tags( get_the_content() ) ) ) : ?>
 						<section><?php the_content(); ?></section>
 					<?php endif; ?>

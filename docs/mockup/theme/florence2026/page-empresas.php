@@ -3,11 +3,11 @@
  * Corporativo Florence (pagina 28609, slug empresas). A versao antiga era
  * vazia. Aqui apresentamos o programa para empresas e ligamos ao formulario
  * Empresas (Ninja Forms id 6), que capta o lead com CNPJ e responsavel.
- * Mantemos tambem o WhatsApp corporativo como canal direto.
+ * O WhatsApp e o numero unico oficial (a Florence nao usa mais o corporativo).
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
-$zapcorp = 'https://api.whatsapp.com/send?phone=5598992422120';
+$zapcorp = florence2026_links_uteis()['whatsapp'];
 ?>
 <div class="course-hero">
 	<div class="shell">
@@ -32,9 +32,9 @@ $zapcorp = 'https://api.whatsapp.com/send?phone=5598992422120';
 					<p>Empresas privadas, órgãos públicos e entidades que queiram oferecer educação superior como benefício ao time.</p>
 				</div>
 				<div class="canal">
-					<span>WhatsApp corporativo</span>
-					<a class="dest" href="<?php echo esc_url( $zapcorp ); ?>" target="_blank" rel="noopener">(98) 99242-2120</a>
-					<p>Prefere falar direto? Chame o time de parcerias.</p>
+					<span>WhatsApp</span>
+					<a class="dest" href="<?php echo esc_url( $zapcorp ); ?>" target="_blank" rel="noopener">(98) 98863-0502</a>
+					<p>Prefere falar direto? Chame no WhatsApp e peça pelo Corporativo.</p>
 				</div>
 			</div>
 			<div class="contato-form">

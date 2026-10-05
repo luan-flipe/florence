@@ -99,7 +99,10 @@ function florence2026_links_uteis() {
 		),
 		'ouvidoria' => home_url( '/ouvidoria/' ),
 		'whatsapp'  => 'https://api.whatsapp.com/send?phone=5598988630502',
-		'telefone'  => array( '(98) 3878-2120', 'tel:+559838782120' ),
+		// Numero unico oficial (confirmado pela Florence em 11/09/2026).
+		'telefone'  => array( '(98) 98863-0502', 'tel:+5598988630502' ),
+		'endereco'  => 'Rua Rio Branco, 216, Centro, São Luís, MA, 65020-470',
+		'horario'   => 'Das 8h às 21h',
 	);
 }
 
@@ -151,6 +154,7 @@ function florence2026_campos_curso( $id ) {
 		'mec'          => $g( 'conceito-mec' ),
 		'autorizacao'  => $g( 'autorizacao' ),
 		'imagem'       => $imagem,
+		'docentes'     => array(),
 	);
 }
 
@@ -182,7 +186,23 @@ function florence2026_campos_curso_acf( $id ) {
 		'mec'          => $m( 'reconhecimento_mec' ),
 		'autorizacao'  => '',
 		'imagem'       => $imagem,
+		'docentes'     => florence2026_docentes( $id ),
 	);
+}
+
+/** Repetidor ACF corpo_docente, lido direto do meta (nao depende do ACF no front). */
+function florence2026_docentes( $id ) {
+	$n     = (int) get_post_meta( $id, 'corpo_docente', true );
+	$lista = array();
+	for ( $i = 0; $i < $n; $i++ ) {
+		$nome = trim( (string) get_post_meta( $id, "corpo_docente_{$i}_nome", true ) );
+		if ( '' === $nome ) continue;
+		$lista[] = array(
+			'nome'   => $nome,
+			'lattes' => trim( (string) get_post_meta( $id, "corpo_docente_{$i}_lattes", true ) ),
+		);
+	}
+	return $lista;
 }
 
 /** Arquivo /cursos/ aceita ?nivel=graduacao|tecnico|pos|... */
