@@ -14,12 +14,23 @@ while ( have_posts() ) :
 		$c    = florence2026_campos_curso( get_the_ID() );
 		$obj  = get_post_type_object( $tipo );
 		$nome = $obj ? $obj->labels->singular_name : 'Curso';
+
+		// No CPT curso, o nivel (Graduacao, Tecnico...) diz mais que o nome do tipo e vira o link de volta.
+		$voltar_url   = get_post_type_archive_link( $tipo );
+		$voltar_nome  = $obj ? $obj->labels->name : '';
+		$nivel_chave  = 'curso' === $tipo ? get_post_meta( get_the_ID(), 'nivel', true ) : '';
+		$niveis       = function_exists( 'florence_niveis' ) ? florence_niveis() : array();
+		if ( $nivel_chave && isset( $niveis[ $nivel_chave ] ) ) {
+			$nome        = $niveis[ $nivel_chave ];
+			$voltar_nome = 'livre' === $nivel_chave ? 'Cursos livres' : $nome;
+			$voltar_url  = add_query_arg( 'nivel', $nivel_chave, $voltar_url );
+		}
 		?>
 		<div class="course-hero">
 			<div class="shell">
 				<div class="crumb">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a> &middot;
-					<a href="<?php echo esc_url( get_post_type_archive_link( $tipo ) ); ?>"><?php echo esc_html( $obj ? $obj->labels->name : '' ); ?></a> &middot;
+					<a href="<?php echo esc_url( $voltar_url ); ?>"><?php echo esc_html( $voltar_nome ); ?></a> &middot;
 					<?php the_title(); ?>
 				</div>
 				<h1><?php the_title(); ?></h1>
@@ -30,36 +41,76 @@ while ( have_posts() ) :
 					<?php if ( $c['duracao'] ) : ?><div class="fact"><span>Duração</span><b><?php echo esc_html( $c['duracao'] ); ?></b></div><?php endif; ?>
 					<?php if ( $c['modalidade'] ) : ?><div class="fact"><span>Modalidade</span><b><?php echo esc_html( wp_trim_words( $c['modalidade'], 5 ) ); ?></b></div><?php endif; ?>
 					<?php if ( $c['titulacao'] ) : ?><div class="fact"><span>Titulação</span><b><?php echo esc_html( $c['titulacao'] ); ?></b></div><?php endif; ?>
-					<div class="fact"><span>Tipo</span><b><?php echo esc_html( $nome ); ?></b></div>
+					<div class="fact"><span>Nível</span><b><?php echo esc_html( $nome ); ?></b></div>
 				</div>
 			</div>
+		</div>
+
+		<?php
+		// Indice da pagina: so as secoes que existem neste curso.
+		$tem_texto = trim( wp_strip_all_tags( get_the_content() ) );
+		$indice    = array_filter( array(
+			'sobre'      => $c['sobre'] ? 'Sobre o curso' : '',
+			'estrutura'  => $c['estrutura'] ? 'Como funciona' : '',
+			'adicionais' => $c['adicionais'] ? 'Informações' : '',
+			'docentes'   => $c['docentes'] ? 'Quem dá aula' : '',
+			'faq'        => $c['faq'] ? 'Dúvidas' : '',
+			'ingresso'   => 'Como entrar',
+		) );
+		$n_doc    = count( $c['docentes'] );
+		$url_vaga = $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao();
+		?>
+		<?php // Celular: decisao na primeira tela (o card lateral cai para o fim da pagina). ?>
+		<div class="shell enroll-mobile">
+			<?php if ( $c['investimento'] ) : ?>
+				<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
+			<?php endif; ?>
+			<a href="<?php echo esc_url( $url_vaga ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
+		</div>
+
+		<div class="shell">
+			<ul class="selos" data-reveal>
+				<li><b>Nota 5</b> no recredenciamento do MEC</li>
+				<?php if ( $n_doc ) : ?><li><b><?php echo esc_html( $n_doc ); ?> professores</b> no corpo docente</li><?php endif; ?>
+				<li><b>Prática</b> desde os primeiros períodos</li>
+				<li><b>Inscrição</b> sem taxa, 100% online</li>
+			</ul>
 		</div>
 
 		<div class="shell">
 			<div class="course-body">
 				<div class="course-main">
+					<?php if ( count( $indice ) > 2 ) : ?>
+						<nav class="indice" aria-label="Nesta página">
+							<span>Nesta página</span>
+							<?php foreach ( $indice as $ancora => $rotulo ) : ?>
+								<a href="#<?php echo esc_attr( $ancora ); ?>"><?php echo esc_html( $rotulo ); ?></a>
+							<?php endforeach; ?>
+						</nav>
+					<?php endif; ?>
+
 					<?php if ( $c['imagem'] ) : ?>
-						<img src="<?php echo esc_url( $c['imagem'] ); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%;border-radius:18px;margin-bottom:2.5rem;aspect-ratio:16/8;object-fit:cover">
+						<img src="<?php echo esc_url( $c['imagem'] ); ?>" alt="<?php the_title_attribute(); ?>" style="width:100%;height:auto;border-radius:18px;margin-bottom:2.5rem;aspect-ratio:16/8;object-fit:cover">
 					<?php endif; ?>
 
 					<?php if ( $c['sobre'] ) : ?>
-						<section>
+						<section id="sobre">
 							<h2>O que você vai fazer nesse curso</h2>
-							<?php echo wp_kses_post( wpautop( $c['sobre'] ) ); ?>
+							<div class="conteudo"><?php echo wp_kses_post( wpautop( $c['sobre'] ) ); ?></div>
 						</section>
 					<?php endif; ?>
 
 					<?php if ( $c['estrutura'] ) : ?>
-						<section>
+						<section id="estrutura">
 							<h2>Como o curso funciona</h2>
-							<?php echo wp_kses_post( wpautop( $c['estrutura'] ) ); ?>
+							<div class="conteudo"><?php echo wp_kses_post( wpautop( $c['estrutura'] ) ); ?></div>
 						</section>
 					<?php endif; ?>
 
 					<?php if ( $c['adicionais'] ) : ?>
-						<section>
+						<section id="adicionais">
 							<h2>Informações importantes</h2>
-							<?php echo wp_kses_post( wpautop( $c['adicionais'] ) ); ?>
+							<div class="conteudo"><?php echo wp_kses_post( wpautop( $c['adicionais'] ) ); ?></div>
 						</section>
 					<?php endif; ?>
 
@@ -71,13 +122,24 @@ while ( have_posts() ) :
 						</section>
 					<?php endif; ?>
 
-					<?php if ( $c['docentes'] ) : ?>
-						<section>
+					<?php if ( $c['docentes'] ) :
+						// Resumo por titulacao, quando a Florence preencher (mestre/doutor).
+						$tit = array_count_values( array_filter( wp_list_pluck( $c['docentes'], 'titulacao' ) ) );
+						?>
+						<section id="docentes">
 							<h2>Quem dá aula</h2>
+							<p class="docentes-resumo">
+								<?php
+								$partes = array( sprintf( '%d professores', $n_doc ) );
+								$plural = array( 'Especialista' => 'especialistas', 'Mestre' => 'mestres', 'Doutor' => 'doutores' );
+								foreach ( $tit as $grau => $qtd ) $partes[] = sprintf( '%d %s', $qtd, $qtd > 1 && isset( $plural[ $grau ] ) ? $plural[ $grau ] : strtolower( $grau ) );
+								echo esc_html( implode( ' · ', $partes ) );
+								?>
+							</p>
 							<ul class="docentes">
 								<?php foreach ( $c['docentes'] as $d ) : ?>
 									<li>
-										<span><?php echo esc_html( $d['nome'] ); ?></span>
+										<span><?php echo esc_html( $d['nome'] ); ?><?php if ( $d['titulacao'] ) : ?> <small><?php echo esc_html( $d['titulacao'] ); ?></small><?php endif; ?></span>
 										<?php if ( $d['lattes'] ) : ?>
 											<a href="<?php echo esc_url( $d['lattes'] ); ?>" target="_blank" rel="noopener">Lattes</a>
 										<?php endif; ?>
@@ -87,7 +149,30 @@ while ( have_posts() ) :
 						</section>
 					<?php endif; ?>
 
-					<?php if ( trim( wp_strip_all_tags( get_the_content() ) ) ) : ?>
+					<?php if ( $c['faq'] ) : ?>
+						<section id="faq">
+							<h2>Dúvidas frequentes</h2>
+							<div class="faq">
+								<?php foreach ( $c['faq'] as $item ) : ?>
+									<details>
+										<summary><?php echo esc_html( $item['pergunta'] ); ?></summary>
+										<div><?php echo wp_kses_post( wpautop( $item['resposta'] ) ); ?></div>
+									</details>
+								<?php endforeach; ?>
+							</div>
+							<script type="application/ld+json"><?php
+							echo wp_json_encode( array(
+								'@context'   => 'https://schema.org',
+								'@type'      => 'FAQPage',
+								'mainEntity' => array_map( function ( $i ) {
+									return array( '@type' => 'Question', 'name' => $i['pergunta'], 'acceptedAnswer' => array( '@type' => 'Answer', 'text' => wp_strip_all_tags( $i['resposta'] ) ) );
+								}, $c['faq'] ),
+							) );
+							?></script>
+						</section>
+					<?php endif; ?>
+
+					<?php if ( $tem_texto ) : ?>
 						<section><?php the_content(); ?></section>
 					<?php endif; ?>
 
@@ -140,7 +225,7 @@ while ( have_posts() ) :
 			</div>
 		</div>
 
-		<section class="ingresso">
+		<section class="ingresso" id="ingresso">
 			<div class="shell">
 				<div class="sec-head">
 					<div>
@@ -184,10 +269,10 @@ while ( have_posts() ) :
 					<section>
 						<?php
 						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'large', array( 'style' => 'width:100%;border-radius:18px;margin-bottom:2rem' ) );
+							the_post_thumbnail( 'large', array( 'style' => 'width:100%;height:auto;border-radius:18px;margin-bottom:2rem' ) );
 						}
-						the_content();
 						?>
+						<div class="conteudo"><?php the_content(); ?></div>
 					</section>
 				</div>
 				<aside>

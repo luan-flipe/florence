@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.15.0
+Version: 0.17.3
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -200,7 +200,7 @@ section{padding:6rem 0}
 .card-lat li{display:flex;gap:.6rem;align-items:flex-start;line-height:1.45}
 .card-lat .btn{width:100%;justify-content:center;margin-top:1.1rem;font-size:.88rem;padding:.75rem 1rem}
 .card-lat .nome{font-family:var(--display);font-weight:700;color:var(--ink);font-size:1rem;line-height:1.3}
-.card-lat .lattes{display:inline-block;margin-top:.6rem;color:var(--navy);font-size:.88rem;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,150,210,.45)}
+.card-lat .lattes{display:inline-block;margin-top:.35rem;padding:.5rem 0;color:var(--navy);font-size:.88rem;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,150,210,.45)}
 .card-lat .lattes:hover{color:var(--sky);text-decoration-color:var(--sky)}
 
 /* rodapé */
@@ -210,6 +210,8 @@ footer.site .brand img{height:82px}
 .foot-grid h4{color:#fff;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
 .foot-grid a{display:block;padding:.32rem 0}
 .foot-grid a:hover{color:#fff}
+.foot-contato{font-style:normal;display:grid;gap:.35rem;margin-top:1.4rem;font-size:.88rem;max-width:34ch}
+.foot-contato a{padding:0;color:#fff;font-weight:600}
 .foot-bot{padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:#6d90a6}
 
 .divider{background:var(--navy-dark);color:#fff;padding:3rem 0;text-align:center}
@@ -252,13 +254,14 @@ footer.site .brand img{height:82px}
 .canal p.dest{font-size:1.05rem;color:var(--navy);margin:0;line-height:1.4}
 .canal a:not(.dest){display:inline-block;margin-top:.6rem;font-weight:700;color:var(--navy)}
 .contato-mapa{display:block;width:100%;height:380px;border:0;border-radius:18px;margin-top:3rem}
-.contato-form h2{font-size:1.5rem;margin:0 0 1.4rem}
+.contato-form h2{font-family:var(--display);font-weight:800;letter-spacing:-.02em;color:var(--navy-dark);font-size:1.5rem;margin:0 0 1.4rem}
+.nf-before-form-content,.nf-form-fields-required{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-bottom:1rem}
 .docentes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 2rem}
 .docentes li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
-.docentes a{font-size:.85rem;font-weight:700;color:var(--navy);white-space:nowrap}
+.docentes a{padding:.4rem 0;font-size:.85rem;font-weight:700;color:var(--navy);white-space:nowrap}
 .lead-form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem;box-shadow:0 24px 60px -40px rgba(0,45,79,.5)}
 .lead-form h3{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--navy-dark);margin:0 0 .4rem;line-height:1.25}
-.lead-form-sub{color:#3c4a55;font-size:.95rem;margin:0 0 1.4rem;line-height:1.5}
+.lead-form-sub,.money .lead-form-sub{color:#3c4a55;max-width:none;font-size:.95rem;margin:0 0 1.4rem;line-height:1.5}
 /* Titulo do proprio Ninja Forms e redundante: o card ja tem h3/h2 */
 .lead-form .nf-form-title,.contato-form .nf-form-title{display:none}
 
@@ -295,6 +298,7 @@ footer.site .brand img{height:82px}
   .pitem:nth-child(even){padding-left:0;border-left:0}
   nav.main,.util .links{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .foot-grid > div:first-child{grid-column:1/-1}
   section{padding:4rem 0}
   .lateral{position:static;max-height:none;overflow:visible;padding-right:0}
   .fact{border-right:0;padding-right:0;margin-right:2rem}
@@ -365,6 +369,54 @@ nav.main > ul > li > a:hover::after{right:0}
   nav.main ul{display:none}
 }
 
+/* O kit global do Elementor (legado) forca Verdana em h1-h6 e links em toda pagina
+   que carrega CSS do Elementor. A tipografia do tema prevalece. */
+body[class*="elementor-kit-"]{font-family:var(--sans)}
+button,input,select,textarea{font-family:inherit}
+body[class*="elementor-kit-"] :is(h1,h2,h3,h4,h5,h6){font-family:var(--display)}
+body[class*="elementor-kit-"] a{font-family:inherit}
+
+/* Galeria classica do WordPress ([gallery]) usada nas paginas legadas. */
+.conteudo .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.6rem 0 2.4rem}
+.conteudo .gallery br{display:none}
+.conteudo .gallery-item{margin:0}
+.conteudo .gallery-icon img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;margin:0}
+.conteudo .gallery-caption{margin-top:.5rem;font-size:.88rem;color:var(--muted)}
+@media(max-width:640px){.conteudo .gallery{grid-template-columns:1fr 1fr;gap:.8rem}}
+.acoes-404{display:flex;flex-wrap:wrap;gap:.8rem;margin:0}
+
+/* ---------- Menu mobile ---------- */
+.menu-toggle,.menu-mobile{display:none}
+@media(max-width:980px){
+  .util{display:none}
+  header.site .shell{gap:.8rem}
+  header.site .brand img{max-height:46px;width:auto}
+  .btn-topo{margin-left:auto;padding:.7rem 1.1rem;font-size:.88rem;white-space:nowrap}
+  .menu-toggle{display:inline-grid;align-content:center;gap:5px;width:46px;height:46px;flex:none;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}
+  .menu-toggle span{display:block;height:2px;background:var(--navy-dark);border-radius:2px;transition:.25s var(--ease)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .menu-mobile:not([hidden]){display:block;position:absolute;left:0;right:0;top:100%;z-index:80;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 50px -30px rgba(0,45,79,.45);max-height:calc(100dvh - 80px);overflow-y:auto;padding:.5rem 20px 1.6rem}
+  .mobile-nav ul{list-style:none;margin:0;padding:0}
+  .mobile-nav > ul > li{border-bottom:1px solid var(--line)}
+  .mobile-nav a{display:block;padding:.85rem 0;font-family:var(--display);font-weight:700;color:var(--navy-dark)}
+  .mobile-nav .sub-menu{padding:0 0 .7rem .9rem}
+  .mobile-nav .sub-menu a{padding:.45rem 0;font-family:var(--sans);font-weight:500;color:#3c4a55}
+  .mobile-acesso{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem;margin-top:1.2rem}
+  .mobile-acesso span{grid-column:1/-1;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .mobile-acesso a{font-size:.9rem;color:var(--navy);font-weight:600}
+  body.menu-aberto{overflow:hidden}
+}
+@media(max-width:640px){
+  .way{display:grid;grid-template-columns:2rem 1fr;gap:.25rem 0}
+  .way span{grid-column:2}
+  .way b{min-width:0}
+}
+@media(max-width:380px){
+  .btn-topo{padding:.6rem .85rem;font-size:.8rem}
+}
+
 /* ---------- Conteudo legado (paginas institucionais) ----------
    Baseado no inventario real: p, a, ul/li, h3, strong. Sem tabela/img/iframe. */
 .course-main .conteudo{max-width:68ch}
@@ -381,7 +433,9 @@ nav.main > ul > li > a:hover::after{right:0}
 
 .course-main .conteudo ul,
 .course-main .conteudo ol{margin:0 0 1.4rem;padding-left:1.35rem;display:grid;gap:.55rem}
-.course-main .conteudo li{color:#3c4d5a;font-size:1.02rem;line-height:1.65}
+.course-main .conteudo ul{list-style:disc}
+.course-main .conteudo ol{list-style:decimal}
+.course-main .conteudo li{display:list-item;color:#3c4d5a;font-size:1.02rem;line-height:1.65}
 .course-main .conteudo ul li::marker{color:var(--sky)}
 .course-main .conteudo ol li::marker{color:var(--sky);font-family:var(--display);font-weight:700}
 
@@ -405,3 +459,142 @@ nav.main > ul > li > a:hover::after{right:0}
    Nao limitamos largura nem tipografia aqui para nao brigar com o construtor. */
 .pagina-elementor{padding:0 0 4rem}
 .pagina-elementor img{max-width:100%;height:auto}
+
+/* =========================================================
+   v0.17: animacoes da home + atalhos de conversao
+   ========================================================= */
+
+/* ---------- Animacoes continuas da home (suaves, em loop) ---------- */
+@keyframes fl-deriva{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(4%,-3%,0) scale(1.08)}100%{transform:translate3d(-3%,2%,0) scale(1.03)}}
+@keyframes fl-orbe{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-60px,40px,0)}100%{transform:translate3d(30px,-30px,0)}}
+@keyframes fl-zoom{from{transform:scale(1)}to{transform:scale(1.09)}}
+@keyframes fl-flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fl-pulso{0%{box-shadow:0 0 0 0 rgba(245,200,66,.55)}80%,100%{box-shadow:0 0 0 10px rgba(245,200,66,0)}}
+@keyframes fl-brilho{0%,72%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(260%) skewX(-20deg)}}
+@keyframes fl-texto{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes fl-fundo{0%,100%{background-position:0% 30%}50%{background-position:100% 70%}}
+@keyframes fl-faixa{from{background-position:0 0}to{background-position:280px 0}}
+
+.hero::before{animation:fl-deriva 22s ease-in-out infinite alternate;will-change:transform;inset:-10%}
+.hero::after{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(51,181,232,.22),transparent 65%);animation:fl-orbe 26s ease-in-out infinite alternate;pointer-events:none}
+.hero-art img{animation:fl-zoom 24s ease-in-out infinite alternate;transform-origin:60% 40%}
+.badge-mec{animation:fl-flutua 6s ease-in-out infinite}
+.hero h1 em{background:linear-gradient(90deg,var(--sky-light),#9fe0ff,var(--sky-light));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:fl-texto 7s ease-in-out infinite}
+.ao-vivo{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:fl-pulso 2.2s ease-out infinite}
+.eyebrow:has(.ao-vivo)::before{display:none}
+.hero .btn-gold,.final .btn-navy{position:relative;overflow:hidden;isolation:isolate}
+.hero .btn-gold::after,.final .btn-navy::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:fl-brilho 6s ease-in-out infinite;z-index:-1;pointer-events:none}
+.final .btn-navy::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent)}
+.path.lead-path .bg img{animation:fl-zoom 28s ease-in-out infinite alternate}
+.money{background:linear-gradient(150deg,var(--navy-dark),var(--navy-deep),#00406e,var(--navy-dark));background-size:300% 300%;animation:fl-fundo 24s ease-in-out infinite}
+.final{position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,0) 0 120px,rgba(255,255,255,.14) 120px 140px);animation:fl-faixa 14s linear infinite;pointer-events:none}
+.final .shell{position:relative}
+.credit b[data-count]{font-variant-numeric:tabular-nums}
+
+/* Entrada ao rolar (so com JS ativo, para nunca esconder conteudo). */
+.js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js [data-reveal]{opacity:1;transform:none}
+}
+
+/* ---------- Barra fixa de inscricao (celular) ---------- */
+.barra-vaga{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;display:none;gap:.6rem;padding:.55rem;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;box-shadow:0 18px 40px -18px rgba(0,26,46,.45);transform:translateY(140%);transition:transform .45s var(--ease)}
+.barra-vaga.is-on{transform:none}
+.barra-vaga .btn{flex:1;justify-content:center;padding:.8rem 1rem}
+.barra-zap{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#0e7d42;color:#fff}
+@media(max-width:980px){.barra-vaga{display:flex}.zap-flutuante{display:none!important}}
+
+/* ---------- WhatsApp flutuante (desktop) ---------- */
+.zap-flutuante{position:fixed;right:24px;bottom:24px;z-index:70;display:flex;align-items:center;gap:.6rem;height:56px;padding:0 16px;border-radius:999px;background:#0e7d42;color:#fff;font-family:var(--display);font-weight:700;font-size:.92rem;box-shadow:0 16px 36px -14px rgba(0,0,0,.45);transition:transform .3s var(--ease)}
+.zap-flutuante span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .45s var(--ease)}
+.zap-flutuante:hover{transform:translateY(-2px)}
+.zap-flutuante:hover span{max-width:160px}
+
+/* ---------- Filtro das listagens ---------- */
+.filtro-cursos{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.2rem;margin-bottom:2rem}
+.filtro-campo{flex:1 1 300px;display:flex;align-items:center;gap:.6rem;padding:0 1.1rem;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);transition:border-color .2s}
+.filtro-campo:focus-within{border-color:var(--sky)}
+.filtro-busca{flex:1;border:0;outline:0;padding:.9rem 0;font-size:1rem;background:transparent;color:var(--ink)}
+.filtro-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.filtro-chip{padding:.55rem 1rem;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font-family:var(--display);font-weight:600;font-size:.85rem;cursor:pointer;transition:.2s var(--ease)}
+.filtro-chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.filtro-contagem{font-size:.85rem;color:var(--muted);margin-left:auto}
+.filtro-vazio{padding:2rem;border:1px dashed var(--line);border-radius:16px;color:var(--muted);text-align:center;margin-bottom:2rem}
+.filtro-vazio a{color:var(--navy);font-weight:700;text-decoration:underline}
+.curso-card[hidden]{display:none}
+.screen-reader-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Cards de curso uniformes: camada da marca sobre fotos de qualidade desigual. */
+.curso-thumb{position:relative}
+.curso-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,80,140,.05) 30%,rgba(0,26,46,.42));mix-blend-mode:multiply;transition:opacity .4s var(--ease)}
+.curso-card:hover .curso-thumb::after{opacity:.55}
+
+/* ---------- Pagina de curso ---------- */
+.enroll-mobile{display:none}
+@media(max-width:980px){
+  .enroll-mobile{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:-1.4rem;position:relative;z-index:2;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1rem 1.2rem;box-shadow:0 20px 40px -26px rgba(0,26,46,.5)}
+  .enroll-mobile .price{font-size:1.25rem;margin:0}
+  .enroll-mobile .btn{flex:none}
+}
+.selos{list-style:none;margin:2.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.selos li{padding:1.1rem 1.3rem;font-size:.88rem;color:var(--muted);line-height:1.4;border-right:1px solid var(--line)}
+.selos li:last-child{border-right:0}
+.selos b{display:block;font-family:var(--display);font-size:1.05rem;color:var(--navy-dark);margin-bottom:.15rem}
+@media(max-width:980px){.selos{grid-template-columns:1fr 1fr}.selos li:nth-child(2n){border-right:0}.selos li:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+.indice{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:2rem}
+.indice span{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:.4rem}
+.indice a{padding:.45rem .9rem;border:1px solid var(--line);border-radius:999px;font-size:.86rem;font-weight:600;color:var(--navy);transition:.2s var(--ease)}
+.indice a:hover{border-color:var(--sky);background:var(--sky-pale)}
+.course-main section[id],#ingresso{scroll-margin-top:24px}
+.docentes-resumo{margin:-.4rem 0 1.2rem;color:var(--muted);font-size:.95rem}
+.docentes small{font-size:.75rem;color:var(--sky);font-weight:700;margin-left:.3rem}
+.faq{display:grid;gap:.7rem}
+.faq details{border:1px solid var(--line);border-radius:14px;background:#fff;transition:border-color .2s}
+.faq details[open]{border-color:var(--sky)}
+.faq summary{cursor:pointer;list-style:none;padding:1.05rem 3rem 1.05rem 1.2rem;font-family:var(--display);font-weight:700;color:var(--navy-dark);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--sky);transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details > div{padding:0 1.2rem 1.1rem;color:#3c4d5a}
+
+/* ---------- Paginas institucionais: subtitulos legados (paragrafo so com negrito) ---------- */
+.course-main .conteudo p.subtitulo{font-family:var(--display);font-size:1.12rem;letter-spacing:-.01em;color:var(--navy-dark);margin:2.4rem 0 .8rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.course-main .conteudo > p.subtitulo:first-child{margin-top:0;padding-top:0;border-top:0}
+
+/* ---------- Mapa sob demanda ---------- */
+.mapa-capa{display:flex;align-items:center;gap:1.4rem;width:100%;margin-top:3rem;padding:2rem 2.2rem;border:0;border-radius:18px;text-align:left;cursor:pointer;color:#fff;font:inherit;background:
+  radial-gradient(circle at 18% 50%,rgba(51,181,232,.35),transparent 45%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+  linear-gradient(150deg,var(--navy-deep),var(--navy-dark))}
+.mapa-pino{flex:none;width:46px;height:46px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--gold);box-shadow:0 10px 24px -10px rgba(0,0,0,.6)}
+.mapa-texto{flex:1;color:#bcd6e7;font-size:.95rem;line-height:1.5}
+.mapa-texto b{display:block;color:#fff;font-family:var(--display);font-size:1.15rem}
+@media(max-width:640px){.mapa-capa{flex-wrap:wrap;padding:1.5rem}}
+
+/* ---------- Rodape em acordeao (celular) ---------- */
+@media(max-width:640px){
+  .foot-grid{grid-template-columns:1fr;gap:0}
+  .foot-col{border-top:1px solid rgba(255,255,255,.12)}
+  .foot-col h4{margin:0;padding:1.1rem 0;cursor:pointer;position:relative}
+  .foot-col h4::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.2rem;color:#9fc0d4;transition:transform .25s var(--ease)}
+  .foot-col.is-open h4::after{transform:translateY(-50%) rotate(45deg)}
+  .foot-col > :not(h4){display:none}
+  .foot-col.is-open > :not(h4){display:block;padding-bottom:1rem}
+  .foot-grid > div:first-child{padding-bottom:1.6rem}
+  footer.site{padding-bottom:6.5rem}
+}
+
+/* Hero do curso compacto no celular: o card de inscricao precisa caber na primeira tela. */
+@media(max-width:640px){
+  .course-hero .shell{padding-top:2.4rem}
+  .course-hero h1{font-size:2.2rem}
+  .course-hero .lead{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:1rem}
+  .course-hero .facts{display:grid;grid-template-columns:1fr 1fr;margin-top:1.6rem}
+  .course-hero .fact{margin:0;padding:.9rem 0;border-right:0}
+  .course-hero .fact b{font-size:1rem}
+}

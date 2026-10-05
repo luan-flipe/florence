@@ -186,7 +186,17 @@ function florence_campos_acf() {
 				'instructions' => 'Aparece na página do curso. Deixe vazio para ocultar a seção.',
 				'sub_fields'   => array(
 					array( 'key' => 'field_curso_docente_nome', 'name' => 'nome', 'label' => 'Nome', 'type' => 'text', 'required' => 1 ),
+					array( 'key' => 'field_curso_docente_titulacao', 'name' => 'titulacao', 'label' => 'Titulação', 'type' => 'select', 'allow_null' => 1, 'choices' => array( 'Especialista' => 'Especialista', 'Mestre' => 'Mestre', 'Doutor' => 'Doutor' ) ),
 					array( 'key' => 'field_curso_docente_lattes', 'name' => 'lattes', 'label' => 'Currículo Lattes', 'type' => 'url' ),
+				),
+			) ),
+			$txt( 'faq', 'Dúvidas frequentes', 'repeater', array(
+				'layout'       => 'block',
+				'button_label' => 'Adicionar pergunta',
+				'instructions' => 'Aparece como acordeão na página do curso e no Google. Só respostas oficiais.',
+				'sub_fields'   => array(
+					array( 'key' => 'field_curso_faq_pergunta', 'name' => 'pergunta', 'label' => 'Pergunta', 'type' => 'text', 'required' => 1 ),
+					array( 'key' => 'field_curso_faq_resposta', 'name' => 'resposta', 'label' => 'Resposta', 'type' => 'textarea', 'rows' => 3, 'required' => 1 ),
 				),
 			) ),
 			$txt( 'reconhecimento_mec', 'Reconhecimento MEC', 'text', array(

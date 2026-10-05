@@ -36,6 +36,31 @@ function florence2026_assets() {
 		array(),
 		null
 	);
+	wp_enqueue_script(
+		'florence2026',
+		get_template_directory_uri() . '/js/florence.js',
+		array(),
+		wp_get_theme()->get( 'Version' ),
+		array( 'in_footer' => true, 'strategy' => 'defer' )
+	);
+}
+
+/** Total de cursos publicados de um nivel (usado na faixa de numeros da home). */
+function florence2026_total_cursos( $nivel ) {
+	$q = new WP_Query( array(
+		'post_type'      => 'curso',
+		'post_status'    => 'publish',
+		'posts_per_page' => 1,
+		'fields'         => 'ids',
+		'meta_query'     => array( array( 'key' => 'nivel', 'value' => $nivel ) ),
+	) );
+	return (int) $q->found_posts;
+}
+
+/** WhatsApp com mensagem pronta, citando o curso quando houver. */
+function florence2026_whatsapp( $curso = '' ) {
+	$msg = $curso ? sprintf( 'Olá! Tenho interesse no curso de %s e quero saber mais.', $curso ) : 'Olá! Quero saber mais sobre os cursos da Florence.';
+	return 'https://api.whatsapp.com/send?phone=5598988630502&text=' . rawurlencode( $msg );
 }
 add_action( 'wp_enqueue_scripts', 'florence2026_assets' );
 
@@ -155,6 +180,7 @@ function florence2026_campos_curso( $id ) {
 		'autorizacao'  => $g( 'autorizacao' ),
 		'imagem'       => $imagem,
 		'docentes'     => array(),
+		'faq'          => array(),
 	);
 }
 
@@ -187,7 +213,20 @@ function florence2026_campos_curso_acf( $id ) {
 		'autorizacao'  => '',
 		'imagem'       => $imagem,
 		'docentes'     => florence2026_docentes( $id ),
+		'faq'          => florence2026_faq( $id ),
 	);
+}
+
+/** Repetidor ACF faq (pergunta/resposta). Vazio enquanto a Florence nao enviar o conteudo. */
+function florence2026_faq( $id ) {
+	$n     = (int) get_post_meta( $id, 'faq', true );
+	$lista = array();
+	for ( $i = 0; $i < $n; $i++ ) {
+		$p = trim( (string) get_post_meta( $id, "faq_{$i}_pergunta", true ) );
+		$r = trim( (string) get_post_meta( $id, "faq_{$i}_resposta", true ) );
+		if ( $p && $r ) $lista[] = array( 'pergunta' => $p, 'resposta' => $r );
+	}
+	return $lista;
 }
 
 /** Repetidor ACF corpo_docente, lido direto do meta (nao depende do ACF no front). */
@@ -200,10 +239,46 @@ function florence2026_docentes( $id ) {
 		$lista[] = array(
 			'nome'   => $nome,
 			'lattes' => trim( (string) get_post_meta( $id, "corpo_docente_{$i}_lattes", true ) ),
+			'titulacao' => trim( (string) get_post_meta( $id, "corpo_docente_{$i}_titulacao", true ) ),
 		);
 	}
 	return $lista;
 }
+
+/** Galerias legadas usavam miniatura de 150px, que fica borrada na grade nova. */
+add_filter( 'shortcode_atts_gallery', function ( $atts ) {
+	if ( 'thumbnail' === $atts['size'] ) {
+		$atts['size'] = 'medium';
+	}
+	return $atts;
+} );
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/** O kit do Elementor baixava Roboto e Roboto Slab, que o tema nao usa. */
+add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
+
+/**
+ * Titulos de aba que o SEO do site gerava mal: a 404 vinha em ingles ("Page not found")
+ * e a listagem de cursos como "Arquivo Cursos", sem o nivel.
+ */
+function florence2026_titulo_aba( $titulo ) {
+	$site = get_bloginfo( 'name' );
+	if ( is_404() ) {
+		return 'Página não encontrada - ' . $site;
+	}
+	if ( is_post_type_archive( 'curso' ) ) {
+		$nome   = 'Cursos';
+		$niveis = function_exists( 'florence_niveis' ) ? array_merge( florence_niveis(), array( 'livre' => 'Cursos livres' ) ) : array();
+		$chave  = isset( $_GET['nivel'] ) ? sanitize_text_field( wp_unslash( $_GET['nivel'] ) ) : '';
+		if ( isset( $niveis[ $chave ] ) ) {
+			$nome = $niveis[ $chave ];
+		}
+		return $nome . ' - ' . $site;
+	}
+	return $titulo;
+}
+add_filter( 'pre_get_document_title', 'florence2026_titulo_aba', 99 );
+add_filter( 'wpseo_title', 'florence2026_titulo_aba', 99 );
 
 /** Arquivo /cursos/ aceita ?nivel=graduacao|tecnico|pos|... */
 add_action( 'pre_get_posts', function ( $q ) {

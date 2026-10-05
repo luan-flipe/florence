@@ -28,7 +28,7 @@ function florence2026_txt() {
 		'paths'        => array(
 			array(
 				'num'  => '01 · GRADUAÇÃO',
-				'h3'   => 'Onze cursos com prática desde o primeiro período',
+				'h3'   => '%d cursos com prática desde o primeiro período',
 				'p'    => 'Você começa a atuar antes mesmo de se formar, em laboratórios e clínicas-escola.',
 				'go'   => 'Ver cursos de graduação',
 				'img'  => 'lab.jpg',

@@ -10,7 +10,7 @@ get_header();
 $zapcorp = florence2026_links_uteis()['whatsapp'];
 ?>
 <div class="course-hero">
-	<div class="shell">
+	<div class="shell" style="padding-bottom:3rem">
 		<div class="crumb">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a> &middot; Corporativo
 		</div>

@@ -10,7 +10,7 @@ get_header();
 $uteis = florence2026_links_uteis();
 ?>
 <div class="course-hero">
-	<div class="shell">
+	<div class="shell" style="padding-bottom:3rem">
 		<div class="crumb">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Início</a> &middot; Contato
 		</div>
@@ -48,8 +48,15 @@ $uteis = florence2026_links_uteis();
 				<?php echo do_shortcode( '[ninja_form id=4]' ); ?>
 			</div>
 		</div>
-		<iframe class="contato-mapa" title="Mapa do campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-			src="<?php echo esc_url( 'https://www.google.com/maps?output=embed&q=' . rawurlencode( 'Centro Universitário Florence, ' . $uteis['endereco'] ) ); ?>"></iframe>
+		<?php // Capa leve no lugar do iframe: o Google Maps so carrega quando a pessoa pede. ?>
+		<button type="button" class="mapa-capa" data-src="<?php echo esc_url( 'https://www.google.com/maps?output=embed&q=' . rawurlencode( 'Centro Universitário Florence, ' . $uteis['endereco'] ) ); ?>">
+			<span class="mapa-pino" aria-hidden="true"></span>
+			<span class="mapa-texto">
+				<b>Centro Universitário Florence</b>
+				<?php echo esc_html( $uteis['endereco'] ); ?>
+			</span>
+			<span class="btn btn-gold">Ver no mapa</span>
+		</button>
 	</div>
 </section>
 <?php get_footer();

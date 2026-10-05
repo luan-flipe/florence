@@ -9,7 +9,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 <div class="hero">
 	<div class="shell">
 		<div>
-			<div class="eyebrow"><?php echo esc_html( $t['hero_eyebrow'] ); ?></div>
+			<div class="eyebrow"><span class="ao-vivo" aria-hidden="true"></span><?php echo esc_html( $t['hero_eyebrow'] ); ?></div>
 			<h1><?php echo esc_html( $t['hero_h1_a'] ); ?><em><?php echo esc_html( $t['hero_h1_em'] ); ?></em><?php echo esc_html( $t['hero_h1_b'] ); ?></h1>
 			<p class="lead"><?php echo esc_html( $t['hero_lead'] ); ?></p>
 			<div class="hero-cta">
@@ -20,15 +20,22 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 		<div style="position:relative">
 			<div class="hero-art"><img src="<?php echo esc_url( $img . '/hero-pratica.jpg' ); ?>" alt="Estudantes de enfermagem em prática supervisionada"></div>
 			<div class="badge-mec">
-				<div class="n">5</div>
+				<div class="n" data-count="5">5</div>
 				<div><small><strong style="color:var(--navy-dark)"><?php echo esc_html( $t['mec_strong'] ); ?></strong><br><?php echo esc_html( $t['mec_small'] ); ?></small></div>
 			</div>
 		</div>
 	</div>
 	<div class="credit">
 		<div class="shell">
-			<?php foreach ( $t['credit'] as $c ) : ?>
-				<div><b><?php echo esc_html( $c[0] ); ?></b> <?php echo esc_html( $c[1] ); ?></div>
+			<?php
+			// O total de graduacoes vem do banco: o texto fixo dizia 11 quando havia 10 publicadas.
+			$credit = $t['credit'];
+			$n_grad = florence2026_total_cursos( 'graduacao' );
+			if ( $n_grad && isset( $credit[0] ) ) $credit[0][0] = (string) $n_grad;
+			foreach ( $credit as $c ) :
+				$num = ctype_digit( $c[0] ) ? ' data-count="' . esc_attr( $c[0] ) . '"' : '';
+				?>
+				<div><b<?php echo $num; // phpcs:ignore ?>><?php echo esc_html( $c[0] ); ?></b> <?php echo esc_html( $c[1] ); ?></div>
 			<?php endforeach; ?>
 		</div>
 	</div>
@@ -36,11 +43,11 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 
 <section id="cursos">
 	<div class="shell">
-		<div class="sec-head">
+		<div class="sec-head" data-reveal>
 			<div><div class="kicker"><?php echo esc_html( $t['paths_kicker'] ); ?></div><h2><?php echo esc_html( $t['paths_h2'] ); ?></h2></div>
 			<p><?php echo esc_html( $t['paths_lead'] ); ?></p>
 		</div>
-		<div class="paths">
+		<div class="paths" data-reveal>
 			<?php foreach ( $t['paths'] as $p ) : ?>
 				<a href="<?php echo esc_url( home_url( $p['url'] ) ); ?>" class="path<?php echo $p['lead'] ? ' lead-path' : ''; ?>">
 					<?php if ( $p['lead'] ) : ?>
@@ -50,7 +57,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 					<?php endif; ?>
 					<div>
 						<div class="num"><?php echo esc_html( $p['num'] ); ?></div>
-						<h3><?php echo esc_html( $p['h3'] ); ?></h3>
+						<h3><?php echo esc_html( false !== strpos( $p['h3'], '%d' ) ? sprintf( $p['h3'], florence2026_total_cursos( 'graduacao' ) ) : $p['h3'] ); ?></h3>
 						<p><?php echo esc_html( $p['p'] ); ?></p>
 					</div>
 					<span class="go"><?php echo esc_html( $p['go'] ); ?> <?php echo $seta; // phpcs:ignore ?></span>
@@ -62,11 +69,11 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 
 <section class="proof">
 	<div class="shell">
-		<div class="sec-head">
+		<div class="sec-head" data-reveal>
 			<div><div class="kicker"><?php echo esc_html( $t['proof_kicker'] ); ?></div><h2><?php echo esc_html( $t['proof_h2'] ); ?></h2></div>
 			<p><?php echo esc_html( $t['proof_lead'] ); ?></p>
 		</div>
-		<div class="proof-grid">
+		<div class="proof-grid" data-reveal>
 			<?php foreach ( $t['proof'] as $i => $pr ) : ?>
 				<div class="pitem">
 					<div class="idx"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></div>
@@ -80,14 +87,14 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 
 <section class="clinica">
 	<div class="shell">
-		<div class="sec-head">
+		<div class="sec-head" data-reveal>
 			<div>
 				<div class="kicker"><?php echo esc_html( $t['clinica_kicker'] ); ?></div>
 				<h2><?php echo esc_html( $t['clinica_h2'] ); ?></h2>
 			</div>
 			<p><?php echo esc_html( $t['clinica_lead'] ); ?></p>
 		</div>
-		<div class="fotos-estrutura">
+		<div class="fotos-estrutura" data-reveal>
 			<?php foreach ( $t['clinica_fotos'] as $f ) : ?>
 				<figure>
 					<img src="<?php echo esc_url( $img . '/' . $f[0] ); ?>" alt="<?php echo esc_attr( $f[1] ); ?>" loading="lazy">
@@ -107,7 +114,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			<p><?php echo esc_html( $t['money_p'] ); ?></p>
 				<a href="<?php echo esc_url( home_url( '/bolsas-e-financiamento/' ) ); ?>" class="btn btn-ghost" style="margin-top:1.6rem">Ver bolsas e financiamento</a>
 		</div>
-		<div class="lead-form">
+		<div class="lead-form" data-reveal>
 			<h3><?php echo esc_html( $t['sim_titulo'] ); ?></h3>
 			<p class="lead-form-sub"><?php echo esc_html( $t['sim_sub'] ); ?></p>
 			<?php echo do_shortcode( '[ninja_form id=10]' ); ?>
@@ -117,11 +124,11 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 
 <section>
 	<div class="shell">
-		<div class="sec-head">
+		<div class="sec-head" data-reveal>
 			<div><div class="kicker"><?php echo esc_html( $t['ways_kicker'] ); ?></div><h2><?php echo esc_html( $t['ways_h2'] ); ?></h2></div>
 			<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-line" target="_blank" rel="noopener"><?php echo esc_html( $t['ways_cta'] ); ?></a>
 		</div>
-		<div class="ways">
+		<div class="ways" data-reveal>
 			<?php foreach ( $t['ways'] as $i => $w ) : ?>
 				<a class="way" href="<?php echo esc_url( isset( $w[2] ) ? $w[2] : florence2026_url_inscricao() ); ?>" target="_blank" rel="noopener">
 					<i><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></i>
@@ -141,16 +148,13 @@ if ( $noticias->have_posts() ) :
 	?>
 <section class="proof">
 	<div class="shell">
-		<div class="sec-head">
+		<div class="sec-head" data-reveal>
 			<div><div class="kicker"><?php echo esc_html( $t['news_kicker'] ); ?></div><h2><?php echo esc_html( $t['news_h2'] ); ?></h2></div>
 			<a href="<?php echo esc_url( $blog ); ?>" class="btn btn-line"><?php echo esc_html( $t['news_cta'] ); ?></a>
 		</div>
-		<div class="quotes">
+		<div class="noticias-grid" data-reveal>
 			<?php while ( $noticias->have_posts() ) : $noticias->the_post(); ?>
-				<a class="quote" href="<?php the_permalink(); ?>" style="display:block">
-					<p style="font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25"><?php echo esc_html( wp_trim_words( get_the_title(), 14 ) ); ?></p>
-					<footer><small><?php echo esc_html( get_the_date() ); ?></small></footer>
-				</a>
+				<?php get_template_part( 'content', 'noticia' ); ?>
 			<?php endwhile; ?>
 		</div>
 	</div>
