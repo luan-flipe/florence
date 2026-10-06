@@ -13,6 +13,10 @@ $q = new WP_Query( array(
 	'post_status'    => 'publish',
 	'posts_per_page' => 12,
 	'paged'          => $paged,
+	// Sempre da mais recente para a mais antiga; posts fixos antigos nao furam a ordem.
+	'ignore_sticky_posts' => true,
+	'orderby'        => 'date',
+	'order'          => 'DESC',
 ) );
 ?>
 <div class="course-hero">

@@ -280,6 +280,19 @@ function florence2026_titulo_aba( $titulo ) {
 add_filter( 'pre_get_document_title', 'florence2026_titulo_aba', 99 );
 add_filter( 'wpseo_title', 'florence2026_titulo_aba', 99 );
 
+/**
+ * Noticias sempre da mais recente para a mais antiga. Havia posts antigos (2022/2023)
+ * marcados como fixos furando a ordem; a marcacao fica no banco, so nao e usada.
+ */
+add_action( 'pre_get_posts', function ( $q ) {
+	if ( is_admin() || ! $q->is_main_query() ) return;
+	if ( $q->is_home() || $q->is_category() || $q->is_tag() || $q->is_date() || $q->is_author() ) {
+		$q->set( 'ignore_sticky_posts', true );
+		$q->set( 'orderby', 'date' );
+		$q->set( 'order', 'DESC' );
+	}
+} );
+
 /** Arquivo /cursos/ aceita ?nivel=graduacao|tecnico|pos|... */
 add_action( 'pre_get_posts', function ( $q ) {
 	if ( is_admin() || ! $q->is_main_query() ) return;
