@@ -1,64 +1,69 @@
 # Dúvidas e pendências para a Florence
 
-Lista de tudo que precisa de resposta ou material do cliente para concluir o redesign do site (tema `florence2026`, ambiente de teste `florence.luanfelipe.com.br`). Enviar de uma vez ao final.
+Lista de tudo que precisa de resposta ou material do cliente para concluir o redesign do site (tema `florence2026`, ambiente de teste `florence.luanfelipe.com.br`).
 
-> Atualizado conforme o trabalho avança. Cada item diz por que precisamos e o que trava enquanto não vier.
+> Legenda: **[x]** feito · **[~]** em andamento ou parcial · **[ ]** pendente. Atualizado em 06/10/2026 (tema v0.17.3). Respostas do Lucas Antônio recebidas em 11/09/2026. A segunda rodada está em `duvidas-florence-rodada-2.md`.
 
-## Respostas recebidas (Lucas Antônio, 11/09/2026)
+## Resumo
 
-- **1. SMTP:** tratar direto com o contato Giovani Murilo (TI/e-mail). Pendente.
-- **2. Contato:** endereço Rua Rio Branco, 216, Centro, São Luís, MA, 65020-470. Número único oficial (98) 98863-0502 (o atendimento distribui por setor; não há outros números). Atendimento das 8h às 21h. Aplicado no tema v0.15.0 (Contato com endereço, mapa e horário; Corporativo passou a usar o número oficial).
-- **3. Formulários:** campo Matrícula do Fale Conosco removido no clone em 05/10 (backup em ~/bkp-nf-campo35.sql). Newsletter fora; eles perguntaram como seria alimentada, responder. Captação da home segue no form Vestibular.
-- **4. FAQ:** com o Flavio, prometido para 12/09.
-- **5. Corpo docente:** atualizado no site oficial (View Toolset 18389, modal com nome + Lattes por curso de graduação). Importado em 05/10 para o repetidor ACF `corpo_docente` do CPT curso (7 cursos, 134 professores), seção "Quem dá aula" na página do curso. Vazios no oficial: Direito, Fisioterapia e também Nutrição (avisar o Lucas). Ao portar pro oficial, reimportar de lá.
+| Tema | Situação |
+|---|---|
+| 1. E-mail dos formulários (SMTP) | [ ] pendente, depende do Giovani Murilo |
+| 2. Página de Contato | [x] feito (falta confirmar dias de atendimento) |
+| 3. Formulários | [~] Matrícula removida; newsletter aguardando resposta |
+| 4. FAQ | [~] estrutura pronta no site; conteúdo com o Flavio |
+| 5. Corpo docente | [~] 7 cursos no ar; faltam Direito, Fisioterapia e Nutrição |
 
 ---
 
-## 1. E-mail e entrega de formulários (SMTP) — bloqueia captação
+## 1. E-mail e entrega de formulários (SMTP), bloqueia captação
 
-O site tem 10 formulários (Fale Conosco, Ouvidoria, Trabalhe Conosco, Vestibular etc.), mas o envio de e-mail não está configurado com autenticação. Sem isso, as mensagens dos formulários caem em spam ou nem chegam. Instalamos o plugin de SMTP; falta a configuração, que depende de vocês:
+O site tem 10 formulários (Fale Conosco, Ouvidoria, Trabalhe Conosco, Vestibular etc.), mas o envio de e-mail não está configurado com autenticação. Plugin de SMTP instalado; falta a configuração.
 
-- **Qual serviço de e-mail a Florence usa?** (ex.: Google Workspace / Gmail, Microsoft 365 / Outlook, servidor próprio da Hostinger, outro)
-- **Qual endereço deve constar como remetente dos formulários?** (ex.: `contato@florence.edu.br`, `ascom@florence.edu.br`)
-- **Para qual(is) endereço(s) cada tipo de formulário deve ser enviado?** (ex.: Fale Conosco vai para X, Trabalhe Conosco para RH, Ouvidoria para Y)
-- **Credenciais de envio** (host SMTP, porta, usuário e senha, ou uma "senha de app"): não manuseamos senha. Vocês aplicam direto no painel, ou nos passam por um canal seguro se preferirem que a gente configure.
+**Resposta do Lucas:** tratar direto com o Giovani Murilo (TI/e-mail).
 
-## 2. Página de Contato — dados que só a Florence tem
+- [ ] **Qual serviço de e-mail a Florence usa?** Perguntar ao Giovani.
+- [ ] **Qual endereço deve constar como remetente dos formulários?** Perguntar ao Giovani.
+- [ ] **Para qual(is) endereço(s) cada tipo de formulário deve ser enviado?** Decisão da Florence, não do TI. Reperguntado na rodada 2 (item 1).
+- [ ] **Credenciais de envio.** Não manuseamos senha: o Giovani aplica direto no painel.
 
-Estamos montando a página de Contato nova (a atual é quase vazia). Precisamos de:
+## 2. Página de Contato
 
-- **Endereço completo do campus** (rua, número, bairro, CEP) para exibir e montar o mapa.
-- **Telefones por setor** (ex.: Secretaria, Financeiro, Coordenações, Ouvidoria). Hoje só temos os gerais: (98) 3878-2120 e (98) 98863-0502.
-- **Horário de atendimento** ao público (presencial e telefônico).
-- **Confirmar o WhatsApp oficial** de atendimento: (98) 98863-0502. E o WhatsApp corporativo (98) 99242-2120 é o correto para o programa Corporativo?
+- [x] **Endereço completo do campus.** Rua Rio Branco, 216, Centro, São Luís, MA, 65020-470. No ar na Contato e no rodapé, com mapa que carrega ao clicar e link "Como chegar".
+- [x] **Telefones por setor.** Não existem: a Florence usa um número único, que distribui por setor. O (98) 3878-2120 foi removido do site.
+- [~] **Horário de atendimento.** Das 8h às 21h, no ar na Contato e no rodapé. Falta confirmar os dias (todos os dias ou só dias úteis), reperguntado na rodada 2 (item 2).
+- [x] **WhatsApp oficial.** Apenas (98) 98863-0502. O corporativo (98) 99242-2120 saiu; a página do Corporativo usa o número oficial. Botão de WhatsApp flutuante e barra fixa no celular adicionados, com mensagem pronta citando o curso.
 
 ## 3. Formulários (revisão de conteúdo)
 
-Reaproveitamos os formulários que já existem no site (Ninja Forms). Dois pontos a confirmar:
+- [x] **Campo Matrícula do Fale Conosco.** Resposta: pode remover. Removido em 05/10 (backup em `~/bkp-nf-campo35.sql` no servidor).
+- [~] **Newsletter do rodapé.** Fora do site novo. O Lucas perguntou como seria alimentada; explicação enviada na rodada 2 (item 4), aguardando decisão.
+- [x] **Formulário de captação da home.** Resposta: pode usar o mesmo. Segue no form Vestibular, com o botão "Quero minha vaga" (antes aparecia "Submit").
 
-- **Fale Conosco** (usado na página de Contato) tem um campo **Matrícula**, que faz sentido para aluno atual mas não para candidato. Podemos remover ou deixar opcional. Como preferem?
-- **Newsletter do rodapé:** hoje aparece quebrada no site atual (o código do formulário aparece como texto). Vocês querem manter uma newsletter no rodapé novo, ou podemos remover?
-- **Formulário de captação da home:** usamos o formulário "Vestibular" (Nome, E-mail, Celular, Curso de interesse). Confirmam que é para onde deve ir esse contato, ou querem um destino/campos diferentes?
+## 4. Perguntas Frequentes (FAQ)
 
-## 4. Perguntas Frequentes (FAQ) — depende de conteúdo de vocês
+**Resposta do Lucas:** repassado ao Flavio, prometido para 12/09. Ainda não chegou.
 
-Queremos criar uma seção de Perguntas Frequentes (com marcação para o Google, o que ajuda a aparecer melhor na busca). Só que uma FAQ boa precisa de respostas oficiais, e não vamos inventar. Precisamos de vocês:
+Já pronto no site: campo "Dúvidas frequentes" no painel de cada curso, exibido como acordeão na página do curso e marcado para aparecer no Google. Basta preencher.
 
-- **Documentos necessários para matrícula**, por nível (graduação, técnico, pós). Qual a lista?
-- **Valores / mensalidades**: o site novo não exibe preços hoje. Vocês querem exibir faixa de valores, "consulte", ou nada? Se sim, quais?
-- **Bolsas**: já temos "até 77% para servidores públicos e funcionários de empresas parceiras, incluindo dependentes". Confirmam os percentuais e quem tem direito? Como o candidato comprova?
-- **Vestibular digital**: como é a prova (duração, número de questões, conteúdo)? Há taxa?
-- **Calendário do processo seletivo 2026.2**: prazos de inscrição, prova e matrícula.
-- **Reconhecimento MEC por curso**: quais cursos têm qual conceito/portaria (para exibir na página de cada curso)?
-- **A FAQ deve ser geral (institucional) ou por curso?** Uma FAQ por curso exige um bloco de perguntas e respostas para cada um; se preferirem, começamos com uma FAQ geral (ingresso, bolsas, documentos) e evoluímos depois.
+- [ ] **Documentos necessários para matrícula**, por nível.
+- [ ] **Valores / mensalidades.** Observação: as páginas de curso já mostram o investimento quando o campo está preenchido (ex.: Enfermagem R$ 1.593,96). Confirmar se esses valores estão atualizados.
+- [ ] **Bolsas.** Confirmar percentuais (até 77%) e quem tem direito.
+- [ ] **Vestibular digital.** Formato da prova e taxa.
+- [ ] **Calendário do processo seletivo 2026.2.**
+- [ ] **Reconhecimento MEC por curso.**
+- [ ] **FAQ geral ou por curso?**
 
-## 5. Corpo docente por curso — depende de conteúdo de vocês
+## 5. Corpo docente por curso
 
-A página de cada curso hoje mostra o **coordenador** (nome e link do Lattes), que é o único dado de docente estruturado que existe no site. Se vocês quiserem exibir o **corpo docente** (os professores) na página do curso, precisamos da lista organizada:
+**Resposta do Lucas:** atualizaram todos os cursos no site oficial; faltam Direito e Fisioterapia (vão cobrar a coordenação).
 
-- **Por curso, quais professores exibir?** Para cada um: nome, titulação (mestre/doutor), e o link do Lattes (opcional). Foto é opcional.
-- Sem essa lista estruturada não montamos a seção, para não publicar nome de professor errado ou desatualizado.
+- [~] **Por curso, quais professores exibir?** Importado do oficial em 05/10 para o campo "Corpo docente" de cada curso: 7 cursos e 134 professores (Medicina 34, Odontologia 24, Farmácia 21, Biomedicina 17, Veterinária 16, Estética 12, Enfermagem 10). Seção "Quem dá aula" no ar, com nome e Lattes.
+  - [ ] Faltam **Direito**, **Fisioterapia** e também **Nutrição** (vazia no oficial, avisado na rodada 2).
+  - [ ] **Titulação (mestre/doutor):** campo pronto no painel, aparece ao lado do nome e no resumo quando preenchido. A lista do oficial não traz essa informação.
+  - [ ] Ao portar o site para o endereço oficial, reimportar a lista de lá (pode ter mudado).
+- [x] **Não publicar nome errado:** cursos sem lista simplesmente não mostram a seção.
 
 ---
 
-_(mais itens serão adicionados abaixo conforme o trabalho continua)_
+_Novos pontos (edições no site atual, páginas para cortar, aprovação e acessos) estão na rodada 2._

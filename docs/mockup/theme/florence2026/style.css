@@ -1,7 +1,7 @@
 /*
 Theme Name: Florence 2026
 Description: Tema enxuto do Centro Universitario Florence. Casca leve para o Elementor Theme Builder, com o design system da marca em CSS.
-Version: 0.17.3
+Version: 0.17.6
 Author: Luan Felipe
 Text Domain: florence2026
 */
@@ -488,7 +488,10 @@ body[class*="elementor-kit-"] a{font-family:inherit}
 .path.lead-path .bg img{animation:fl-zoom 28s ease-in-out infinite alternate}
 .money{background:linear-gradient(150deg,var(--navy-dark),var(--navy-deep),#00406e,var(--navy-dark));background-size:300% 300%;animation:fl-fundo 24s ease-in-out infinite}
 .final{position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,0) 0 120px,rgba(255,255,255,.14) 120px 140px);animation:fl-faixa 14s linear infinite;pointer-events:none}
+/* Faixa amarela: luzes suaves que passeiam atras do texto (sem linhas cruzando a leitura). */
+.final::before{content:"";position:absolute;inset:-30%;background:
+  radial-gradient(circle at 25% 35%,rgba(255,255,255,.45),transparent 32%),
+  radial-gradient(circle at 75% 65%,rgba(212,160,23,.35),transparent 34%);animation:fl-deriva 18s ease-in-out infinite alternate;pointer-events:none}
 .final .shell{position:relative}
 .credit b[data-count]{font-variant-numeric:tabular-nums}
 
@@ -598,3 +601,22 @@ body[class*="elementor-kit-"] a{font-family:inherit}
   .course-hero .fact{margin:0;padding:.9rem 0;border-right:0}
   .course-hero .fact b{font-size:1rem}
 }
+
+/* v0.17.4: degrade animado nos fundos azuis escuros */
+.course-hero,footer.site,.hero,.util{background:linear-gradient(120deg,var(--navy-dark),var(--navy-deep),#003e6b,var(--navy-dark));background-size:300% 300%;animation:fl-fundo 20s ease-in-out infinite}
+.util{animation-duration:26s}
+
+/* WhatsApp flutuante: circulo perfeito (o texto so ocupa espaco no hover) */
+.zap-flutuante{gap:0;padding:0 17px;min-width:56px;justify-content:center}
+.zap-flutuante:hover span{margin-left:.6rem}
+.barra-zap{aspect-ratio:1}
+
+/* Celular: sem o botao do topo (a barra fixa ja leva a inscricao) */
+@media(max-width:980px){.btn-topo{display:none}.menu-toggle{margin-left:auto}}
+
+/* Logo maior no celular (o botao do topo saiu, sobrou espaco) */
+@media(max-width:980px){header.site .brand img{height:62px;max-height:none;width:auto}}
+
+/* As artes das noticias vem com moldura branca no proprio arquivo (~4%% por lado). Zoom leve corta a moldura. */
+.noticia-thumb img{transform:scale(1.1)}
+.noticia-card:hover .noticia-thumb img{transform:scale(1.15)}
