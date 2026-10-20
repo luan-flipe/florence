@@ -211,3 +211,29 @@ function florence_campos_acf() {
 		),
 	) );
 }
+
+/** Numeros da Clinica-Escola: so aparecem no site quando preenchidos com dado oficial. */
+add_action( 'acf/init', function () {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) return;
+	$pagina = get_page_by_path( 'clinica-escola' );
+	if ( ! $pagina ) return;
+	acf_add_local_field_group( array(
+		'key'      => 'group_clinica_numeros',
+		'title'    => 'Números da Clínica',
+		'location' => array( array( array( 'param' => 'page', 'operator' => '==', 'value' => (string) $pagina->ID ) ) ),
+		'fields'   => array( array(
+			'key'          => 'field_clinica_numeros',
+			'name'         => 'clinica_numeros',
+			'label'        => 'Números de atendimento',
+			'type'         => 'repeater',
+			'layout'       => 'table',
+			'max'          => 4,
+			'button_label' => 'Adicionar número',
+			'instructions' => 'Ex.: 12000 / atendimentos por ano. Use só números oficiais. Vazio, a seção não aparece.',
+			'sub_fields'   => array(
+				array( 'key' => 'field_clinica_num_numero', 'name' => 'numero', 'label' => 'Número', 'type' => 'text', 'required' => 1 ),
+				array( 'key' => 'field_clinica_num_rotulo', 'name' => 'rotulo', 'label' => 'Descrição', 'type' => 'text', 'required' => 1 ),
+			),
+		) ),
+	) );
+} );

@@ -18,7 +18,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			</div>
 		</div>
 		<div style="position:relative">
-			<div class="hero-art"><img src="<?php echo esc_url( $img . '/hero-pratica.jpg' ); ?>" alt="Estudantes de enfermagem em prática supervisionada"></div>
+			<div class="hero-art"><img src="<?php echo esc_url( $img . '/hero-pratica.jpg' ); ?>" fetchpriority="high" alt="Estudantes de enfermagem em prática supervisionada"></div>
 			<div class="badge-mec">
 				<div class="n" data-count="5">5</div>
 				<div><small><strong style="color:var(--navy-dark)"><?php echo esc_html( $t['mec_strong'] ); ?></strong><br><?php echo esc_html( $t['mec_small'] ); ?></small></div>

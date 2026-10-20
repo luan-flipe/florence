@@ -66,6 +66,29 @@ $fotos = array(
 	</div>
 </section>
 
+<?php
+// Numeros de atendimento: preenchidos no painel da pagina (campo "Números da Clínica"). Sem dado, sem secao.
+$n_clinica = (int) get_post_meta( get_the_ID(), 'clinica_numeros', true );
+$numeros   = array();
+for ( $i = 0; $i < $n_clinica; $i++ ) {
+	$num = trim( (string) get_post_meta( get_the_ID(), "clinica_numeros_{$i}_numero", true ) );
+	$rot = trim( (string) get_post_meta( get_the_ID(), "clinica_numeros_{$i}_rotulo", true ) );
+	if ( $num && $rot ) $numeros[] = array( $num, $rot );
+}
+if ( $numeros ) : ?>
+<section class="clinica-numeros">
+	<div class="shell">
+		<ul data-reveal>
+			<?php foreach ( $numeros as $n ) :
+				$conta = ctype_digit( $n[0] ) ? ' data-count="' . esc_attr( $n[0] ) . '"' : '';
+				?>
+				<li><b<?php echo $conta; // phpcs:ignore ?>><?php echo esc_html( $n[0] ); ?></b><span><?php echo esc_html( $n[1] ); ?></span></li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+</section>
+<?php endif; ?>
+
 <section class="fotos-sec">
 	<div class="shell">
 		<div class="fotos-estrutura">

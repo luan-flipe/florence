@@ -175,7 +175,7 @@ while ( have_posts() ) :
 					<section id="valores" class="valores-form">
 						<h2>Quanto custa <?php the_title(); ?>?</h2>
 						<p>Deixe seus dados e o time de admissões envia o valor da mensalidade e as bolsas que você pode usar.</p>
-						<div class="lead-form"><?php echo do_shortcode( '[ninja_form id=10]' ); ?></div>
+						<div class="lead-form" data-curso="<?php the_title_attribute(); ?>"><?php echo do_shortcode( '[ninja_form id=10]' ); ?></div>
 					</section>
 
 					<?php if ( $tem_texto ) : ?>
@@ -189,6 +189,7 @@ while ( have_posts() ) :
 						<div class="enroll">
 							<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao() ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
 							<a href="#valores" class="btn btn-line" style="width:100%;justify-content:center">Receber os valores</a>
+							<?php if ( 'curso' === $tipo ) : ?><a href="<?php echo esc_url( add_query_arg( 'c', get_the_ID(), home_url( '/comparar-cursos/' ) ) ); ?>" class="link-comparar">Comparar com outro curso</a><?php endif; ?>
 							<ul>
 								<?php if ( $c['duracao'] ) : ?><li><span class="tick"></span><?php echo esc_html( $c['duracao'] ); ?></li><?php endif; ?>
 								<?php if ( $c['modalidade'] ) : ?><li><span class="tick"></span><?php echo esc_html( wp_trim_words( $c['modalidade'], 6 ) ); ?></li><?php endif; ?>

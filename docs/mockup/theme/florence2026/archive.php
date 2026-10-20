@@ -88,6 +88,7 @@ if ( 'curso' === $tipo && ! empty( $_GET['nivel'] ) && function_exists( 'florenc
 				foreach ( $cursos as $item ) :
 					list( $cid, $campos, $modo, $thumb ) = $item;
 					?>
+					<div class="curso-item">
 					<a class="curso-card" href="<?php echo esc_url( get_permalink( $cid ) ); ?>" data-nome="<?php echo esc_attr( get_the_title( $cid ) ); ?>" data-modalidade="<?php echo esc_attr( sanitize_title( $modo ) ); ?>">
 						<?php if ( $thumb ) : ?>
 							<div class="curso-thumb"><img src="<?php echo esc_url( $thumb ); ?>" alt="" loading="lazy"></div>
@@ -106,8 +107,17 @@ if ( 'curso' === $tipo && ! empty( $_GET['nivel'] ) && function_exists( 'florenc
 							</div>
 						</div>
 					</a>
+					<?php if ( 'curso' === $tipo ) : ?><button type="button" class="comparar-toggle" data-id="<?php echo esc_attr( $cid ); ?>" aria-pressed="false">Comparar</button><?php endif; ?>
+					</div>
 				<?php endforeach; ?>
 			</div>
+			<?php if ( 'curso' === $tipo ) : ?>
+				<div class="comparar-barra" hidden data-base="<?php echo esc_url( home_url( '/comparar-cursos/' ) ); ?>">
+					<span class="comparar-qtd" aria-live="polite"></span>
+					<button type="button" class="comparar-limpar">Limpar</button>
+					<a class="btn btn-gold comparar-ir" href="#">Comparar agora</a>
+				</div>
+			<?php endif; ?>
 		<?php elseif ( have_posts() ) : ?>
 			<div class="noticias-grid">
 				<?php
@@ -128,7 +138,8 @@ if ( 'curso' === $tipo && ! empty( $_GET['nivel'] ) && function_exists( 'florenc
 	<div class="shell">
 		<h2>Ainda em dúvida sobre qual curso escolher?</h2>
 		<p>Fale com o time de admissões. A gente ajuda você a comparar as opções e entender as formas de ingresso.</p>
-		<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-navy">Falar com admissões</a>
+		<a href="<?php echo esc_url( home_url( '/qual-curso-combina-comigo/' ) ); ?>" class="btn btn-navy">Descobrir qual curso combina comigo</a>
+		<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-line">Falar com admissões</a>
 	</div>
 </section>
 <?php get_footer();

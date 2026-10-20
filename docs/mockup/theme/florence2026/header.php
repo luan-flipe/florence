@@ -11,6 +11,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
 <?php $florence_uteis = florence2026_links_uteis(); ?>
 <div class="util">
@@ -69,3 +70,4 @@
 	b.addEventListener('click',function(){var a=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!a));b.setAttribute('aria-label',a?'Abrir menu':'Fechar menu');p.hidden=a;document.body.classList.toggle('menu-aberto',!a);});})();
 	</script>
 </header>
+<div id="conteudo" tabindex="-1"></div>

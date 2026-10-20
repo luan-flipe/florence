@@ -41,7 +41,6 @@
 // Atalhos de conversao: barra fixa no celular e WhatsApp flutuante no desktop.
 // Na pagina de curso, o link de inscricao e a mensagem do WhatsApp citam o curso.
 $e_pagina_curso = is_singular() && florence2026_e_curso( get_post_type() );
-$curso_nome     = $e_pagina_curso ? get_the_title() : '';
 $url_vaga       = florence2026_url_inscricao();
 if ( $e_pagina_curso ) {
 	$campos_rodape = florence2026_campos_curso( get_queried_object_id() );
@@ -51,9 +50,9 @@ $zap_icone = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor
 ?>
 <div class="barra-vaga" aria-label="Atalhos de inscrição">
 	<a class="btn btn-gold" href="<?php echo esc_url( $url_vaga ); ?>" target="_blank" rel="noopener">Quero minha vaga</a>
-	<a class="barra-zap" href="<?php echo esc_url( florence2026_whatsapp( $curso_nome ) ); ?>" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><?php echo $zap_icone; // phpcs:ignore ?></a>
+	<a class="barra-zap" href="<?php echo esc_url( florence2026_whatsapp_contexto() ); ?>" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><?php echo $zap_icone; // phpcs:ignore ?></a>
 </div>
-<a class="zap-flutuante" href="<?php echo esc_url( florence2026_whatsapp( $curso_nome ) ); ?>" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><?php echo $zap_icone; // phpcs:ignore ?><span>Fale com a gente</span></a>
+<a class="zap-flutuante" href="<?php echo esc_url( florence2026_whatsapp_contexto() ); ?>" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><?php echo $zap_icone; // phpcs:ignore ?><span>Fale com a gente</span></a>
 <?php wp_footer(); ?>
 </body>
 </html>
