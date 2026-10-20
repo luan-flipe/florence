@@ -127,7 +127,7 @@ function florence2026_links_uteis() {
 		// Numero unico oficial (confirmado pela Florence em 11/09/2026).
 		'telefone'  => array( '(98) 98863-0502', 'tel:+5598988630502' ),
 		'endereco'  => 'Rua Rio Branco, 216, Centro, São Luís, MA, 65020-470',
-		'horario'   => 'Das 8h às 21h',
+		'horario'   => 'Segunda a sexta, das 8h às 21h. Sábado, das 8h às 12h',
 	);
 }
 

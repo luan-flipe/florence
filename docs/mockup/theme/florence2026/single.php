@@ -54,6 +54,7 @@ while ( have_posts() ) :
 			'estrutura'  => $c['estrutura'] ? 'Como funciona' : '',
 			'adicionais' => $c['adicionais'] ? 'Informações' : '',
 			'docentes'   => $c['docentes'] ? 'Quem dá aula' : '',
+			'valores'    => 'Valores',
 			'faq'        => $c['faq'] ? 'Dúvidas' : '',
 			'ingresso'   => 'Como entrar',
 		) );
@@ -62,9 +63,7 @@ while ( have_posts() ) :
 		?>
 		<?php // Celular: decisao na primeira tela (o card lateral cai para o fim da pagina). ?>
 		<div class="shell enroll-mobile">
-			<?php if ( $c['investimento'] ) : ?>
-				<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
-			<?php endif; ?>
+			<a href="#valores" class="btn btn-line">Ver valores</a>
 			<a href="<?php echo esc_url( $url_vaga ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
 		</div>
 
@@ -172,6 +171,13 @@ while ( have_posts() ) :
 						</section>
 					<?php endif; ?>
 
+					<?php // Valores sob pedido: a Florence prefere captar o contato antes de informar a mensalidade. ?>
+					<section id="valores" class="valores-form">
+						<h2>Quanto custa <?php the_title(); ?>?</h2>
+						<p>Deixe seus dados e o time de admissões envia o valor da mensalidade e as bolsas que você pode usar.</p>
+						<div class="lead-form"><?php echo do_shortcode( '[ninja_form id=10]' ); ?></div>
+					</section>
+
 					<?php if ( $tem_texto ) : ?>
 						<section><?php the_content(); ?></section>
 					<?php endif; ?>
@@ -181,12 +187,8 @@ while ( have_posts() ) :
 				<aside>
 					<div class="lateral">
 						<div class="enroll">
-							<?php if ( $c['investimento'] ) : ?>
-								<div class="price"><small>Investimento</small><?php echo esc_html( $c['investimento'] ); ?></div>
-								<hr>
-							<?php endif; ?>
 							<a href="<?php echo esc_url( $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao() ); ?>" class="btn btn-gold" target="_blank" rel="noopener">Quero minha vaga</a>
-							<a href="<?php echo esc_url( home_url( '/#inscricao' ) ); ?>" class="btn btn-line" style="width:100%;justify-content:center">Simular minha mensalidade</a>
+							<a href="#valores" class="btn btn-line" style="width:100%;justify-content:center">Receber os valores</a>
 							<ul>
 								<?php if ( $c['duracao'] ) : ?><li><span class="tick"></span><?php echo esc_html( $c['duracao'] ); ?></li><?php endif; ?>
 								<?php if ( $c['modalidade'] ) : ?><li><span class="tick"></span><?php echo esc_html( wp_trim_words( $c['modalidade'], 6 ) ); ?></li><?php endif; ?>

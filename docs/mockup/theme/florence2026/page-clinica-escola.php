@@ -40,7 +40,7 @@ $fotos = array(
 		<div class="facts">
 			<div class="fact"><span>Atendimento</span><b>Aberto à comunidade</b></div>
 			<div class="fact"><span>Funcionamento</span><b>Seg a sex, 8h às 17h30</b></div>
-			<div class="fact"><span>Agendamento</span><b>(98) 3878-2130</b></div>
+			<div class="fact"><span>Agendamento</span><b>(98) 98863-0502</b></div>
 		</div>
 	</div>
 </div>
@@ -104,9 +104,8 @@ $fotos = array(
 				<p>Segunda a sexta, das 8h às 12h e das 14h às 17h30. O atendimento é feito por agendamento prévio.</p>
 			</div>
 			<div class="tels">
-				<span>Agende pelo telefone</span>
-				<a href="tel:+559838782130">(98) 3878-2130</a>
-				<a href="tel:+559838782112">(98) 3878-2112</a>
+				<span>Agende pelo WhatsApp ou telefone</span>
+				<a href="<?php echo esc_url( florence2026_whatsapp() ); ?>" target="_blank" rel="noopener">(98) 98863-0502</a>
 			</div>
 		</div>
 	</div>

@@ -175,7 +175,7 @@ function florence_campos_acf() {
 			$txt( 'sobre', 'Sobre o curso', 'wysiwyg', array( 'media_upload' => 1 ) ),
 			$txt( 'estrutura', 'Como o curso funciona', 'wysiwyg', array( 'media_upload' => 0 ) ),
 			$txt( 'informacoes_adicionais', 'Informações importantes', 'wysiwyg', array( 'media_upload' => 0 ) ),
-			$txt( 'investimento', 'Investimento', 'text', array( 'wrapper' => array( 'width' => 50 ) ) ),
+			$txt( 'investimento', 'Investimento', 'text', array( 'wrapper' => array( 'width' => 50 ), 'instructions' => 'Atualize a cada semestre. Não aparece no site: o candidato pede o valor pelo formulário.' ) ),
 			$txt( 'link_inscricao', 'Link de inscrição', 'url', array( 'wrapper' => array( 'width' => 50 ) ) ),
 			$txt( 'matriz_curricular', 'Matriz curricular (arquivo ou link)', 'url' ),
 			$txt( 'coordenador', 'Coordenador', 'text', array( 'wrapper' => array( 'width' => 50 ) ) ),
