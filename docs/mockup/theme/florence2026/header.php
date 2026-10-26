@@ -45,11 +45,11 @@
 			<?php } ?>
 		</a>
 		<nav class="main">
-			<?php if ( has_nav_menu( 'principal' ) ) { florence2026_menu( 'principal' ); } else { ?>
+			<?php if ( ! florence2026_mega_menu() ) { ?>
 				<a href="#">Institucional</a><a href="#">Cursos</a><a href="#">Como entrar</a><a href="#">Bolsas</a><a href="#">Notícias</a><a href="#">Contato</a>
 			<?php } ?>
 		</nav>
-		<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-gold btn-topo" target="_blank" rel="noopener">Quero minha vaga</a>
+		<a href="<?php echo esc_url( florence2026_url_inscricao() ); ?>" class="btn btn-gold btn-topo" target="_blank" rel="noopener"><span class="ao-vivo" aria-hidden="true"></span>Quero minha vaga</a>
 		<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
 			<span></span><span></span><span></span>
 		</button>

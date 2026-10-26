@@ -94,6 +94,7 @@ if ( 'curso' === $tipo && ! empty( $_GET['nivel'] ) && function_exists( 'florenc
 							<div class="curso-thumb"><img src="<?php echo esc_url( $thumb ); ?>" alt="" loading="lazy"></div>
 						<?php endif; ?>
 						<div class="curso-body">
+							<?php if ( 'curso' === $tipo ) echo '<span class="curso-icone">' . florence2026_icone_area( get_post_field( 'post_name', $cid ) ) . '</span>'; // phpcs:ignore ?>
 							<?php if ( $campos['titulacao'] ) : ?>
 								<span class="curso-tag"><?php echo esc_html( $campos['titulacao'] ); ?></span>
 							<?php endif; ?>

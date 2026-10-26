@@ -61,6 +61,8 @@ while ( have_posts() ) :
 		$n_doc    = count( $c['docentes'] );
 		$url_vaga = $c['inscricao'] ? $c['inscricao'] : florence2026_url_inscricao();
 		?>
+		<?php // Desktop: barra fina com o curso e a inscricao, aparece depois do topo. ?>
+		<div class="curso-fixo" aria-hidden="true"><div class="shell"><b><?php the_title(); ?></b><span><?php echo esc_html( trim( $c['duracao'] . ( $c['modalidade'] ? ' · ' . $c['modalidade'] : '' ), ' ·' ) ); ?></span><a href="#valores" class="btn btn-line" tabindex="-1">Ver valores</a><a href="<?php echo esc_url( $url_vaga ); ?>" class="btn btn-gold" target="_blank" rel="noopener" tabindex="-1">Quero minha vaga</a></div></div>
 		<?php // Celular: decisao na primeira tela (o card lateral cai para o fim da pagina). ?>
 		<div class="shell enroll-mobile">
 			<a href="#valores" class="btn btn-line">Ver valores</a>

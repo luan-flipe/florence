@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 require_once get_template_directory() . "/textos.php";
 require_once get_template_directory() . "/recursos.php";
+require_once get_template_directory() . "/menu.php";
 
 function florence2026_setup() {
 	add_theme_support( 'title-tag' );

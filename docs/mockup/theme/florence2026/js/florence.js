@@ -308,4 +308,79 @@
 		};
 		desenha(0);
 	}
+	/* ---------- Mega menu: abre no hover (CSS) e pelo botao (teclado e toque) ---------- */
+	var megaItens = document.querySelectorAll('.mega-item.tem-painel');
+	function fechaMegas(exceto) {
+		megaItens.forEach(function (li) {
+			if (li === exceto) return;
+			li.classList.remove('is-open');
+			var b = li.querySelector('.mega-abre');
+			if (b) b.setAttribute('aria-expanded', 'false');
+		});
+	}
+	megaItens.forEach(function (li) {
+		var b = li.querySelector('.mega-abre');
+		if (!b) return;
+		b.addEventListener('click', function () {
+			var abre = !li.classList.contains('is-open');
+			fechaMegas(li);
+			li.classList.toggle('is-open', abre);
+			b.setAttribute('aria-expanded', String(abre));
+		});
+		li.addEventListener('mouseleave', function () { if (li.classList.contains('is-open')) { li.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); } });
+	});
+	document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fechaMegas(); });
+	document.addEventListener('click', function (e) { if (!e.target.closest('.mega-item')) fechaMegas(); });
+
+	/* ---------- Efeitos de mouse: so em quem tem mouse e aceita movimento ---------- */
+	var temMouse = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+	if (temMouse && !calmo) {
+		/* Borda que acende onde o cursor esta */
+		document.querySelectorAll('.curso-card,.path:not(.lead-path),.mega-atalho,.passos li').forEach(function (el) {
+			el.classList.add('spot');
+			el.addEventListener('pointermove', function (e) {
+				var r = el.getBoundingClientRect();
+				el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+				el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+			});
+		});
+	}
+
+	/* ---------- Barra de progresso de leitura (noticias e paginas longas) ---------- */
+	if (document.body.classList.contains('single-post') || document.querySelector('.conteudo.longa')) {
+		var prog = document.createElement('div');
+		prog.className = 'leitura';
+		prog.setAttribute('aria-hidden', 'true');
+		document.body.appendChild(prog);
+		var mede = function () {
+			var max = document.documentElement.scrollHeight - innerHeight;
+			prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(scrollY / max, 1) : 0) + ')';
+		};
+		addEventListener('scroll', mede, { passive: true });
+		mede();
+	}
+
+	/* ---------- Barra fixa do curso (desktop), depois do topo da pagina ---------- */
+	var cursoFixo = document.querySelector('.curso-fixo');
+	var topoCurso = document.querySelector('.course-hero');
+	if (cursoFixo && topoCurso && temIO) {
+		new IntersectionObserver(function (it) {
+			var on = !it[0].isIntersecting;
+			cursoFixo.classList.toggle('is-on', on);
+			cursoFixo.setAttribute('aria-hidden', String(!on));
+			cursoFixo.querySelectorAll('a').forEach(function (a) { a.tabIndex = on ? 0 : -1; });
+		}).observe(topoCurso);
+	}
+
+	/* Menu do celular em tela cheia: comeca logo abaixo do cabecalho */
+	var tgl = document.querySelector('.menu-toggle');
+	var hdr = document.querySelector('header.site');
+	var mm = document.getElementById('menu-mobile');
+	if (tgl && hdr && mm) {
+		tgl.addEventListener('click', function () {
+			// Com a pagina rolada o cabecalho sai da tela: volta ao topo para o menu encostar nele.
+			if (!mm.hidden && hdr.getBoundingClientRect().top < 0) window.scrollTo(0, 0);
+			mm.style.setProperty('--topo-menu', Math.max(0, hdr.querySelector('.shell').getBoundingClientRect().bottom) + 'px');
+		});
+	}
 })();

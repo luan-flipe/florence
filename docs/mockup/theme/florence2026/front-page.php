@@ -7,6 +7,8 @@ $t   = florence2026_txt();
 $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true"><path d="M1 6h14M10 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 ?>
 <div class="hero">
+	<div class="hero-icones" aria-hidden="true"><?php foreach ( array( 'medicina', 'odontologia', 'direito', 'veterinaria', 'nutricao', 'farmacia', 'biomedicina', 'fisioterapia', 'estetica' ) as $ic ) echo '<span>' . florence2026_icone_area( $ic ) . '</span>'; // phpcs:ignore ?></div>
+	<div class="hero-fundo" aria-hidden="true"><img src="<?php echo esc_url( $img . '/turma.jpg' ); ?>" alt=""></div>
 	<div class="shell">
 		<div>
 			<div class="eyebrow"><span class="ao-vivo" aria-hidden="true"></span><?php echo esc_html( $t['hero_eyebrow'] ); ?></div>
@@ -20,7 +22,7 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 		<div style="position:relative">
 			<div class="hero-art"><img src="<?php echo esc_url( $img . '/hero-pratica.jpg' ); ?>" fetchpriority="high" alt="Estudantes de enfermagem em prática supervisionada"></div>
 			<div class="badge-mec">
-				<div class="n" data-count="5">5</div>
+				<div class="selo-mec" role="img" aria-label="Selo MEC nota 5"><svg viewBox="0 0 64 64" aria-hidden="true"><polygon points="32.0,2.0 37.1,6.5 43.5,4.3 46.4,10.4 53.2,10.8 53.6,17.6 59.7,20.5 57.5,26.9 62.0,32.0 57.5,37.1 59.7,43.5 53.6,46.4 53.2,53.2 46.4,53.6 43.5,59.7 37.1,57.5 32.0,62.0 26.9,57.5 20.5,59.7 17.6,53.6 10.8,53.2 10.4,46.4 4.3,43.5 6.5,37.1 2.0,32.0 6.5,26.9 4.3,20.5 10.4,17.6 10.8,10.8 17.6,10.4 20.5,4.3 26.9,6.5" fill="#F5C842"/><circle cx="32" cy="32" r="22" fill="#00508c"/><circle cx="32" cy="32" r="19" fill="none" stroke="#F5C842" stroke-width="1" stroke-dasharray="2 2"/><text x="32" y="22.5" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6" font-weight="800" letter-spacing=".6" fill="#F5C842">MEC</text></svg><span class="n">5</span></div>
 				<div><small><strong style="color:var(--navy-dark)"><?php echo esc_html( $t['mec_strong'] ); ?></strong><br><?php echo esc_html( $t['mec_small'] ); ?></small></div>
 			</div>
 		</div>
@@ -94,13 +96,19 @@ $seta = '<svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden
 			</div>
 			<p><?php echo esc_html( $t['clinica_lead'] ); ?></p>
 		</div>
-		<div class="fotos-estrutura" data-reveal>
-			<?php foreach ( $t['clinica_fotos'] as $f ) : ?>
-				<figure>
-					<img src="<?php echo esc_url( $img . '/' . $f[0] ); ?>" alt="<?php echo esc_attr( $f[1] ); ?>" loading="lazy">
-					<figcaption><?php echo esc_html( $f[1] ); ?></figcaption>
-				</figure>
-			<?php endforeach; ?>
+		<?php
+		// Carrossel continuo: fotos da estrutura + do site, duplicadas para o loop nao ter emenda.
+		$fotos = array_merge( $t['clinica_fotos'], array( array( 'lab.jpg', 'Laboratório de aulas práticas' ), array( 'cirurgico.jpg', 'Prática em centro cirúrgico simulado' ), array( 'estudo.jpg', 'Estudo em grupo' ), array( 'equipe.jpg', 'Equipe de saúde em formação' ), array( 'turma.jpg', 'Turma em atividade' ) ) );
+		?>
+		<div class="fotos-carrossel" data-reveal>
+			<div class="fotos-trilho">
+				<?php foreach ( array( 0, 1 ) as $volta ) : foreach ( $fotos as $f ) : ?>
+					<figure<?php echo $volta ? ' aria-hidden="true"' : ''; ?>>
+						<img src="<?php echo esc_url( $img . '/' . $f[0] ); ?>" alt="<?php echo $volta ? '' : esc_attr( $f[1] ); ?>" loading="lazy">
+						<figcaption><?php echo esc_html( $f[1] ); ?></figcaption>
+					</figure>
+				<?php endforeach; endforeach; ?>
+			</div>
 		</div>
 		<a href="<?php echo esc_url( home_url( '/clinica-escola/' ) ); ?>" class="btn btn-line"><?php echo esc_html( $t['clinica_cta'] ); ?></a>
 	</div>
